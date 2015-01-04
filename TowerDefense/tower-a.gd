@@ -1,6 +1,8 @@
 
 extends RigidBody2D
 
+var global
+
 var time = 0.0
 var level = 1
 var level_max = 3
@@ -9,31 +11,40 @@ var fire_next = 0.0
 var enemy_at_range = 0
 var enemy_direction = Vector2(0,-1)
 
+var upgrade_cost = 10
+
+
 func _ready():
+	global = get_node("/root/global")
 	set_fixed_process(true)
 
 func _fixed_process(delta):
 	time += delta
-	if enemy_at_range > 0:
-		fire()
+	#if enemy_at_range > 0:
+	fire()
 
 func upgrade():
-	if level < level_max:
+	if level < level_max and global.cash >= upgrade_cost:
 		level += 1
 		var sprite = get_node("Sprite")
 		sprite.set_frame(level-1)
+		global.cash -= upgrade_cost
 		print(get_name(), " upgraded to level ", level)
 
 func fire():
 	if time > fire_next:
-		var scene = preload("res://bullet.scn")
-		var bullet = scene.instance()
-		#bullet.set_pos(get_pos())
 		var target_enemy = null
 		for b in get_colliding_bodies():
+			if b.is_in_group("enemy") == false:
+				continue
 			if target_enemy == null or \
 				b.get_global_pos().x > target_enemy.get_global_pos().x:
 				target_enemy = b
+		if target_enemy == null:
+			return
+		var scene = preload("res://bullet.scn")
+		var bullet = scene.instance()
+		#bullet.set_pos(get_pos())
 		bullet.direction = (target_enemy.get_global_pos() - get_global_pos()).normalized()
 		add_child(bullet)
 		fire_next = time + fire_delta
