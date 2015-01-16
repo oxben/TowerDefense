@@ -17,7 +17,7 @@ func _ready():
 func _process(delta):
 	time += delta
 	if time > enemy_spawn and enemy_num < max_enemy_num:
-		enemy_spawn = time + 2.0
+		enemy_spawn = time + 5.0
 		var scene = preload("res://tank-a.scn")
 		var enemy = scene.instance()
 		var path = PathFollow2D.new()

@@ -7,7 +7,7 @@ var global
 var speed = 40
 
 # Number of hit points
-var health = 20
+var health = 50
 
 # Number of Armor points
 var armor = 2
@@ -48,7 +48,10 @@ func hit(damage):
 		print(get_name(), " destroyed!")
 		var texture = ImageTexture.new()
 		texture.load("res://assets/images/tank-a-dead.png")
-		get_node("Sprite").set_texture(texture)
+		var sprite = get_node("Sprite")
+		sprite.set_texture(texture)
+		sprite.set_hframes(1)
+		sprite.set_frame(0)
 		remove_from_group("enemy")
 		global.cash += reward
 
