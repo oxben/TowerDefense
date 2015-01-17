@@ -30,5 +30,9 @@ func _fixed_process(delta):
 func _on_body_enter(body):
 	#print("Hit!")
 	if body.is_in_group("enemy"):
+		var scene = preload("res://explosion.scn")
+		var explosion = scene.instance()
+		explosion.set_pos(get_global_pos())
+		get_node("/root").add_child(explosion)
 		body.hit(damage)
 		queue_free()

@@ -46,6 +46,14 @@ func hit(damage):
 	health -= max(0, damage - armor)
 	if health <= 0:
 		print(get_name(), " destroyed!")
+		# Add wreckage
+		var scene = preload("res://wreck-a.scn")
+		var wreck = scene.instance()
+		wreck.set_pos(get_global_pos())
+		var root = get_node("/root")
+		global.current_level.add_child(wreck)
+		global.current_level.move_child(wreck, 0)
+		
 		var texture = ImageTexture.new()
 		texture.load("res://assets/images/tank-a-dead.png")
 		var sprite = get_node("Sprite")

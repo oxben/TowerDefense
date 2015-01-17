@@ -35,7 +35,8 @@ func rotate_turret(direction):
 	var rad_angle = atan2(direction.x, direction.y) - atan2(0, -1)
 	var angle = (360 - int(rad_angle * global.DEG_PER_RAD)) % 360
 	var sprite = get_node("Sprite")
-	var frame = int(round(angle / (360.0/8.0))) % 8
+	var hframes = sprite.get_hframes()
+	var frame = int(round(angle / (360.0/hframes))) % hframes
 	sprite.set_frame(frame)
 
 func fire():
