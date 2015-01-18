@@ -3,17 +3,19 @@ extends RigidBody2D
 
 var global
 
+var level = 1
 var speed = 300
 var direction = Vector2(0, -1)
 var fire_range = 200
-var damage = 5
+var damage = [ 0, 3, 4 ,5 ]
 
 func _ready():
 	global = get_node("/root/global")
 	set_fixed_process(true)
-	# Rotate bullet sprite
-	var rad_angle = atan2(direction.x, direction.y) - atan2(0, -1)
+	# Set and rotate bullet sprite
 	var sprite = get_node("Sprite")
+	sprite.set_frame(level-1)
+	var rad_angle = atan2(direction.x, direction.y) - atan2(0, -1)
 	set_rot(rad_angle)
 
 	
@@ -34,5 +36,5 @@ func _on_body_enter(body):
 		var explosion = scene.instance()
 		explosion.set_pos(get_global_pos())
 		get_node("/root").add_child(explosion)
-		body.hit(damage)
+		body.hit(damage[level])
 		queue_free()

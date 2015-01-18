@@ -5,7 +5,7 @@ var global
 
 var time = 0.0
 var level = 1
-var level_max = 8
+var level_max = 3
 var fire_delta = 1.0/5.0
 var fire_next = 0.0
 var enemy_at_range = 0
@@ -13,10 +13,13 @@ var enemy_direction = Vector2(0,-1)
 
 var upgrade_cost = 1
 
+const ammunition = "res://bullet.scn"
+
 
 func _ready():
 	global = get_node("/root/global")
 	set_fixed_process(true)
+	
 
 func _fixed_process(delta):
 	time += delta
@@ -27,7 +30,8 @@ func upgrade():
 	if level < level_max and global.cash >= upgrade_cost:
 		level += 1
 		var sprite = get_node("Sprite")
-		sprite.set_frame(level-1)
+		var hframes = sprite.get_hframes()
+		sprite.set_frame(hframes * (level-1 ))
 		global.cash -= upgrade_cost
 		print(get_name(), " upgraded to level ", level)
 
@@ -37,7 +41,7 @@ func rotate_turret(direction):
 	var sprite = get_node("Sprite")
 	var hframes = sprite.get_hframes()
 	var frame = int(round(angle / (360.0/hframes))) % hframes
-	sprite.set_frame(frame)
+	sprite.set_frame(hframes * (level-1 ) + frame)
 
 func fire():
 	if time > fire_next:
@@ -50,10 +54,11 @@ func fire():
 				target_enemy = b
 		if target_enemy == null:
 			return
-		var scene = preload("res://double-bullet.scn")
+		var scene = load(ammunition)
 		var bullet = scene.instance()
 		#bullet.set_pos(get_pos())
 		bullet.direction = (target_enemy.get_global_pos() - get_global_pos()).normalized()
+		bullet.level = level
 		rotate_turret(bullet.direction)
 		add_child(bullet)
 		move_child(bullet, 0)

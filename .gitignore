@@ -1,3 +1,4 @@
 .fscache
 *.blend1
+/assets/tmp/*
 
