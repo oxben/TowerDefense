@@ -13,6 +13,7 @@ func _ready():
 	enemy_spawn = 2.0
 	global = get_node("/root/global")
 	set_process(true)
+	set_process_input(true)
 
 func _process(delta):
 	time += delta
@@ -27,9 +28,14 @@ func _process(delta):
 		enemy_num += 1
 	get_node("CashLabel").set_text(str("Cash: ", global.cash))
 	get_node("HealthLabel").set_text(str("Health: ", global.health))
-	
+		
 	if global.health <= 0:
 		print("You loose!")
+
+func _input(event):
+	if Input.is_action_pressed("pause_game"):
+		get_tree().set_pause(true)
+		get_node("PausePopupPanel").show()
 
 func add_tower(pos, id):
 	print("Add tower: x=", pos.x, " y=", pos.y)
@@ -38,4 +44,8 @@ func add_tower(pos, id):
 	tower.set_name("Tower-" + id)
 	tower.set_pos(pos)
 	add_child(tower)
+
+func _on_resume_button_pressed():
+	get_node("PausePopupPanel").hide()
+	get_tree().set_pause(false)
 	
