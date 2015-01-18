@@ -33,9 +33,14 @@ func _process(delta):
 		print("You loose!")
 
 func _input(event):
-	if Input.is_action_pressed("pause_game"):
-		get_tree().set_pause(true)
-		get_node("PausePopupPanel").show()
+	if event.type == InputEvent.KEY:
+		if Input.is_action_pressed("pause_game"):
+			get_tree().set_pause(true)
+			get_node("PausePopupPanel").show()
+			return
+		if Input.is_action_pressed("quit_game"):
+			get_tree().quit()
+			return
 
 func add_tower(pos, id):
 	print("Add tower: x=", pos.x, " y=", pos.y)
