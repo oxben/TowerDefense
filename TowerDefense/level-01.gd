@@ -15,6 +15,7 @@ func _ready():
 	set_process(true)
 	set_process_input(true)
 
+
 func _process(delta):
 	time += delta
 	if time > enemy_spawn and enemy_num < max_enemy_num:
@@ -32,6 +33,7 @@ func _process(delta):
 	if global.health <= 0:
 		print("You loose!")
 
+
 func _input(event):
 	if event.type == InputEvent.KEY:
 		if Input.is_action_pressed("pause_game"):
@@ -42,13 +44,6 @@ func _input(event):
 			get_tree().quit()
 			return
 
-func add_tower(pos, id):
-	print("Add tower: x=", pos.x, " y=", pos.y)
-	var scene = preload("res://tower-a.scn")
-	var tower = scene.instance()
-	tower.set_name("Tower-" + id)
-	tower.set_pos(pos)
-	add_child(tower)
 
 func _on_resume_button_pressed():
 	get_node("PausePopupPanel").hide()

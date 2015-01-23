@@ -7,7 +7,7 @@ var global
 var speed = 40
 
 # Number of hit points
-var health = 50
+var health = 50.0
 
 # Number of Armor points
 var armor = 2
@@ -25,7 +25,13 @@ var dead_since = 0
 func _ready():
 	add_to_group("enemy")
 	global = get_node("/root/global")
+	get_node("HealthLabel").set_text(str(health))
+	var progress = get_node("HealthProgress")
+	progress.hide()
+	progress.set_max(health)
+	progress.set_value(health)
 	set_fixed_process(true)
+
 
 func _fixed_process(delta):
 	if health <= 0:
@@ -42,10 +48,22 @@ func _fixed_process(delta):
 		global.health -= damage
 		queue_free()
 
-func hit(damage):
-	health -= max(0, damage - armor)
+
+func hit(damage, continuous=false):
+	if not continuous:
+		health -= max(0, damage - armor)
+	else:
+		health -= damage
+	get_node("HealthLabel").set_text(str(health))
+	var progress = get_node("HealthProgress")
+	if not progress.is_visible():
+		progress.show()
+	progress.set_value(health)
+	# Death
 	if health <= 0:
 		print(get_name(), " destroyed!")
+		get_node("HealthLabel").hide()
+		progress.hide()
 		# Add wreckage
 		var scene = preload("res://wreck-a.scn")
 		var wreck = scene.instance()
