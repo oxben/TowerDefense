@@ -50,6 +50,7 @@ func hit(damage):
 		var scene = preload("res://wreck-a.scn")
 		var wreck = scene.instance()
 		wreck.set_pos(get_global_pos())
+		wreck.set_frame(randi() % wreck.get_hframes())
 		var root = get_node("/root")
 		global.current_level.add_child(wreck)
 		global.current_level.move_child(wreck, 0)
