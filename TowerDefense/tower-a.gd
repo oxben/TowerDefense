@@ -11,7 +11,7 @@ var fire_next = 0.0
 var enemy_at_range = 0
 var enemy_direction = Vector2(0,-1)
 
-var upgrade_cost = 1
+var upgrade_cost = 5
 
 const ammunition = "res://bullet.scn"
 

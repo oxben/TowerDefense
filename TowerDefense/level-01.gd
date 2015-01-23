@@ -26,8 +26,8 @@ func _process(delta):
 		get_node("/root/Level-1/WavePath-1").add_child(path)
 		path.add_child(enemy)
 		enemy_num += 1
-	get_node("CashLabel").set_text(str(global.cash))
-	get_node("HealthLabel").set_text(str(global.health))
+	get_node("CashSprite/CashLabel").set_text(str(global.cash))
+	get_node("HealthSprite/HealthLabel").set_text(str(global.health))
 		
 	if global.health <= 0:
 		print("You loose!")
