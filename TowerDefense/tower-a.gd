@@ -43,11 +43,11 @@ func get_upgrade_cost():
 
 func upgrade():
 	if level < level_max and global.cash >= upgrade_cost[level]:
+		global.cash -= upgrade_cost[level]
 		level += 1
 		var sprite = get_node("Sprite")
 		var hframes = sprite.get_hframes()
 		sprite.set_frame(hframes * (level-1 ))
-		global.cash -= upgrade_cost[level]
 		print(get_name(), " upgraded to level ", level)
 
 
