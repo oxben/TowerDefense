@@ -45,7 +45,7 @@ func _fixed_process(delta):
 		get_parent().set_offset(get_parent().get_offset() + (speed * delta) )
 	else:
 		print(get_name() + " reached the fortress")
-		global.health -= damage
+		global.hit_fortress(damage)
 		queue_free()
 
 

@@ -6,6 +6,7 @@ var global
 var idx
 var tower = null
 
+
 func _ready():
 	idx = get_name().split("-")[1]
 	global = get_node("/root/global")
@@ -53,10 +54,12 @@ func show_upgrade_menu():
 	var sell_price = tower.get_sell_price()
 	get_node("SellTowerButton/Label").set_text("$ " + str(sell_price))
 	var cost = tower.get_upgrade_cost()
-	var label = get_node("UpgradeTowerButton/Label").set_text("$ " + str(cost))
-	#if cost > global.cash:
-	# Set property "label.custom_colors/font_color"
-	# else:
+	var label = get_node("UpgradeTowerButton/Label")
+	label.set_text("$ " + str(cost))
+	if cost > global.cash:
+		label.set("custom_colors/font_color", Color(global.COLOR_RED))
+	else:
+		label.set("custom_colors/font_color", Color(global.COLOR_GOLD))
 	get_node("SellTowerButton").show()
 	get_node("UpgradeTowerButton").show()
 

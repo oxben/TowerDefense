@@ -11,6 +11,7 @@ var enemy_num = 0
 var start_wave = false
 var start_countdown = 10.0
 
+
 func _ready():
 	time = 0.0
 	enemy_spawn = 2.0
