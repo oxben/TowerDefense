@@ -12,7 +12,7 @@ const COLOR_RED  = "#ff4444"
 var current_level = null
 var cash = 10
 var health = 5
-
+var debug = true
 
 func _ready():
 	var root = get_tree().get_root()
