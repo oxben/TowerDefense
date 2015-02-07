@@ -80,5 +80,11 @@ func hit(damage, continuous=false):
 		sprite.set_hframes(1)
 		sprite.set_frame(0)
 		remove_from_group("enemy")
+		
+		# Add label for reward
+		scene = preload("res://ascending-label.scn")
+		var label = scene.instance()
+		label.set_text("+ $" + str(reward))
+		add_child(label)
 		global.cash += reward
 
