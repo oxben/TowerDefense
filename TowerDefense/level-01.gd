@@ -67,3 +67,15 @@ func _on_resume_button_pressed():
 func _on_SkullButton_pressed():
 	start_wave = true
 	get_node("SkullButton").hide()
+
+
+func gameover_pause():
+	get_tree().set_pause(true)
+
+
+
+func _on_RestartButton_pressed():
+	print("Load Spash")
+	get_tree().set_pause(false)
+	get_node("/root/global").goto_scene("res://splash.scn")
+
