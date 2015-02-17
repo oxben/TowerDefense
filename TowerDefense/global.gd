@@ -14,6 +14,7 @@ var cash = 10
 var health = 5
 var debug = false
 
+
 func _ready():
 	var root = get_tree().get_root()
 	current_level = root.get_child( root.get_child_count() - 1)
@@ -23,3 +24,11 @@ func hit_fortress(damage):
 	health -= damage
 	if health <= 0:
 		current_level.get_node("GameOverFrame").show()
+
+
+func goto_scene(scene):
+	current_level.queue_free()
+	var scn = ResourceLoader.load(scene)
+	current_level = scn.instance()
+	get_tree().get_root().add_child(current_level)
+
