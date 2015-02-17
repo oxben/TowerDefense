@@ -29,6 +29,10 @@ func hit_fortress(damage):
 
 func goto_scene(scene):
 	current_level.queue_free()
+	if scene.basename() != "splash.scn":
+		# Reset player attributes
+		cash = 10
+		health = 5
 	var scn = ResourceLoader.load(scene)
 	current_level = scn.instance()
 	get_tree().get_root().add_child(current_level)
