@@ -21,9 +21,10 @@ func _ready():
 
 
 func hit_fortress(damage):
-	health -= damage
-	if health <= 0:
-		current_level.get_node("GameOverFrame").show()
+	if health > 0:
+		health -= damage
+		if health <= 0:
+			current_level.get_node("AnimPlayer").play("GameOver")
 
 
 func goto_scene(scene):
