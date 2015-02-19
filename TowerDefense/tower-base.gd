@@ -15,15 +15,19 @@ func _ready():
 
 
 func _on_BuyTowerAButton_pressed():
-	add_tower(preload("res://tower-a.scn"))
-	hide_tower_menu()
-	set_pressed(false)
+	if global.init_tower_cost <= global.cash:
+		global.cash -= global.init_tower_cost
+		add_tower(preload("res://tower-a.scn"))
+		hide_tower_menu()
+		set_pressed(false)
 
 
 func _on_BuyTowerDButton_pressed():
-	add_tower(preload("res://tower-d.scn"))
-	hide_tower_menu()
-	set_pressed(false)
+	if global.init_tower_cost <= global.cash:
+		global.cash -= global.init_tower_cost
+		add_tower(preload("res://tower-d.scn"))
+		hide_tower_menu()
+		set_pressed(false)
 
 
 func _on_TowerBase_toggled( pressed ):
@@ -39,8 +43,16 @@ func _on_TowerBase_toggled( pressed ):
 
 
 func show_tower_menu():
-	get_node("BuyTowerAButton/Label").set_text("$ 5")
-	get_node("BuyTowerDButton/Label").set_text("$ 5")
+	var ta_label = get_node("BuyTowerAButton/Label")
+	var td_label = get_node("BuyTowerDButton/Label")
+	ta_label.set_text("$ " + str(global.init_tower_cost))
+	td_label.set_text("$ " + str(global.init_tower_cost))
+	if global.init_tower_cost > global.cash:
+		ta_label.set("custom_colors/font_color", Color(global.COLOR_RED))
+		td_label.set("custom_colors/font_color", Color(global.COLOR_RED))
+	else:
+		ta_label.set("custom_colors/font_color", Color(global.COLOR_GOLD))
+		td_label.set("custom_colors/font_color", Color(global.COLOR_GOLD))
 	get_node("BuyTowerAButton").show()
 	get_node("BuyTowerDButton").show()
 

@@ -13,6 +13,7 @@ var current_level = null
 var cash = 10
 var health = 5
 var debug = false
+var init_tower_cost = 5 # Initial tower cost
 
 
 func _ready():
