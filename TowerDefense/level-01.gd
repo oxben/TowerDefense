@@ -10,11 +10,12 @@ var enemy_num = 0
 
 var start_wave = false
 var start_countdown = 10.0
-
+var victory = false
 
 func _ready():
 	time = 0.0
 	enemy_spawn = 2.0
+	victory = false
 	global = get_node("/root/global")
 	set_process(true)
 	set_process_input(true)
@@ -43,6 +44,13 @@ func _process(delta):
 		
 	if global.health <= 0:
 		print("You loose!")
+	elif (not victory and
+		enemy_num == max_enemy_num and
+		get_tree().get_nodes_in_group("enemy").size() == 0):
+		print("Victory!")
+		victory = true
+		get_node("AnimPlayer").play("Victory")
+		
 
 
 func _input(event):
