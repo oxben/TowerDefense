@@ -25,7 +25,7 @@ func _process(delta):
 	time += delta
 	if start_wave == true and time > enemy_spawn and enemy_num < max_enemy_num:
 		enemy_spawn = time + 3.0
-		var scene = preload("res://tank-a.scn")
+		var scene = preload("res://tank-a.xscn")
 		var enemy = scene.instance()
 		var path = PathFollow2D.new()
 		path.set_loop(false)
@@ -85,5 +85,5 @@ func gameover_pause():
 func _on_RestartButton_pressed():
 	print("Load Spash")
 	get_tree().set_pause(false)
-	get_node("/root/global").goto_scene("res://splash.scn")
+	get_node("/root/global").goto_scene("res://splash.xscn")
 

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource_file type="PackedScene" subresource_count="9" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
+	<ext_resource path="res://assets/images/tower-base-b.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/button-upgrade.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/button-sell.png" type="Texture"></ext_resource>
+	<ext_resource path="res://tower-base.gd" type="Script"></ext_resource>
+	<ext_resource path="res://assets/images/button-shadow.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/button-tower-d.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/button-tower-a.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/tower-base-b-pressed.png" type="Texture"></ext_resource>
+	<main_resource>
+		<dictionary name="_bundled" shared="false">
+			<string> "names" </string>
+			<string_array  len="77">
+				<string> "TowerBase" </string>
+				<string> "TextureButton" </string>
+				<string> "_import_path" </string>
+				<string> "visibility/visible" </string>
+				<string> "visibility/opacity" </string>
+				<string> "visibility/self_opacity" </string>
+				<string> "visibility/behind_parent" </string>
+				<string> "margin/left" </string>
+				<string> "margin/top" </string>
+				<string> "margin/right" </string>
+				<string> "margin/bottom" </string>
+				<string> "focus_neighbour/left" </string>
+				<string> "focus_neighbour/top" </string>
+				<string> "focus_neighbour/right" </string>
+				<string> "focus_neighbour/bottom" </string>
+				<string> "focus/ignore_mouse" </string>
+				<string> "focus/stop_mouse" </string>
+				<string> "size_flags/horizontal" </string>
+				<string> "size_flags/vertical" </string>
+				<string> "size_flags/stretch_ratio" </string>
+				<string> "disabled" </string>
+				<string> "toggle_mode" </string>
+				<string> "click_on_press" </string>
+				<string> "textures/normal" </string>
+				<string> "textures/pressed" </string>
+				<string> "textures/hover" </string>
+				<string> "textures/disabled" </string>
+				<string> "textures/focused" </string>
+				<string> "textures/click_mask" </string>
+				<string> "script/script" </string>
+				<string> "__meta__" </string>
+				<string> "BuyTowerAButton" </string>
+				<string> "Label" </string>
+				<string> "custom_colors/font_color" </string>
+				<string> "custom_colors/font_color_shadow" </string>
+				<string> "custom_constants/shadow_offset_x" </string>
+				<string> "custom_constants/shadow_offset_y" </string>
+				<string> "custom_constants/shadow_as_outline" </string>
+				<string> "range/min" </string>
+				<string> "range/max" </string>
+				<string> "range/step" </string>
+				<string> "range/page" </string>
+				<string> "range/value" </string>
+				<string> "range/exp_edit" </string>
+				<string> "rounded_values" </string>
+				<string> "text" </string>
+				<string> "align" </string>
+				<string> "valign" </string>
+				<string> "autowrap" </string>
+				<string> "uppercase" </string>
+				<string> "percent_visible" </string>
+				<string> "Shadow" </string>
+				<string> "Sprite" </string>
+				<string> "transform/pos" </string>
+				<string> "transform/rot" </string>
+				<string> "transform/scale" </string>
+				<string> "texture" </string>
+				<string> "centered" </string>
+				<string> "offset" </string>
+				<string> "flip_h" </string>
+				<string> "flip_v" </string>
+				<string> "vframes" </string>
+				<string> "hframes" </string>
+				<string> "frame" </string>
+				<string> "modulate" </string>
+				<string> "region" </string>
+				<string> "region_rect" </string>
+				<string> "BuyTowerDButton" </string>
+				<string> "SellTowerButton" </string>
+				<string> "UpgradeTowerButton" </string>
+				<string> "_on_TowerBase_toggled" </string>
+				<string> "toggled" </string>
+				<string> "_on_BuyTowerAButton_pressed" </string>
+				<string> "pressed" </string>
+				<string> "_on_BuyTowerDButton_pressed" </string>
+				<string> "_on_SellTowerButton_pressed" </string>
+				<string> "_on_UpgradeTowerButton_pressed" </string>
+			</string_array>
+			<string> "version" </string>
+			<int> 1 </int>
+			<string> "conn_count" </string>
+			<int> 5 </int>
+			<string> "node_count" </string>
+			<int> 13 </int>
+			<string> "variants" </string>
+			<array  len="40" shared="false">
+				<node_path> "" </node_path>
+				<bool> True </bool>
+				<real> 1 </real>
+				<bool> False </bool>
+				<real> -32 </real>
+				<real> 32 </real>
+				<int> 2 </int>
+				<resource  resource_type="Texture" path="res://assets/images/tower-base-b.png">  </resource>
+				<resource  resource_type="Texture" path="res://assets/images/tower-base-b-pressed.png">  </resource>
+				<resource name=""></resource>				<resource  resource_type="Script" path="res://tower-base.gd">  </resource>
+				<dictionary  shared="false">
+					<string> "__editor_plugin_states__" </string>
+					<dictionary  shared="false">
+						<string> "Script" </string>
+						<dictionary  shared="false">
+							<string> "current" </string>
+							<int> 0 </int>
+							<string> "sources" </string>
+							<array  len="6" shared="false">
+								<string> "res://tower-base.gd" </string>
+								<string> "res://global.gd" </string>
+								<string> "res://level-01.gd" </string>
+								<string> "res://tower-a.gd" </string>
+								<string> "res://tank-a.gd" </string>
+								<string> "res://tower-d.gd" </string>
+							</array>
+						</dictionary>
+						<string> "2D" </string>
+						<dictionary  shared="false">
+							<string> "pixel_snap" </string>
+							<bool> False </bool>
+							<string> "zoom" </string>
+							<real> 3.794776 </real>
+							<string> "use_snap" </string>
+							<bool> True </bool>
+							<string> "ofs" </string>
+							<vector2> -146.627, -79.1888 </vector2>
+							<string> "snap" </string>
+							<int> 4 </int>
+						</dictionary>
+						<string> "3D" </string>
+						<dictionary  shared="false">
+							<string> "deflight_rot_y" </string>
+							<real> 0.628319 </real>
+							<string> "zfar" </string>
+							<real> 500 </real>
+							<string> "fov" </string>
+							<real> 45 </real>
+							<string> "viewports" </string>
+							<array  len="4" shared="false">
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> True </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+							</array>
+							<string> "viewport_mode" </string>
+							<int> 1 </int>
+							<string> "default_light" </string>
+							<bool> True </bool>
+							<string> "ambient_light_color" </string>
+							<color> 0.15, 0.15, 0.15, 1 </color>
+							<string> "show_grid" </string>
+							<bool> True </bool>
+							<string> "show_origin" </string>
+							<bool> True </bool>
+							<string> "znear" </string>
+							<real> 0.1 </real>
+							<string> "default_srgb" </string>
+							<bool> False </bool>
+							<string> "deflight_rot_x" </string>
+							<real> 0.942478 </real>
+						</dictionary>
+					</dictionary>
+					<string> "__editor_run_settings__" </string>
+					<dictionary  shared="false">
+						<string> "custom_args" </string>
+						<string> "-l $scene" </string>
+						<string> "run_mode" </string>
+						<int> 0 </int>
+					</dictionary>
+					<string> "__editor_plugin_screen__" </string>
+					<string> "2D" </string>
+				</dictionary>
+				<real> -24 </real>
+				<real> 16 </real>
+				<real> 24 </real>
+				<resource  resource_type="Texture" path="res://assets/images/button-tower-a.png">  </resource>
+				<real> 8 </real>
+				<real> 28 </real>
+				<real> 40 </real>
+				<real> 41 </real>
+				<color> 1, 0.854902, 0.501961, 1 </color>
+				<color> 0.12549, 0.0627451, 0, 0.75 </color>
+				<int> 1 </int>
+				<real> 0 </real>
+				<string> "$ 99" </string>
+				<int> 0 </int>
+				<real> -1 </real>
+				<vector2> 28, 28 </vector2>
+				<vector2> 1, 1 </vector2>
+				<resource  resource_type="Texture" path="res://assets/images/button-shadow.png">  </resource>
+				<vector2> 0, 0 </vector2>
+				<color> 1, 1, 1, 1 </color>
+				<rect2> 0, 0, 0, 0 </rect2>
+				<real> 48 </real>
+				<real> 96 </real>
+				<resource  resource_type="Texture" path="res://assets/images/button-tower-d.png">  </resource>
+				<real> 80 </real>
+				<resource  resource_type="Texture" path="res://assets/images/button-sell.png">  </resource>
+				<color> 0.12549, 0.0627451, 0, 0.745098 </color>
+				<resource  resource_type="Texture" path="res://assets/images/button-upgrade.png">  </resource>
+			</array>
+			<string> "nodes" </string>
+			<int_array  len="797"> 				-1, -1, 1, 0, -1, 29, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 4, 9, 5, 10, 5, 11, 0, 12, 0, 13, 0, 14, 0, 15, 3, 16, 1, 17, 6, 18, 6, 19, 2, 20, 3, 21, 1, 22, 3, 23, 7, 24, 8, 25, 9, 26, 9, 27, 9, 28, 9, 29, 10, 30, 11, 0, 0, 0, 1, 31, -1, 27, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 12, 9, 13, 10, 14, 11, 0, 12, 0, 13, 0, 14, 0, 15, 3, 16, 1, 17, 6, 18, 6, 19, 2, 20, 3, 21, 3, 22, 3, 23, 15, 24, 9, 25, 9, 26, 9, 27, 9, 28, 9, 0, 1, 0, 32, 32, -1, 35, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 16, 8, 17, 9, 18, 10, 19, 11, 0, 12, 0, 13, 0, 14, 0, 15, 1, 16, 1, 17, 6, 19, 2, 33, 20, 34, 21, 35, 22, 36, 22, 37, 22, 38, 23, 39, 2, 40, 2, 41, 2, 42, 23, 43, 3, 44, 3, 45, 24, 46, 22, 47, 25, 48, 3, 49, 3, 50, 26, 0, 1, 0, 52, 51, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 1, 53, 27, 54, 23, 55, 28, 56, 29, 57, 1, 58, 30, 59, 3, 60, 3, 61, 22, 62, 22, 63, 25, 64, 31, 65, 3, 66, 32, 0, 0, 0, 1, 67, -1, 27, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 33, 8, 12, 9, 34, 10, 14, 11, 0, 12, 0, 13, 0, 14, 0, 15, 3, 16, 1, 17, 6, 18, 6, 19, 2, 20, 3, 21, 3, 22, 3, 23, 35, 24, 9, 25, 9, 26, 9, 27, 9, 28, 9, 0, 4, 0, 32, 32, -1, 35, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 16, 8, 17, 9, 18, 10, 19, 11, 0, 12, 0, 13, 0, 14, 0, 15, 1, 16, 1, 17, 6, 19, 2, 33, 20, 34, 21, 35, 22, 36, 22, 37, 22, 38, 23, 39, 2, 40, 2, 41, 2, 42, 23, 43, 3, 44, 3, 45, 24, 46, 22, 47, 25, 48, 3, 49, 3, 50, 26, 0, 4, 0, 52, 51, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 1, 53, 27, 54, 23, 55, 28, 56, 29, 57, 1, 58, 30, 59, 3, 60, 3, 61, 22, 62, 22, 63, 25, 64, 31, 65, 3, 66, 32, 0, 0, 0, 1, 68, -1, 27, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 13, 10, 36, 11, 0, 12, 0, 13, 0, 14, 0, 15, 3, 16, 1, 17, 6, 18, 6, 19, 2, 20, 3, 21, 3, 22, 3, 23, 37, 24, 9, 25, 9, 26, 9, 27, 9, 28, 9, 0, 7, 0, 32, 32, -1, 35, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 16, 8, 17, 9, 18, 10, 19, 11, 0, 12, 0, 13, 0, 14, 0, 15, 1, 16, 1, 17, 6, 19, 2, 33, 20, 34, 38, 35, 22, 36, 22, 37, 22, 38, 23, 39, 2, 40, 2, 41, 2, 42, 23, 43, 3, 44, 3, 45, 24, 46, 22, 47, 25, 48, 3, 49, 3, 50, 26, 0, 7, 0, 52, 51, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 1, 53, 27, 54, 23, 55, 28, 56, 29, 57, 1, 58, 30, 59, 3, 60, 3, 61, 22, 62, 22, 63, 25, 64, 31, 65, 3, 66, 32, 0, 0, 0, 1, 69, -1, 27, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 33, 8, 5, 9, 34, 10, 36, 11, 0, 12, 0, 13, 0, 14, 0, 15, 3, 16, 1, 17, 6, 18, 6, 19, 2, 20, 3, 21, 3, 22, 3, 23, 39, 24, 9, 25, 9, 26, 9, 27, 9, 28, 9, 0, 10, 0, 32, 32, -1, 35, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 16, 8, 17, 9, 18, 10, 19, 11, 0, 12, 0, 13, 0, 14, 0, 15, 1, 16, 1, 17, 6, 19, 2, 33, 20, 34, 38, 35, 22, 36, 22, 37, 22, 38, 23, 39, 2, 40, 2, 41, 2, 42, 23, 43, 3, 44, 3, 45, 24, 46, 22, 47, 25, 48, 3, 49, 3, 50, 26, 0, 10, 0, 52, 51, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 1, 53, 27, 54, 23, 55, 28, 56, 29, 57, 1, 58, 30, 59, 3, 60, 3, 61, 22, 62, 22, 63, 25, 64, 31, 65, 3, 66, 32, 0 </int_array>
+			<string> "conns" </string>
+			<int_array  len="30"> 				0, 0, 71, 70, 2, 0, 1, 0, 73, 72, 2, 0, 4, 0, 73, 74, 2, 0, 7, 0, 73, 75, 2, 0, 10, 0, 73, 76, 2, 0 </int_array>
+		</dictionary>
+
+	</main_resource>
+</resource_file>
