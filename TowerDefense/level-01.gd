@@ -128,6 +128,7 @@ func _on_resume_button_pressed():
 
 func _on_SkullButton_pressed():
 	wave["state"] = ACTIVE
+	get_node("WaveSprite/WaveLabel").set_text(str(wave_idx+1) + "/" + str(waves.size()))
 	get_node("SkullButton").hide()
 
 
