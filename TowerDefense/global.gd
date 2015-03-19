@@ -9,16 +9,24 @@ const DEAD_CLEAN_INTVAL = 3.0
 const COLOR_GOLD = "#ffda80"
 const COLOR_RED  = "#ff4444"
 
+# Game
 var current_level = null
+
+# Player
 var cash = 10
 var health = 5
+
 var debug = false
 var init_tower_cost = 5 # Initial tower cost
+
+var enemy_scenes = {}
 
 
 func _ready():
 	var root = get_tree().get_root()
 	current_level = root.get_child( root.get_child_count() - 1)
+	# Preload enemies' scenes
+	enemy_scenes["tank-a"] = preload("res://tank-a.xscn")
 
 
 func hit_fortress(damage):
