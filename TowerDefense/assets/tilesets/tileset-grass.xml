@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource_file type="TileSet" subresource_count="2" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
+	<ext_resource path="res://assets/tilesets/tileset-grass.png" type="Texture"></ext_resource>
+	<main_resource>
+		<string name="0/name"> "T" </string>
+		<resource name="0/texture" resource_type="Texture" path="res://assets/tilesets/tileset-grass.png">  </resource>
+		<vector2 name="0/tex_offset"> 0, 0 </vector2>
+		<vector2 name="0/shape_offset"> 0, 0 </vector2>
+		<rect2 name="0/region"> 32, 0, 16, 16 </rect2>
+		<array name="0/shapes" len="0" shared="false">
+		</array>
+		<string name="1/name"> "TR" </string>
+		<resource name="1/texture" resource_type="Texture" path="res://assets/tilesets/tileset-grass.png">  </resource>
+		<vector2 name="1/tex_offset"> 0, 0 </vector2>
+		<vector2 name="1/shape_offset"> 0, 0 </vector2>
+		<rect2 name="1/region"> 64, 0, 16, 16 </rect2>
+		<array name="1/shapes" len="0" shared="false">
+		</array>
+		<string name="2/name"> "R" </string>
+		<resource name="2/texture" resource_type="Texture" path="res://assets/tilesets/tileset-grass.png">  </resource>
+		<vector2 name="2/tex_offset"> 0, 0 </vector2>
+		<vector2 name="2/shape_offset"> 0, 0 </vector2>
+		<rect2 name="2/region"> 64, 32, 16, 16 </rect2>
+		<array name="2/shapes" len="0" shared="false">
+		</array>
+		<string name="3/name"> "RB" </string>
+		<resource name="3/texture" resource_type="Texture" path="res://assets/tilesets/tileset-grass.png">  </resource>
+		<vector2 name="3/tex_offset"> 0, 0 </vector2>
+		<vector2 name="3/shape_offset"> 0, 0 </vector2>
+		<rect2 name="3/region"> 64, 64, 16, 16 </rect2>
+		<array name="3/shapes" len="0" shared="false">
+		</array>
+		<string name="4/name"> "B" </string>
+		<resource name="4/texture" resource_type="Texture" path="res://assets/tilesets/tileset-grass.png">  </resource>
+		<vector2 name="4/tex_offset"> 0, 0 </vector2>
+		<vector2 name="4/shape_offset"> 0, 0 </vector2>
+		<rect2 name="4/region"> 32, 64, 16, 16 </rect2>
+		<array name="4/shapes" len="0" shared="false">
+		</array>
+		<string name="5/name"> "BL" </string>
+		<resource name="5/texture" resource_type="Texture" path="res://assets/tilesets/tileset-grass.png">  </resource>
+		<vector2 name="5/tex_offset"> 0, 0 </vector2>
+		<vector2 name="5/shape_offset"> 0, 0 </vector2>
+		<rect2 name="5/region"> 0, 64, 16, 16 </rect2>
+		<array name="5/shapes" len="0" shared="false">
+		</array>
+		<string name="6/name"> "L" </string>
+		<resource name="6/texture" resource_type="Texture" path="res://assets/tilesets/tileset-grass.png">  </resource>
+		<vector2 name="6/tex_offset"> 0, 0 </vector2>
+		<vector2 name="6/shape_offset"> 0, 0 </vector2>
+		<rect2 name="6/region"> 0, 32, 16, 16 </rect2>
+		<array name="6/shapes" len="0" shared="false">
+		</array>
+		<string name="7/name"> "LT" </string>
+		<resource name="7/texture" resource_type="Texture" path="res://assets/tilesets/tileset-grass.png">  </resource>
+		<vector2 name="7/tex_offset"> 0, 0 </vector2>
+		<vector2 name="7/shape_offset"> 0, 0 </vector2>
+		<rect2 name="7/region"> 0, 0, 16, 16 </rect2>
+		<array name="7/shapes" len="0" shared="false">
+		</array>
+		<string name="8/name"> "M" </string>
+		<resource name="8/texture" resource_type="Texture" path="res://assets/tilesets/tileset-grass.png">  </resource>
+		<vector2 name="8/tex_offset"> 0, 0 </vector2>
+		<vector2 name="8/shape_offset"> 0, 0 </vector2>
+		<rect2 name="8/region"> 32, 32, 16, 16 </rect2>
+		<array name="8/shapes" len="0" shared="false">
+		</array>
+
+	</main_resource>
+</resource_file>
