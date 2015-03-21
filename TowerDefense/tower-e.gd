@@ -39,7 +39,7 @@ func get_sell_price():
 
 
 func sell():
-	global.cash += sell_price[level]
+	global.increase_cash(sell_price[level])
 	queue_free()
 
 
@@ -49,7 +49,7 @@ func get_upgrade_cost():
 
 func upgrade():
 	if level < level_max and global.cash >= upgrade_cost[level]:
-		global.cash -= upgrade_cost[level]
+		global.decrease_cash(upgrade_cost[level])
 		level += 1
 		var sprite = get_node("Sprite")
 		var hframes = sprite.get_hframes()

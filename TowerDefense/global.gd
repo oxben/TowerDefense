@@ -31,7 +31,7 @@ func _ready():
 
 func hit_fortress(damage):
 	if health > 0:
-		health -= damage
+		decrease_health(damage)
 		if health <= 0:
 			current_level.get_node("AnimPlayer").play("GameOver")
 
@@ -45,4 +45,28 @@ func goto_scene(scene):
 	var scn = ResourceLoader.load(scene)
 	current_level = scn.instance()
 	get_tree().get_root().add_child(current_level)
+
+
+func increase_cash(sum):
+	cash += sum
+	# Update listeners
+	get_tree().call_group(0,"CashListeners","on_cash_update")
+
+
+func decrease_cash(sum):
+	cash -= sum
+	# Update listeners
+	get_tree().call_group(0,"CashListeners","on_cash_update")
+
+
+func increase_health(point):
+	health += point
+	# Update listeners
+	get_tree().call_group(0,"HealthListeners","on_health_update")
+
+
+func decrease_health(point):
+	health -= point
+	# Update listeners
+	get_tree().call_group(0,"HealthListeners","on_health_update")
 

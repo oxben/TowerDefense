@@ -10,13 +10,19 @@ var tower = null
 func _ready():
 	idx = get_name().split("-")[1]
 	global = get_node("/root/global")
+	add_to_group("CashListeners")
 	hide_tower_menu()
 	hide_upgrade_menu()
 
 
+func on_cash_update():
+	set_tower_cost_color()
+	set_upgrade_cost_color()
+
+
 func _on_BuyTowerAButton_pressed():
 	if global.init_tower_cost <= global.cash:
-		global.cash -= global.init_tower_cost
+		global.decrease_cash(global.init_tower_cost)
 		add_tower(preload("res://tower-a.xscn"))
 		hide_tower_menu()
 		set_pressed(false)
@@ -24,14 +30,15 @@ func _on_BuyTowerAButton_pressed():
 
 func _on_BuyTowerDButton_pressed():
 	if global.init_tower_cost <= global.cash:
-		global.cash -= global.init_tower_cost
+		global.decrease_cash(global.init_tower_cost)
 		add_tower(preload("res://tower-d.xscn"))
 		hide_tower_menu()
 		set_pressed(false)
 
+
 func _on_BuyTowerEButton_pressed():
 	if global.init_tower_cost <= global.cash:
-		global.cash -= global.init_tower_cost
+		global.decrease_cash(global.init_tower_cost)
 		add_tower(preload("res://tower-e.xscn"))
 		hide_tower_menu()
 		set_pressed(false)
@@ -40,13 +47,40 @@ func _on_BuyTowerEButton_pressed():
 func _on_TowerBase_toggled( pressed ):
 	print("pressed=", str(pressed))
 	if pressed:
+		# Close other opened menu
+		get_tree().call_group(0,"OpenedBases","close_tower_menu")
+		# Display menu
 		if tower == null:
 			show_tower_menu()
 		else:
 			show_upgrade_menu()
+		add_to_group("OpenedBases")
 	else:
+		remove_from_group("OpenedBases")
 		hide_tower_menu()
 		hide_upgrade_menu()
+
+
+func close_tower_menu():
+		# Called when another tower base is pressed (radio button behavior)
+		remove_from_group("OpenedBases")
+		hide_tower_menu()
+		hide_upgrade_menu()
+		set_pressed(false)
+
+
+func set_tower_cost_color():
+	var ta_label = get_node("BuyTowerAButton/Label")
+	var td_label = get_node("BuyTowerDButton/Label")
+	var te_label = get_node("BuyTowerEButton/Label")
+	if global.init_tower_cost > global.cash:
+		ta_label.set("custom_colors/font_color", Color(global.COLOR_RED))
+		td_label.set("custom_colors/font_color", Color(global.COLOR_RED))
+		te_label.set("custom_colors/font_color", Color(global.COLOR_RED))
+	else:
+		ta_label.set("custom_colors/font_color", Color(global.COLOR_GOLD))
+		td_label.set("custom_colors/font_color", Color(global.COLOR_GOLD))
+		te_label.set("custom_colors/font_color", Color(global.COLOR_GOLD))
 
 
 func show_tower_menu():
@@ -56,22 +90,27 @@ func show_tower_menu():
 	ta_label.set_text("$ " + str(global.init_tower_cost))
 	td_label.set_text("$ " + str(global.init_tower_cost))
 	te_label.set_text("$ " + str(global.init_tower_cost))
-	if global.init_tower_cost > global.cash:
-		ta_label.set("custom_colors/font_color", Color(global.COLOR_RED))
-		td_label.set("custom_colors/font_color", Color(global.COLOR_RED))
-		te_label.set("custom_colors/font_color", Color(global.COLOR_RED))
-	else:
-		ta_label.set("custom_colors/font_color", Color(global.COLOR_GOLD))
-		td_label.set("custom_colors/font_color", Color(global.COLOR_GOLD))
-		te_label.set("custom_colors/font_color", Color(global.COLOR_GOLD))
+	set_tower_cost_color()
 	get_node("BuyTowerAButton").show()
 	get_node("BuyTowerDButton").show()
 	get_node("BuyTowerEButton").show()
+
 
 func hide_tower_menu():
 	get_node("BuyTowerAButton").hide()
 	get_node("BuyTowerDButton").hide()
 	get_node("BuyTowerEButton").hide()
+
+
+func set_upgrade_cost_color():
+	if tower == null:
+		return
+	var cost = tower.get_upgrade_cost()
+	var label = get_node("UpgradeTowerButton/Label")
+	if cost > global.cash:
+		label.set("custom_colors/font_color", Color(global.COLOR_RED))
+	else:
+		label.set("custom_colors/font_color", Color(global.COLOR_GOLD))
 
 
 func show_upgrade_menu():
@@ -80,10 +119,7 @@ func show_upgrade_menu():
 	var cost = tower.get_upgrade_cost()
 	var label = get_node("UpgradeTowerButton/Label")
 	label.set_text("$ " + str(cost))
-	if cost > global.cash:
-		label.set("custom_colors/font_color", Color(global.COLOR_RED))
-	else:
-		label.set("custom_colors/font_color", Color(global.COLOR_GOLD))
+	set_upgrade_cost_color()
 	get_node("SellTowerButton").show()
 	get_node("UpgradeTowerButton").show()
 

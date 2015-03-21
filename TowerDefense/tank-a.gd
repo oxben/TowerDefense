@@ -86,5 +86,5 @@ func hit(damage, continuous=false):
 		var label = scene.instance()
 		label.set_text("+ $" + str(reward))
 		add_child(label)
-		global.cash += reward
+		global.increase_cash(reward)
 
