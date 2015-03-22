@@ -86,7 +86,9 @@ func fire():
 		missile.target_path = target_enemy.get_path()
 		print("TARGET: " + target_enemy.get_path())
 		missile.level = level
-		rotate_turret((target_enemy.get_global_pos() - get_global_pos()).normalized())
+		var direction = (target_enemy.get_global_pos() - get_global_pos()).normalized()
+		rotate_turret(direction)
+		missile.set_pos(direction * 24) # Move missile to launcher level
 		add_child(missile)
 		move_child(missile, 0)
 		fire_next = time + fire_delta
