@@ -22,16 +22,22 @@ func _ready():
 	global = get_node("/root/global")
 	set_fixed_process(true)
 	if global.debug:
-		# Show fire range
-		var f_range = get_node("FireRange")
-		f_range.set_scale(Vector2(fire_range/100.0, fire_range/100.0))
-		f_range.show()
+		show_range()
 
 
 func _fixed_process(delta):
 	time += delta
 	#if enemy_at_range > 0:
 	fire()
+
+
+func show_range():
+	get_node("FireRange").set_scale(Vector2(fire_range/100.0, fire_range/100.0))
+	get_node("FireRange").show()
+
+
+func hide_range():
+	get_node("FireRange").hide()
 
 
 func get_sell_price():
@@ -88,7 +94,7 @@ func fire():
 		missile.level = level
 		var direction = (target_enemy.get_global_pos() - get_global_pos()).normalized()
 		rotate_turret(direction)
-		missile.set_pos(direction * 24) # Move missile to launcher level
+		missile.set_pos(direction * 24) # Move missile at launcher boundary
 		add_child(missile)
 		move_child(missile, 0)
 		fire_next = time + fire_delta

@@ -12,6 +12,7 @@ var fire_range = 120
 var enemy_at_range = 0
 var enemy_direction = Vector2(0,-1)
 
+
 var upgrade_cost = [0, 5, 10, 15]
 var sell_price = [0, 2, 5, 8]
 
@@ -22,16 +23,22 @@ func _ready():
 	global = get_node("/root/global")
 	set_fixed_process(true)
 	if global.debug:
-		# Show fire range
-		var f_range = get_node("FireRange")
-		f_range.set_scale(Vector2(fire_range/100.0, fire_range/100.0))
-		f_range.show()
+		show_range()
 
 
 func _fixed_process(delta):
 	time += delta
 	#if enemy_at_range > 0:
 	fire()
+
+
+func show_range():
+	get_node("FireRange").set_scale(Vector2(fire_range/100.0, fire_range/100.0))
+	get_node("FireRange").show()
+
+
+func hide_range():
+	get_node("FireRange").hide()
 
 
 func get_sell_price():

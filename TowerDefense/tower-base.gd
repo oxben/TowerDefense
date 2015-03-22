@@ -122,11 +122,14 @@ func show_upgrade_menu():
 	set_upgrade_cost_color()
 	get_node("SellTowerButton").show()
 	get_node("UpgradeTowerButton").show()
+	get_node("FireRange").set_scale(Vector2(tower.fire_range/100.0, tower.fire_range/100.0))
+	get_node("FireRange").show()
 
 
 func hide_upgrade_menu():
 	get_node("SellTowerButton").hide()
 	get_node("UpgradeTowerButton").hide()
+	get_node("FireRange").hide()
 
 
 func add_tower(tower_scene):
