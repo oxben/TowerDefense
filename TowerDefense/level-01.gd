@@ -117,7 +117,7 @@ func _input(event):
 			get_tree().quit()
 			return
 		if Input.is_action_pressed("cheat_cash"):
-			global.cash += 100
+			global.increase_cash(100)
 			return
 
 
