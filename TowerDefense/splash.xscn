@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="8" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
-	<ext_resource path="res://assets/images/splash/tower-defense-title.png" type="Texture"></ext_resource>
-	<ext_resource path="res://splash.gd" type="Script"></ext_resource>
-	<ext_resource path="res://assets/images/splash/copyright.png" type="Texture"></ext_resource>
-	<ext_resource path="res://assets/images/splash/splash-background.png" type="Texture"></ext_resource>
+<resource_file type="PackedScene" subresource_count="10" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
 	<ext_resource path="res://assets/images/splash/start.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/splash/quit.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/splash/copyright.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/splash/quit-hover.png" type="Texture"></ext_resource>
+	<ext_resource path="res://splash.gd" type="Script"></ext_resource>
+	<ext_resource path="res://assets/images/splash/tower-defense-title.png" type="Texture"></ext_resource>
 	<ext_resource path="res://assets/images/splash/start-hover.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/splash/splash-background.png" type="Texture"></ext_resource>
 	<resource type="Animation" path="local://1">
 		<string name="resource/name"> "Intro" </string>
 		<real name="length"> 4 </real>
@@ -44,7 +46,7 @@
 			<real_array  len="2"> 				2.5, 3.5 </real_array>
 		</dictionary>
 		<string name="tracks/2/type"> "value" </string>
-		<node_path name="tracks/2/path"> "Copyright:visibility/opacity" </node_path>
+		<node_path name="tracks/2/path"> "Quit:visibility/opacity" </node_path>
 		<int name="tracks/2/interp"> 1 </int>
 		<dictionary name="tracks/2/keys" shared="false">
 			<string> "cont" </string>
@@ -57,12 +59,28 @@
 				<real> 1 </real>
 			</array>
 			<string> "times" </string>
-			<real_array  len="2"> 				3.5, 4 </real_array>
+			<real_array  len="2"> 				2.5, 3.5 </real_array>
 		</dictionary>
 		<string name="tracks/3/type"> "value" </string>
-		<node_path name="tracks/3/path"> "Background:visibility/opacity" </node_path>
+		<node_path name="tracks/3/path"> "Copyright:visibility/opacity" </node_path>
 		<int name="tracks/3/interp"> 1 </int>
 		<dictionary name="tracks/3/keys" shared="false">
+			<string> "cont" </string>
+			<bool> True </bool>
+			<string> "transitions" </string>
+			<real_array  len="2"> 				1, 1 </real_array>
+			<string> "values" </string>
+			<array  len="2" shared="false">
+				<real> 0 </real>
+				<real> 1 </real>
+			</array>
+			<string> "times" </string>
+			<real_array  len="2"> 				3.5, 4 </real_array>
+		</dictionary>
+		<string name="tracks/4/type"> "value" </string>
+		<node_path name="tracks/4/path"> "Background:visibility/opacity" </node_path>
+		<int name="tracks/4/interp"> 1 </int>
+		<dictionary name="tracks/4/keys" shared="false">
 			<string> "cont" </string>
 			<bool> True </bool>
 			<string> "transitions" </string>
@@ -80,7 +98,7 @@
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
-			<string_array  len="65">
+			<string_array  len="67">
 				<string> "Splash" </string>
 				<string> "Control" </string>
 				<string> "_import_path" </string>
@@ -143,18 +161,20 @@
 				<string> "textures/disabled" </string>
 				<string> "textures/focused" </string>
 				<string> "textures/click_mask" </string>
+				<string> "Quit" </string>
 				<string> "Copyright" </string>
 				<string> "_on_Start_pressed" </string>
 				<string> "pressed" </string>
+				<string> "_on_Quit_pressed" </string>
 			</string_array>
 			<string> "version" </string>
 			<int> 1 </int>
 			<string> "conn_count" </string>
-			<int> 1 </int>
+			<int> 2 </int>
 			<string> "node_count" </string>
-			<int> 6 </int>
+			<int> 7 </int>
 			<string> "variants" </string>
-			<array  len="33" shared="false">
+			<array  len="38" shared="false">
 				<node_path> "" </node_path>
 				<bool> True </bool>
 				<real> 1 </real>
@@ -181,13 +201,13 @@
 							<string> "pixel_snap" </string>
 							<bool> False </bool>
 							<string> "zoom" </string>
-							<real> 0.814506 </real>
+							<real> 1.670182 </real>
 							<string> "use_snap" </string>
 							<bool> True </bool>
 							<string> "ofs" </string>
-							<vector2> -520.078, -183.347 </vector2>
+							<vector2> -97.1971, -16.3392 </vector2>
 							<string> "snap" </string>
-							<int> 4 </int>
+							<int> 16 </int>
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
@@ -290,7 +310,7 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "2D" </string>
+					<string> "Script" </string>
 				</dictionary>
 				<resource  resource_type="Texture" path="res://assets/images/splash/splash-background.png">  </resource>
 				<color> 1, 1, 1, 1 </color>
@@ -313,14 +333,19 @@
 				<real> 268 </real>
 				<resource  resource_type="Texture" path="res://assets/images/splash/start.png">  </resource>
 				<resource name=""></resource>				<resource  resource_type="Texture" path="res://assets/images/splash/start-hover.png">  </resource>
+				<real> 240 </real>
+				<real> 400 </real>
+				<real> 312 </real>
+				<resource  resource_type="Texture" path="res://assets/images/splash/quit.png">  </resource>
+				<resource  resource_type="Texture" path="res://assets/images/splash/quit-hover.png">  </resource>
 				<real> 572 </real>
 				<real> 440 </real>
 				<resource  resource_type="Texture" path="res://assets/images/splash/copyright.png">  </resource>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="280"> 				-1, -1, 1, 0, -1, 18, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 0, 10, 0, 11, 0, 12, 0, 13, 3, 14, 1, 15, 6, 16, 6, 17, 2, 18, 7, 19, 8, 0, 0, 0, 21, 20, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 0, 10, 0, 11, 0, 12, 0, 13, 1, 14, 1, 15, 6, 16, 6, 17, 2, 22, 9, 23, 10, 24, 3, 0, 0, 0, 26, 25, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 27, 11, 28, 12, 29, 13, 22, 14, 30, 1, 31, 15, 32, 3, 33, 3, 34, 16, 35, 16, 36, 17, 23, 10, 37, 3, 38, 18, 0, 0, 0, 40, 39, -1, 9, 2, 0, 41, 16, 42, 12, 43, 19, 44, 20, 45, 1, 46, 2, 47, 21, 48, 22, 0, 0, 0, 50, 49, -1, 27, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 51, 23, 52, 24, 7, 25, 8, 26, 9, 0, 10, 0, 11, 0, 12, 0, 13, 3, 14, 1, 15, 6, 16, 6, 17, 2, 53, 3, 54, 3, 55, 3, 56, 27, 57, 28, 58, 29, 59, 28, 60, 28, 61, 28, 0, 0, 0, 50, 62, -1, 27, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 51, 30, 52, 31, 7, 4, 8, 5, 9, 0, 10, 0, 11, 0, 12, 0, 13, 3, 14, 1, 15, 6, 16, 6, 17, 2, 53, 3, 54, 3, 55, 3, 56, 32, 57, 28, 58, 28, 59, 28, 60, 28, 61, 28, 0 </int_array>
+			<int_array  len="341"> 				-1, -1, 1, 0, -1, 18, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 0, 10, 0, 11, 0, 12, 0, 13, 3, 14, 1, 15, 6, 16, 6, 17, 2, 18, 7, 19, 8, 0, 0, 0, 21, 20, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 0, 10, 0, 11, 0, 12, 0, 13, 1, 14, 1, 15, 6, 16, 6, 17, 2, 22, 9, 23, 10, 24, 3, 0, 0, 0, 26, 25, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 27, 11, 28, 12, 29, 13, 22, 14, 30, 1, 31, 15, 32, 3, 33, 3, 34, 16, 35, 16, 36, 17, 23, 10, 37, 3, 38, 18, 0, 0, 0, 40, 39, -1, 9, 2, 0, 41, 16, 42, 12, 43, 19, 44, 20, 45, 1, 46, 2, 47, 21, 48, 22, 0, 0, 0, 50, 49, -1, 27, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 51, 23, 52, 24, 7, 25, 8, 26, 9, 0, 10, 0, 11, 0, 12, 0, 13, 3, 14, 1, 15, 6, 16, 6, 17, 2, 53, 3, 54, 3, 55, 3, 56, 27, 57, 28, 58, 29, 59, 28, 60, 28, 61, 28, 0, 0, 0, 50, 62, -1, 27, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 51, 30, 52, 23, 7, 31, 8, 32, 9, 0, 10, 0, 11, 0, 12, 0, 13, 3, 14, 1, 15, 6, 16, 6, 17, 2, 53, 3, 54, 3, 55, 3, 56, 33, 57, 28, 58, 34, 59, 28, 60, 28, 61, 28, 0, 0, 0, 50, 63, -1, 27, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 51, 35, 52, 36, 7, 4, 8, 5, 9, 0, 10, 0, 11, 0, 12, 0, 13, 3, 14, 1, 15, 6, 16, 6, 17, 2, 53, 3, 54, 3, 55, 3, 56, 37, 57, 28, 58, 28, 59, 28, 60, 28, 61, 28, 0 </int_array>
 			<string> "conns" </string>
-			<int_array  len="6"> 				4, 0, 64, 63, 2, 0 </int_array>
+			<int_array  len="12"> 				4, 0, 65, 64, 2, 0, 5, 0, 65, 66, 2, 0 </int_array>
 		</dictionary>
 
 	</main_resource>

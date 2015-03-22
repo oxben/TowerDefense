@@ -141,3 +141,6 @@ func _on_RestartButton_pressed():
 	get_tree().set_pause(false)
 	get_node("/root/global").goto_scene("res://splash.xscn")
 
+
+func _on_QuitButton_pressed():
+	get_tree().quit()
