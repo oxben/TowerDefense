@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="4" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
-	<ext_resource path="res://assets/images/missile.png" type="Texture"></ext_resource>
+<resource_file type="PackedScene" subresource_count="5" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
 	<ext_resource path="res://guided-missile.gd" type="Script"></ext_resource>
+	<ext_resource path="res://assets/images/missile.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/smoke.png" type="Texture"></ext_resource>
 	<resource type="RectangleShape2D" path="local://1">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2 name="extents"> 10, 10 </vector2>
@@ -10,7 +11,7 @@
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
-			<string_array  len="46">
+			<string_array  len="104">
 				<string> "Missile" </string>
 				<string> "RigidBody2D" </string>
 				<string> "_import_path" </string>
@@ -55,6 +56,64 @@
 				<string> "CollisionShape2D" </string>
 				<string> "shape" </string>
 				<string> "trigger" </string>
+				<string> "Particles2D" </string>
+				<string> "config/amount" </string>
+				<string> "config/lifetime" </string>
+				<string> "config/time_scale" </string>
+				<string> "config/preprocess" </string>
+				<string> "config/emit_timeout" </string>
+				<string> "config/emitting" </string>
+				<string> "config/offset" </string>
+				<string> "config/half_extents" </string>
+				<string> "config/local_space" </string>
+				<string> "config/explosiveness" </string>
+				<string> "config/flip_h" </string>
+				<string> "config/flip_v" </string>
+				<string> "config/texture" </string>
+				<string> "config/h_frames" </string>
+				<string> "config/v_frames" </string>
+				<string> "params/direction" </string>
+				<string> "params/spread" </string>
+				<string> "params/linear_velocity" </string>
+				<string> "params/spin_velocity" </string>
+				<string> "params/orbit_velocity" </string>
+				<string> "params/gravity_direction" </string>
+				<string> "params/gravity_strength" </string>
+				<string> "params/radial_accel" </string>
+				<string> "params/tangential_accel" </string>
+				<string> "params/damping" </string>
+				<string> "params/initial_angle" </string>
+				<string> "params/initial_size" </string>
+				<string> "params/final_size" </string>
+				<string> "params/hue_variation" </string>
+				<string> "params/anim_speed_scale" </string>
+				<string> "params/anim_initial_pos" </string>
+				<string> "randomness/direction" </string>
+				<string> "randomness/spread" </string>
+				<string> "randomness/linear_velocity" </string>
+				<string> "randomness/spin_velocity" </string>
+				<string> "randomness/orbit_velocity" </string>
+				<string> "randomness/gravity_direction" </string>
+				<string> "randomness/gravity_strength" </string>
+				<string> "randomness/radial_accel" </string>
+				<string> "randomness/tangential_accel" </string>
+				<string> "randomness/damping" </string>
+				<string> "randomness/initial_angle" </string>
+				<string> "randomness/initial_size" </string>
+				<string> "randomness/final_size" </string>
+				<string> "randomness/hue_variation" </string>
+				<string> "randomness/anim_speed_scale" </string>
+				<string> "randomness/anim_initial_pos" </string>
+				<string> "color_phases/count" </string>
+				<string> "phase_0/pos" </string>
+				<string> "phase_0/color" </string>
+				<string> "phase_1/pos" </string>
+				<string> "phase_1/color" </string>
+				<string> "phase_2/pos" </string>
+				<string> "phase_2/color" </string>
+				<string> "phase_3/pos" </string>
+				<string> "phase_3/color" </string>
+				<string> "emission_points" </string>
 				<string> "_on_body_enter" </string>
 				<string> "body_enter" </string>
 			</string_array>
@@ -63,9 +122,9 @@
 			<string> "conn_count" </string>
 			<int> 1 </int>
 			<string> "node_count" </string>
-			<int> 3 </int>
+			<int> 4 </int>
 			<string> "variants" </string>
-			<array  len="17" shared="false">
+			<array  len="33" shared="false">
 				<node_path> "" </node_path>
 				<bool> True </bool>
 				<real> 1 </real>
@@ -85,7 +144,7 @@
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 2 </int>
+							<int> 0 </int>
 							<string> "sources" </string>
 							<array  len="4" shared="false">
 								<string> "res://global.gd" </string>
@@ -99,11 +158,11 @@
 							<string> "pixel_snap" </string>
 							<bool> False </bool>
 							<string> "zoom" </string>
-							<real> 11.729159 </real>
+							<real> 5.162316 </real>
 							<string> "use_snap" </string>
 							<bool> True </bool>
 							<string> "ofs" </string>
-							<vector2> -51.8124, -26.2281 </vector2>
+							<vector2> -139.757, -51.1917 </vector2>
 							<string> "snap" </string>
 							<int> 8 </int>
 						</dictionary>
@@ -208,16 +267,32 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "Script" </string>
+					<string> "2D" </string>
 				</dictionary>
 				<resource  resource_type="Texture" path="res://assets/images/missile.png">  </resource>
 				<color> 1, 1, 1, 1 </color>
 				<rect2> 0, 0, 0, 0 </rect2>
+				<vector2> 0, 14 </vector2>
+				<int> 40 </int>
+				<real> 0.5 </real>
+				<resource  resource_type="Texture" path="res://assets/images/smoke.png">  </resource>
+				<real> 4 </real>
+				<real> 10 </real>
+				<real> 0.2 </real>
+				<real> 0.3 </real>
+				<int> 4 </int>
+				<color> 0.123624, 0.105032, 0.0799965, 0.909804 </color>
+				<real> 0.1 </real>
+				<color> 1, 0.847059, 0.580392, 0.847059 </color>
+				<real> 0.3 </real>
+				<color> 1, 1, 1, 0.752941 </color>
+				<color> 1, 1, 1, 0.12549 </color>
+				<vector2_array  len="0"> 					 </vector2_array>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="133"> 				-1, -1, 1, 0, -1, 27, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 8, 12, 9, 13, 3, 14, 7, 15, 10, 16, 2, 17, 2, 18, 5, 19, 3, 20, 11, 21, 7, 22, 1, 23, 3, 24, 1, 25, 4, 26, 5, 27, 12, 28, 13, 0, 0, 0, 29, 29, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 30, 14, 31, 1, 32, 4, 33, 3, 34, 3, 35, 7, 36, 7, 37, 11, 38, 15, 39, 3, 40, 16, 0, 0, 0, 41, 41, -1, 10, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 42, 8, 43, 3, 0 </int_array>
+			<int_array  len="270"> 				-1, -1, 1, 0, -1, 27, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 8, 12, 9, 13, 3, 14, 7, 15, 10, 16, 2, 17, 2, 18, 5, 19, 3, 20, 11, 21, 7, 22, 1, 23, 3, 24, 1, 25, 4, 26, 5, 27, 12, 28, 13, 0, 0, 0, 29, 29, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 30, 14, 31, 1, 32, 4, 33, 3, 34, 3, 35, 7, 36, 7, 37, 11, 38, 15, 39, 3, 40, 16, 0, 0, 0, 41, 41, -1, 10, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 42, 8, 43, 3, 0, 0, 0, 44, 44, -1, 65, 2, 0, 3, 1, 4, 2, 5, 2, 6, 1, 7, 17, 8, 5, 9, 6, 45, 18, 46, 19, 47, 2, 48, 5, 49, 5, 50, 1, 51, 4, 52, 4, 53, 3, 54, 2, 55, 3, 56, 3, 57, 20, 58, 7, 59, 7, 60, 5, 61, 21, 62, 5, 63, 22, 64, 5, 65, 5, 66, 5, 67, 5, 68, 5, 69, 5, 70, 5, 71, 19, 72, 23, 73, 5, 74, 2, 75, 5, 76, 5, 77, 5, 78, 5, 79, 5, 80, 5, 81, 5, 82, 5, 83, 5, 84, 5, 85, 5, 86, 2, 87, 24, 88, 19, 89, 5, 90, 5, 91, 5, 92, 25, 93, 5, 94, 26, 95, 27, 96, 28, 97, 29, 98, 30, 99, 2, 100, 31, 101, 32, 0 </int_array>
 			<string> "conns" </string>
-			<int_array  len="6"> 				0, 0, 45, 44, 2, 0 </int_array>
+			<int_array  len="6"> 				0, 0, 103, 102, 2, 0 </int_array>
 		</dictionary>
 
 	</main_resource>
