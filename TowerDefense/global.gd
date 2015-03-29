@@ -36,7 +36,7 @@ func hit_fortress(damage):
 			current_level.get_node("AnimPlayer").play("GameOver")
 
 
-func goto_scene(scene):
+func goto_scene(scene, level_name=""):
 	current_level.queue_free()
 	if scene.basename() != "splash.xscn":
 		# Reset player attributes
@@ -44,6 +44,8 @@ func goto_scene(scene):
 		health = 5
 	var scn = ResourceLoader.load(scene)
 	current_level = scn.instance()
+	if level_name != "":
+		current_level.level_name = level_name
 	get_tree().get_root().add_child(current_level)
 
 

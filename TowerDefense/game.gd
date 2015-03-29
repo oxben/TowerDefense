@@ -12,7 +12,7 @@ var start_countdown = 10.0
 var victory = false
 
 # Current level scene
-var level_name = "level-01"
+var level_name = ""
 var level = null
 # Enemy waves
 var waves = []
@@ -31,6 +31,8 @@ func _ready():
 	victory = false
 	global = get_node("/root/global")
 	# Add level scene to current scene
+	if level_name == "":
+		level_name = "level-01"
 	var scn = ResourceLoader.load("res://" + level_name + ".xscn")
 	level = scn.instance()
 	add_child(level)
@@ -154,6 +156,14 @@ func _on_RestartButton_pressed():
 	print("Load Spash")
 	get_tree().set_pause(false)
 	get_node("/root/global").goto_scene("res://splash.xscn")
+
+
+func _on_ContinueButton_pressed():
+	print("Load next level")
+	get_tree().set_pause(false)
+	# Hack
+	get_node("/root/global").goto_scene("res://game.xscn", "level-02")
+	
 
 
 func _on_QuitButton_pressed():
