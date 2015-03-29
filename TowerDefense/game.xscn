@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="17" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
-	<ext_resource path="res://assets/images/restart.png" type="Texture"></ext_resource>
-	<ext_resource path="res://assets/images/button-shadow-32x32.png" type="Texture"></ext_resource>
-	<ext_resource path="res://assets/images/blank-level.png" type="Texture"></ext_resource>
-	<ext_resource path="res://assets/images/splash/quit.png" type="Texture"></ext_resource>
 	<ext_resource path="res://assets/images/skull-label.png" type="Texture"></ext_resource>
-	<ext_resource path="res://assets/images/button-skull.png" type="Texture"></ext_resource>
-	<ext_resource path="res://assets/images/victory.png" type="Texture"></ext_resource>
 	<ext_resource path="res://game.gd" type="Script"></ext_resource>
-	<ext_resource path="res://assets/images/restart-hover.png" type="Texture"></ext_resource>
-	<ext_resource path="res://assets/images/cash-label.png" type="Texture"></ext_resource>
 	<ext_resource path="res://assets/images/health-label.png" type="Texture"></ext_resource>
-	<ext_resource path="res://assets/images/splash/quit-hover.png" type="Texture"></ext_resource>
 	<ext_resource path="res://assets/images/star.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/victory.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/button-skull.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/splash/quit-hover.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/restart.png" type="Texture"></ext_resource>
 	<ext_resource path="res://assets/images/game-over.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/blank-level.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/restart-hover.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/splash/quit.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/button-shadow-32x32.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/cash-label.png" type="Texture"></ext_resource>
 	<resource type="Animation" path="local://1">
 		<real name="length"> 3 </real>
 		<bool name="loop"> False </bool>
@@ -505,18 +505,16 @@
 				<color> 1, 1, 1, 1 </color>
 				<resource  resource_type="Script" path="res://game.gd">  </resource>
 				<dictionary  shared="false">
-					<string> "_edit_lock_" </string>
-					<bool> True </bool>
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 1 </int>
+							<int> 0 </int>
 							<string> "sources" </string>
 							<array  len="2" shared="false">
-								<string> "res://global.gd" </string>
 								<string> "res://game.gd" </string>
+								<string> "res://global.gd" </string>
 							</array>
 						</dictionary>
 						<string> "2D" </string>
@@ -625,6 +623,8 @@
 							<real> 0.942478 </real>
 						</dictionary>
 					</dictionary>
+					<string> "_edit_lock_" </string>
+					<bool> True </bool>
 					<string> "__editor_run_settings__" </string>
 					<dictionary  shared="false">
 						<string> "custom_args" </string>

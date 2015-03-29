@@ -82,11 +82,11 @@ func _process(delta):
 				# (idx is already incremented)
 				var enemy = wave["enemies"][wave["idx"]]
 				var scene = global.enemy_scenes[enemy["type"]]
-				var enemy = scene.instance()
+				var enemy_inst = scene.instance()
 				var path = PathFollow2D.new()
 				path.set_loop(false)
-				level.get_node(wave["path"]).add_child(path)
-				path.add_child(enemy)
+				level.get_node(enemy["path"]).add_child(path)
+				path.add_child(enemy_inst)
 
 				if (wave["idx"]+1) < wave["count"]:
 					# Next enemy in wave

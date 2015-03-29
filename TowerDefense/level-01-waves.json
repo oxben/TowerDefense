@@ -3,12 +3,11 @@
     {
       "id" : "1",
       "intval" : 10.0,
-      "path" : "WavePath-01",
       "enemies" : [
-        {"type": "tank-a", "intval": 2.0},
-        {"type": "tank-a", "intval": 2.0},
-        {"type": "tank-a", "intval": 2.0},
-        {"type": "tank-a", "intval": 2.0}
+        {"type": "tank-a", "intval": 2.0, "path": "WavePath-01"},
+        {"type": "tank-a", "intval": 2.0, "path": "WavePath-02"},
+        {"type": "tank-a", "intval": 2.0, "path": "WavePath-01"},
+        {"type": "tank-a", "intval": 2.0, "path": "WavePath-02"}
       ],
       "count" : 0,
       "state" : 0
@@ -16,14 +15,13 @@
     {
       "id" : "2",
       "intval" : 10.0,
-      "path" : "WavePath-02",
       "enemies" : [
-        {"type": "tank-a", "intval": 2.0},
-        {"type": "tank-a", "intval": 2.0},
-        {"type": "tank-a", "intval": 2.0},
-        {"type": "tank-a", "intval": 2.0},
-        {"type": "tank-a", "intval": 2.0},
-        {"type": "tank-a", "intval": 2.0}
+        {"type": "tank-a", "intval": 2.0, "path": "WavePath-02"},
+        {"type": "tank-a", "intval": 2.0, "path": "WavePath-02"},
+        {"type": "tank-a", "intval": 2.0, "path": "WavePath-01"},
+        {"type": "tank-a", "intval": 2.0, "path": "WavePath-01"},
+        {"type": "tank-a", "intval": 2.0, "path": "WavePath-02"},
+        {"type": "tank-a", "intval": 2.0, "path": "WavePath-02"}
       ],
       "count" : 0,
       "state" : 0
