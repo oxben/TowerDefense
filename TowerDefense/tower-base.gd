@@ -63,7 +63,7 @@ func _on_TowerBase_toggled( pressed ):
 
 func close_tower_menu():
 		# Called when another tower base is pressed (radio button behavior)
-		remove_from_group("OpenedBases")
+		# remove_from_group("OpenedBases") : done by called routines below
 		hide_tower_menu()
 		hide_upgrade_menu()
 		set_pressed(false)
@@ -97,6 +97,7 @@ func show_tower_menu():
 
 
 func hide_tower_menu():
+	remove_from_group("OpenedBases")
 	get_node("BuyTowerAButton").hide()
 	get_node("BuyTowerDButton").hide()
 	get_node("BuyTowerEButton").hide()
@@ -127,6 +128,7 @@ func show_upgrade_menu():
 
 
 func hide_upgrade_menu():
+	remove_from_group("OpenedBases")
 	get_node("SellTowerButton").hide()
 	get_node("UpgradeTowerButton").hide()
 	get_node("FireRange").hide()
@@ -149,5 +151,6 @@ func _on_SellTowerButton_pressed():
 
 func _on_UpgradeTowerButton_pressed():
 	tower.upgrade()
+	remove_from_group("OpenedBases")
 	hide_upgrade_menu()
 	set_pressed(false)

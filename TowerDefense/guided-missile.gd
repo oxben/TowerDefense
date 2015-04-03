@@ -36,7 +36,7 @@ func _fixed_process(delta):
 		direction = (target.get_global_pos() - get_global_pos()).normalized()
 		var rad_angle = atan2(direction.x, direction.y) - atan2(0, -1)
 		set_rot(rad_angle)
-		set_pos(pos + (direction * speed * delta))		
+		set_pos(pos + (direction * speed * delta))
 	else:
 		queue_free()
 
