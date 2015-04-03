@@ -50,6 +50,9 @@ func _fixed_process(delta):
 
 
 func hit(damage, continuous=false):
+	if health <= 0:
+		# If unit is already dead (case of wrecks)
+		return
 	if not continuous:
 		health -= max(0, damage - armor)
 	else:
