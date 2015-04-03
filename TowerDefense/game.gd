@@ -62,7 +62,7 @@ func init_wave(idx):
 	wave["count"] = wave["enemies"].size()
 	wave["state"] = WAIT
 	wave["idx"] = 0
-	start_countdown = time + wave["intval"]
+	start_countdown = wave["intval"]
 	get_node("SkullButton/Label").set_text(str(ceil(start_countdown)) + "s")
 	get_node("SkullButton").show()
 
