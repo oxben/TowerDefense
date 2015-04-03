@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="7" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
-	<ext_resource path="res://assets/images/level_01.background.png" type="Texture"></ext_resource>
-	<ext_resource path="res://assets/images/blank-level.png" type="Texture"></ext_resource>
 	<ext_resource path="res://tower-base-a.xscn" type="PackedScene"></ext_resource>
 	<ext_resource path="res://assets/tilesets/tileset-blue-concrete.xml" type="TileSet"></ext_resource>
+	<ext_resource path="res://assets/images/blank-level.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/level_01.background.png" type="Texture"></ext_resource>
 	<resource type="Curve2D" path="local://1">
 		<real name="bake_interval"> 5 </real>
 		<dictionary name="_data" shared="false">
@@ -118,7 +118,7 @@
 							<string> "use_snap" </string>
 							<bool> True </bool>
 							<string> "ofs" </string>
-							<vector2> -486.022, -185.821 </vector2>
+							<vector2> -117.103, -185.821 </vector2>
 							<string> "snap" </string>
 							<int> 16 </int>
 						</dictionary>
@@ -243,7 +243,7 @@
 					<string> "_edit_lock_" </string>
 					<bool> True </bool>
 				</dictionary>
-				<int_array  len="106"> 					327713, 23, 327715, 26, 327717, 23, 393226, 22, 393234, 24, 458767, 37, 458771, 23, 458773, 37, 458790, 24, 524326, 24, 589826, 22, 589843, 23, 720897, 23, 720925, 26, 720934, 26, 786440, 24, 786467, 23, 851969, 2, 851970, 11, 851973, 37, 851983, 22, 851992, 25, 852000, 37, 852005, 2, 852006, 11, 917505, 34, 917521, 22, 917540, 22, 917541, 34, 1048577, 5, 1048578, 8, 1048598, 24, 1048604, 23, 1048613, 5, 1048614, 8, 1114113, 25, 1114117, 22, 1179648, 26, 1179650, 25, 1179683, 24, 1245199, 37, 1245205, 37, 1376269, 26, 1376275, 23, 1376288, 25, 1441793, 22, 1441806, 25, 1507330, 22, 1507357, 23, 1507360, 23, 1507363, 23, 1507366, 23, 1572891, 22 </int_array>
+				<int_array  len="110"> 					327713, 23, 327715, 26, 327717, 23, 393226, 22, 393234, 24, 458767, 37, 458771, 23, 458773, 37, 458790, 24, 524299, 38, 524326, 24, 589826, 22, 589843, 23, 720897, 23, 720925, 26, 720934, 26, 786440, 24, 786467, 23, 851969, 2, 851970, 11, 851973, 37, 851983, 22, 851992, 25, 852000, 37, 852005, 2, 852006, 11, 917505, 34, 917521, 22, 917540, 22, 917541, 34, 983064, 38, 1048577, 5, 1048578, 8, 1048598, 24, 1048604, 23, 1048613, 5, 1048614, 8, 1114113, 25, 1114117, 22, 1179648, 26, 1179650, 25, 1179683, 24, 1245199, 37, 1245205, 37, 1376269, 26, 1376275, 23, 1376288, 25, 1441793, 22, 1441806, 25, 1507330, 22, 1507357, 23, 1507360, 23, 1507363, 23, 1507366, 23, 1572891, 22 </int_array>
 				<dictionary  shared="false">
 					<string> "_edit_lock_" </string>
 					<bool> True </bool>
@@ -279,6 +279,10 @@
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
+							<string> "fov" </string>
+							<real> 45 </real>
+							<string> "zfar" </string>
+							<real> 500 </real>
 							<string> "viewports" </string>
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
@@ -346,28 +350,24 @@
 									<vector3> 0, 0, 0 </vector3>
 								</dictionary>
 							</array>
-							<string> "zfar" </string>
-							<real> 500 </real>
 							<string> "deflight_rot_y" </string>
 							<real> 0.628319 </real>
-							<string> "fov" </string>
-							<real> 45 </real>
-							<string> "default_light" </string>
-							<bool> True </bool>
 							<string> "viewport_mode" </string>
 							<int> 1 </int>
+							<string> "default_light" </string>
+							<bool> True </bool>
 							<string> "ambient_light_color" </string>
 							<color> 0.15, 0.15, 0.15, 1 </color>
 							<string> "show_grid" </string>
 							<bool> True </bool>
-							<string> "znear" </string>
-							<real> 0.1 </real>
 							<string> "show_origin" </string>
 							<bool> True </bool>
-							<string> "deflight_rot_x" </string>
-							<real> 0.942478 </real>
+							<string> "znear" </string>
+							<real> 0.1 </real>
 							<string> "default_srgb" </string>
 							<bool> False </bool>
+							<string> "deflight_rot_x" </string>
+							<real> 0.942478 </real>
 						</dictionary>
 					</dictionary>
 					<string> "__editor_run_settings__" </string>

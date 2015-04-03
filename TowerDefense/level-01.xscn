@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="7" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
-	<ext_resource path="res://assets/images/blank-level.png" type="Texture"></ext_resource>
-	<ext_resource path="res://tower-base-a.xscn" type="PackedScene"></ext_resource>
 	<ext_resource path="res://assets/tilesets/tileset-blue-concrete.xml" type="TileSet"></ext_resource>
+	<ext_resource path="res://tower-base-a.xscn" type="PackedScene"></ext_resource>
 	<ext_resource path="res://assets/images/level_01.background.png" type="Texture"></ext_resource>
+	<ext_resource path="res://assets/images/blank-level.png" type="Texture"></ext_resource>
 	<resource type="Curve2D" path="local://1">
 		<real name="bake_interval"> 5 </real>
 		<dictionary name="_data" shared="false">
@@ -93,8 +93,6 @@
 				<resource  resource_type="Texture" path="res://assets/images/blank-level.png">  </resource>
 				<color> 1, 1, 1, 1 </color>
 				<dictionary  shared="false">
-					<string> "_edit_lock_" </string>
-					<bool> True </bool>
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "Script" </string>
@@ -215,6 +213,8 @@
 							<real> 0.942478 </real>
 						</dictionary>
 					</dictionary>
+					<string> "_edit_lock_" </string>
+					<bool> True </bool>
 					<string> "__editor_run_settings__" </string>
 					<dictionary  shared="false">
 						<string> "custom_args" </string>
@@ -241,7 +241,7 @@
 					<string> "_edit_lock_" </string>
 					<bool> True </bool>
 				</dictionary>
-				<int_array  len="60"> 					196618, 25, 327688, 24, 327692, 37, 327713, 23, 327715, 26, 393226, 22, 589826, 22, 589847, 25, 720897, 23, 720925, 26, 786440, 24, 786467, 23, 917538, 25, 917540, 22, 1048604, 23, 1114117, 22, 1179648, 26, 1179683, 24, 1376288, 25, 1441798, 37, 1441812, 37, 1441826, 37, 1507342, 36, 1507352, 24, 1572889, 23, 1572891, 22, 1638414, 36, 1703940, 25, 1769473, 36, 1769478, 22 </int_array>
+				<int_array  len="62"> 					196618, 25, 327688, 24, 327692, 37, 327713, 23, 327715, 26, 393226, 22, 589826, 22, 589847, 25, 720897, 23, 720925, 26, 786440, 24, 786467, 23, 917538, 25, 917540, 22, 1048593, 38, 1048604, 23, 1114117, 22, 1179648, 26, 1179683, 24, 1376288, 25, 1441798, 37, 1441812, 37, 1441826, 37, 1507342, 36, 1507352, 24, 1572889, 23, 1572891, 22, 1638414, 36, 1703940, 25, 1769473, 36, 1769478, 22 </int_array>
 				<int_array  len="252"> 					196621, 14, 262157, 14, 327680, 16, 327681, 16, 327682, 16, 327683, 16, 327684, 16, 327685, 16, 327686, 16, 327687, 16, 327688, 16, 327689, 16, 327690, 16, 327691, 16, 327692, 16, 327693, 16, 327694, 16, 327695, 16, 327696, 18, 327697, 16, 327698, 16, 327699, 16, 327700, 16, 327701, 16, 327702, 18, 327703, 16, 327704, 16, 327705, 16, 327706, 16, 327707, 16, 327708, 16, 327709, 16, 327710, 16, 327711, 16, 327712, 16, 327713, 16, 327714, 16, 327715, 16, 327716, 16, 327717, 16, 327718, 16, 327719, 16, 393232, 14, 393238, 14, 458768, 14, 524304, 14, 589824, 16, 589825, 16, 589826, 16, 589827, 16, 589828, 16, 589829, 16, 589830, 16, 589831, 16, 589832, 16, 589833, 16, 589834, 16, 589836, 17, 589837, 16, 589838, 16, 589839, 16, 589840, 15, 589841, 18, 589842, 16, 589843, 16, 589844, 16, 589845, 16, 589846, 16, 589847, 16, 589848, 16, 589849, 16, 589850, 16, 589851, 16, 589852, 16, 589853, 16, 589854, 16, 589855, 16, 589856, 16, 589857, 16, 589858, 16, 589859, 16, 589860, 16, 589861, 16, 589862, 16, 589863, 16, 655371, 17, 655372, 16, 655373, 16, 655374, 16, 655375, 16, 655376, 16, 655377, 15, 1441802, 13, 1441816, 13, 1441830, 13, 1507338, 14, 1507352, 14, 1507366, 14, 1572874, 14, 1572888, 14, 1572902, 14, 1638410, 14, 1638424, 14, 1638438, 14, 1703942, 17, 1703943, 16, 1703944, 16, 1703945, 16, 1703946, 15, 1703956, 17, 1703957, 16, 1703958, 16, 1703959, 16, 1703960, 15, 1703970, 17, 1703971, 16, 1703972, 16, 1703973, 16, 1703974, 15, 1769475, 13, 1835011, 14, 1835041, 13, 1900545, 17, 1900546, 16, 1900547, 15, 1900577, 14 </int_array>
 				<dictionary  shared="false">
 					<string> "_edit_lock_" </string>
@@ -273,10 +273,12 @@
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
-							<string> "fov" </string>
-							<real> 45 </real>
+							<string> "deflight_rot_y" </string>
+							<real> 0.628319 </real>
 							<string> "zfar" </string>
 							<real> 500 </real>
+							<string> "fov" </string>
+							<real> 45 </real>
 							<string> "viewports" </string>
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
@@ -344,24 +346,22 @@
 									<vector3> 0, 0, 0 </vector3>
 								</dictionary>
 							</array>
-							<string> "deflight_rot_y" </string>
-							<real> 0.628319 </real>
-							<string> "default_light" </string>
-							<bool> True </bool>
 							<string> "viewport_mode" </string>
 							<int> 1 </int>
+							<string> "default_light" </string>
+							<bool> True </bool>
 							<string> "ambient_light_color" </string>
 							<color> 0.15, 0.15, 0.15, 1 </color>
 							<string> "show_grid" </string>
 							<bool> True </bool>
-							<string> "znear" </string>
-							<real> 0.1 </real>
 							<string> "show_origin" </string>
 							<bool> True </bool>
-							<string> "deflight_rot_x" </string>
-							<real> 0.942478 </real>
+							<string> "znear" </string>
+							<real> 0.1 </real>
 							<string> "default_srgb" </string>
 							<bool> False </bool>
+							<string> "deflight_rot_x" </string>
+							<real> 0.942478 </real>
 						</dictionary>
 					</dictionary>
 					<string> "__editor_run_settings__" </string>

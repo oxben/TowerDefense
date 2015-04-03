@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="TileSet" subresource_count="5" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
+	<ext_resource path="res://assets/tilesets/tileset-shadow.png" type="Texture"></ext_resource>
 	<ext_resource path="res://assets/tilesets/tileset-details.png" type="Texture"></ext_resource>
 	<ext_resource path="res://assets/tilesets/tileset-road.png" type="Texture"></ext_resource>
 	<ext_resource path="res://assets/tilesets/tileset-blue-concrete.png" type="Texture"></ext_resource>
-	<ext_resource path="res://assets/tilesets/tileset-shadow.png" type="Texture"></ext_resource>
 	<main_resource>
 		<string name="0/name"> "M" </string>
 		<resource name="0/texture" resource_type="Texture" path="res://assets/tilesets/tileset-blue-concrete.png">  </resource>
@@ -270,6 +270,13 @@
 		<vector2 name="37/shape_offset"> 0, 0 </vector2>
 		<rect2 name="37/region"> 0, 128, 64, 64 </rect2>
 		<array name="37/shapes" len="0" shared="false">
+		</array>
+		<string name="38/name"> "RoadCrater" </string>
+		<resource name="38/texture" resource_type="Texture" path="res://assets/tilesets/tileset-details.png">  </resource>
+		<vector2 name="38/tex_offset"> 0, 0 </vector2>
+		<vector2 name="38/shape_offset"> 0, 0 </vector2>
+		<rect2 name="38/region"> 80, 128, 48, 48 </rect2>
+		<array name="38/shapes" len="0" shared="false">
 		</array>
 
 	</main_resource>
