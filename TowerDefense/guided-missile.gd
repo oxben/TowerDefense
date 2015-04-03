@@ -23,27 +23,39 @@ func _ready():
 	var rad_angle = atan2(direction.x, direction.y) - atan2(0, -1)
 	set_rot(rad_angle)
 
-	
+
 func _fixed_process(delta):
 	var pos = get_pos()
 	target = get_node(target_path)
 	if target != null and pos.length() <= fire_range:
+		# Check if target is not beneath us
+		if target.get_global_pos().distance_to(get_global_pos()) < 8:
+			hit_target()
+			return
+		# Rotate to target direction
 		direction = (target.get_global_pos() - get_global_pos()).normalized()
 		var rad_angle = atan2(direction.x, direction.y) - atan2(0, -1)
 		set_rot(rad_angle)
-		set_pos(pos + (direction * speed * delta))
+		set_pos(pos + (direction * speed * delta))		
 	else:
 		queue_free()
 
 
 func _on_body_enter(body):
-	if body.is_in_group("enemy"):
-		target = get_node(target_path)
-		if target != body:
-			return
-		var scene = preload("res://explosion.xscn")
-		var explosion = scene.instance()
-		explosion.set_pos(get_global_pos())
-		get_node("/root").add_child(explosion)
-		body.hit(damage[level])
-		queue_free()
+	#if body.is_in_group("enemy"):
+	target = get_node(target_path)
+	if target != body:
+		return
+	else:
+		hit_target()
+
+
+func hit_target():
+	var scene = preload("res://explosion.xscn")
+	var explosion = scene.instance()
+	explosion.set_pos(get_global_pos())
+	get_node("/root").add_child(explosion)
+	target.hit(damage[level])
+	target = null
+	queue_free()
+
