@@ -20,7 +20,7 @@ var damage = [ 0, 1, 2, 3 ]
 var upgrade_cost = [0, 5, 10, 15]
 var sell_price = [0, 2, 5, 8]
 
-const ammunition = "res://bullet.xscn"
+const ammunition = "res://bullet.tscn"
 
 
 func _ready():

@@ -18,7 +18,7 @@ func _ready():
 	var rad_angle = atan2(direction.x, direction.y) - atan2(0, -1)
 	set_rot(rad_angle)
 
-	
+
 func _fixed_process(delta):
 	var pos = get_pos()
 	if pos.y > -fire_range:
@@ -32,7 +32,7 @@ func _fixed_process(delta):
 func _on_body_enter(body):
 	#print("Hit!")
 	if body.is_in_group("enemy"):
-		var scene = preload("res://explosion.xscn")
+		var scene = preload("res://explosion.tscn")
 		var explosion = scene.instance()
 		explosion.set_pos(get_global_pos())
 		get_node("/root").add_child(explosion)

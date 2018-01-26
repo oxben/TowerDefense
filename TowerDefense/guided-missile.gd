@@ -51,7 +51,7 @@ func _on_body_enter(body):
 
 
 func hit_target():
-	var scene = preload("res://explosion.xscn")
+	var scene = preload("res://explosion.tscn")
 	var explosion = scene.instance()
 	explosion.set_pos(get_global_pos())
 	get_node("/root").add_child(explosion)

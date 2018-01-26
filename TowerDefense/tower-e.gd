@@ -15,7 +15,7 @@ var enemy_direction = Vector2(0,-1)
 var upgrade_cost = [0, 5, 10, 15]
 var sell_price = [0, 2, 5, 8]
 
-const ammunition = "res://guided-missile.xscn"
+const ammunition = "res://guided-missile.tscn"
 
 
 func _ready():

@@ -33,7 +33,7 @@ func _ready():
 	# Add level scene to current scene
 	if level_name == "":
 		level_name = "level-01"
-	var scn = ResourceLoader.load("res://" + level_name + ".xscn")
+	var scn = ResourceLoader.load("res://" + level_name + ".tscn")
 	level = scn.instance()
 	add_child(level)
 	move_child(level, 0)
@@ -73,7 +73,7 @@ func start_wave():
 	get_node("WaveSprite/WaveLabel").set_text(str(wave_idx+1) + "/" + str(waves.size()))
 	spawn_time = time + wave["enemies"][wave["idx"]]["intval"]
 	get_node("SkullButton").hide()
-	
+
 
 func _process(delta):
 	time += delta
@@ -112,7 +112,7 @@ func _process(delta):
 
 	get_node("CashSprite/CashLabel").set_text(str(global.cash))
 	get_node("HealthSprite/HealthLabel").set_text(str(global.health))
-		
+
 	if global.health <= 0:
 		print("You loose!")
 		set_process(false)
@@ -155,15 +155,15 @@ func gameover_pause():
 func _on_RestartButton_pressed():
 	print("Load Spash")
 	get_tree().set_pause(false)
-	get_node("/root/global").goto_scene("res://splash.xscn")
+	get_node("/root/global").goto_scene("res://splash.tscn")
 
 
 func _on_ContinueButton_pressed():
 	print("Load next level")
 	get_tree().set_pause(false)
 	# Hack
-	get_node("/root/global").goto_scene("res://game.xscn", "level-02")
-	
+	get_node("/root/global").goto_scene("res://game.tscn", "level-02")
+
 
 
 func _on_QuitButton_pressed():

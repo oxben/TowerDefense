@@ -68,14 +68,14 @@ func hit(damage, continuous=false):
 		get_node("HealthLabel").hide()
 		progress.hide()
 		# Add wreckage
-		var scene = preload("res://wreck-a.xscn")
+		var scene = preload("res://wreck-a.tscn")
 		var wreck = scene.instance()
 		wreck.set_pos(get_global_pos())
 		wreck.set_frame(randi() % wreck.get_hframes())
 		var root = get_node("/root")
 		global.current_level.level.add_child(wreck)
 		global.current_level.level.move_child(wreck, 3)
-		
+
 		var texture = ImageTexture.new()
 		texture.load("res://assets/images/tank-a-dead.png")
 		var sprite = get_node("Sprite")
@@ -83,9 +83,9 @@ func hit(damage, continuous=false):
 		sprite.set_hframes(1)
 		sprite.set_frame(0)
 		remove_from_group("enemy")
-		
+
 		# Add label for reward
-		scene = preload("res://ascending-label.xscn")
+		scene = preload("res://ascending-label.tscn")
 		var label = scene.instance()
 		label.set_text("+ $" + str(reward))
 		add_child(label)

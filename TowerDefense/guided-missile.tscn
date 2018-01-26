@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://guided-missile.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/missile.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/smoke.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="ColorRamp" id=2]
+
+offsets = FloatArray( 0, 0.1, 0.3, 1 )
+colors = ColorArray( 0.123624, 0.105032, 0.0799965, 0.909804, 1, 0.847059, 0.580392, 0.847059, 1, 1, 1, 0.752941, 1, 1, 1, 0.12549 )
+
+[node name="Missile" type="RigidBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 3
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 1 )
+__meta__ = {
+"__editor_plugin_screen__": "2D"
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = -1
+
+[node name="Particles2D" type="Particles2D" parent="."]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 0, 14 )
+config/amount = 40
+config/lifetime = 0.5
+config/process_mode = 1
+config/local_space = false
+config/texture = ExtResource( 3 )
+params/direction = 0.0
+params/spread = 4.0
+params/linear_velocity = 0.0
+params/spin_velocity = 10.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.5
+params/final_size = 0.2
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/initial_angle = 1.0
+randomness/initial_size = 0.3
+randomness/final_size = 0.5
+color/color_ramp = SubResource( 2 )
+
+[connection signal="body_enter" from="." to="." method="_on_body_enter"]
+
+

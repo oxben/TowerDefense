@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://ascending-label.gd" type="Script" id=1]
+
+[node name="Label" type="Label"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -16.0
+margin/top = -8.0
+margin/right = 16.0
+margin/bottom = 5.0
+custom_colors/font_color = Color( 1, 0.798958, 0.309938, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "$5"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 1 )
+__meta__ = {
+"__editor_plugin_screen__": "2D"
+}
+
+

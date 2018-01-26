@@ -12,7 +12,7 @@ var move = 0
 func _ready():
 	# Initalization here
 	set_process(true)
-	
+
 func _process(delta):
 	var pos = get_pos()
 	var delta_move= (speed * delta)

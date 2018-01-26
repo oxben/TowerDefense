@@ -23,7 +23,7 @@ func on_cash_update():
 func _on_BuyTowerAButton_pressed():
 	if global.init_tower_cost <= global.cash:
 		global.decrease_cash(global.init_tower_cost)
-		add_tower(preload("res://tower-a.xscn"))
+		add_tower(preload("res://tower-a.tscn"))
 		hide_tower_menu()
 		set_pressed(false)
 
@@ -31,7 +31,7 @@ func _on_BuyTowerAButton_pressed():
 func _on_BuyTowerDButton_pressed():
 	if global.init_tower_cost <= global.cash:
 		global.decrease_cash(global.init_tower_cost)
-		add_tower(preload("res://tower-d.xscn"))
+		add_tower(preload("res://tower-d.tscn"))
 		hide_tower_menu()
 		set_pressed(false)
 
@@ -39,7 +39,7 @@ func _on_BuyTowerDButton_pressed():
 func _on_BuyTowerEButton_pressed():
 	if global.init_tower_cost <= global.cash:
 		global.decrease_cash(global.init_tower_cost)
-		add_tower(preload("res://tower-e.xscn"))
+		add_tower(preload("res://tower-e.tscn"))
 		hide_tower_menu()
 		set_pressed(false)
 

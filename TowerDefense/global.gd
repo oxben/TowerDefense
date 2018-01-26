@@ -26,7 +26,7 @@ func _ready():
 	var root = get_tree().get_root()
 	current_level = root.get_child( root.get_child_count() - 1)
 	# Preload enemies' scenes
-	enemy_scenes["tank-a"] = preload("res://tank-a.xscn")
+	enemy_scenes["tank-a"] = preload("res://tank-a.tscn")
 
 
 func hit_fortress(damage):
@@ -38,7 +38,7 @@ func hit_fortress(damage):
 
 func goto_scene(scene, level_name=""):
 	current_level.queue_free()
-	if scene.basename() != "splash.xscn":
+	if scene.basename() != "splash.tscn":
 		# Reset player attributes
 		cash = 10
 		health = 5

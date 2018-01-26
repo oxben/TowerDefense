@@ -1,0 +1,118 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://tower-d.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/fire-range-100.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/tower-d.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/spark-2.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 7.0
+
+[node name="TowerD" type="RigidBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 20, 0, 0, 20, 0, 0 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+mode = 3
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 5
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 1 )
+__meta__ = {
+"__editor_plugin_screen__": "2D"
+}
+
+[node name="FireRange" type="Sprite" parent="."]
+
+visibility/visible = false
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 3 )
+vframes = 3
+
+[node name="TextureButton" type="TextureButton" parent="."]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -16.0
+margin/top = -16.0
+margin/right = 16.0
+margin/bottom = 16.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+params/resize_mode = 0
+params/stretch_mode = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/scale = Vector2( 20, 20 )
+shape = SubResource( 1 )
+trigger = true
+_update_shape_index = -1
+
+[node name="ParticlesRay" type="Particles2D" parent="."]
+
+transform/pos = Vector2( 0, -24 )
+config/amount = 32
+config/lifetime = 0.5
+config/emitting = false
+config/process_mode = 1
+config/texture = ExtResource( 4 )
+params/direction = 135.0
+params/spread = 5.0
+params/linear_velocity = 300.0
+params/spin_velocity = 40.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 0.8
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/linear_velocity = 0.2
+randomness/spin_velocity = 0.5
+randomness/initial_size = 0.2
+randomness/final_size = 0.2
+
+[node name="RayAttractor" type="ParticleAttractor2D" parent="ParticlesRay"]
+
+transform/pos = Vector2( 96, -72 )
+enabled = true
+radius = 50.0
+disable_radius = 0.0
+gravity = 100.0
+absorption = 10.0
+particles_path = NodePath("..")
+
+[connection signal="body_enter" from="." to="." method="_on_body_enter"]
+
+[connection signal="body_exit" from="." to="." method="_on_body_exit"]
+
+

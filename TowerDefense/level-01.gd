@@ -90,10 +90,10 @@ func _process(delta):
 			wave["state"] = ACTIVE
 			get_node("WaveSprite/WaveLabel").set_text(str(wave_idx+1) + "/" + str(waves.size()))
 			get_node("SkullButton").hide()
-	
+
 	get_node("CashSprite/CashLabel").set_text(str(global.cash))
 	get_node("HealthSprite/HealthLabel").set_text(str(global.health))
-		
+
 	if global.health <= 0:
 		print("You loose!")
 		set_process(false)
@@ -139,7 +139,7 @@ func gameover_pause():
 func _on_RestartButton_pressed():
 	print("Load Spash")
 	get_tree().set_pause(false)
-	get_node("/root/global").goto_scene("res://splash.xscn")
+	get_node("/root/global").goto_scene("res://splash.tscn")
 
 
 func _on_QuitButton_pressed():
