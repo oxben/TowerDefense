@@ -76,7 +76,7 @@ tracks/4/keys = {
 "values": [ 0.0, 1.0 ]
 }
 
-[node name="Splash" type="Control" index="0"]
+[node name="Splash" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0

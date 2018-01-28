@@ -86,11 +86,12 @@ func fire():
 			ray.set_emitting(false)
 			return
 		var ray_direction = (target_enemy.get_global_position() - get_global_position()).normalized()
-		var rad_angle = atan2(ray_direction.x, ray_direction.y) + atan2(0, -1)
-		var angle = (180 + int(rad_angle * global.DEG_PER_RAD)) % 360
-		var material = ray.get_process_material()
+		var rad_angle = atan2(ray_direction.x, ray_direction.y) - atan2(0, -1)
+		var angle = (360 - int(rad_angle * global.DEG_PER_RAD)) % 360
+		#var material = ray.get_process_material()
 		#material.set_angle(angle)
 		#ray.set_param(Particles2D.PARAM_DIRECTION, angle)
+		ray.set_rotation_degrees(angle-90)
 		ray.set_emitting(true)
 		# @todo ParticalAttractor doesn't exist in Godot 3
 		#get_node("ParticlesRay/RayAttractor").set_global_position(target_enemy.get_global_position())

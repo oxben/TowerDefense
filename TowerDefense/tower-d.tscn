@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://tower-d.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/fire-range-100.png" type="Texture" id=2]
@@ -10,6 +10,19 @@
 custom_solver_bias = 0.0
 radius = 7.0
 
+[sub_resource type="Curve" id=3]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.510742 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+
+flags = 4
+width = 2048
+curve = SubResource( 3 )
+
 [sub_resource type="ParticlesMaterial" id=2]
 
 render_priority = 0
@@ -18,12 +31,12 @@ emission_shape = 0
 flag_align_y = false
 flag_rotate_y = false
 flag_disable_z = true
-spread = 45.0
+spread = 0.0
 flatness = 0.0
-gravity = Vector3( 0, 98, 0 )
-initial_velocity = 1.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 150.0
 initial_velocity_random = 0.0
-angular_velocity = 10.0
+angular_velocity = 100.0
 angular_velocity_random = 0.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
@@ -39,6 +52,7 @@ angle = 0.0
 angle_random = 1.0
 scale = 0.5
 scale_random = 0.5
+scale_curve = SubResource( 4 )
 color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -47,9 +61,9 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Scale" ]
+_sections_unfolded = [ "Angular Velocity" ]
 
-[node name="TowerD" type="RigidBody2D"]
+[node name="TowerD" type="RigidBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -114,9 +128,10 @@ shape = SubResource( 1 )
 [node name="ParticlesRay" type="Particles2D" parent="." index="4"]
 
 position = Vector2( 0, -24 )
+rotation = -1.5708
 emitting = true
-amount = 8
-lifetime = 1.0
+amount = 15
+lifetime = 0.8
 one_shot = false
 preprocess = 0.0
 speed_scale = 1.0
@@ -132,7 +147,7 @@ texture = ExtResource( 4 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures" ]
+_sections_unfolded = [ "Process Material", "Time", "Transform" ]
 
 [connection signal="body_entered" from="." to="." method="_on_body_enter"]
 
