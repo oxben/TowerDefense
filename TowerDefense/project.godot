@@ -10,7 +10,9 @@ config_version=3
 
 [application]
 
+config/name="TowerDefense"
 run/main_scene="res://splash.tscn"
+config/icon="res://assets/images/td-icon-64x64.png"
 icon="res://assets/images/td-icon-64x64.png"
 main_scene="res://splash.tscn"
 name="TowerDefense"
