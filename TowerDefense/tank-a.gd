@@ -30,10 +30,10 @@ func _ready():
 	progress.hide()
 	progress.set_max(health)
 	progress.set_value(health)
-	set_fixed_process(true)
+	set_physics_process(true)
 
 
-func _fixed_process(delta):
+func _physics_process(delta):
 	if health <= 0:
 		if dead_since > global.DEAD_CLEAN_INTVAL:
 			queue_free()
@@ -70,7 +70,7 @@ func hit(damage, continuous=false):
 		# Add wreckage
 		var scene = preload("res://wreck-a.tscn")
 		var wreck = scene.instance()
-		wreck.set_pos(get_global_pos())
+		wreck.set_position(get_global_position())
 		wreck.set_frame(randi() % wreck.get_hframes())
 		var root = get_node("/root")
 		global.current_level.level.add_child(wreck)

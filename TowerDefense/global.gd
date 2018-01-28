@@ -36,9 +36,19 @@ func hit_fortress(damage):
 			current_level.get_node("AnimPlayer").play("GameOver")
 
 
+func get_next_level():
+	# @todo: implement something more elegant
+	if current_level.level_name  == "level-01":
+		return "level-02"
+	elif current_level.level_name  == "level-02":
+		return "level-03"
+	elif current_level.level_name  == "level-03":
+		return "level-01"
+
+
 func goto_scene(scene, level_name=""):
 	current_level.queue_free()
-	if scene.basename() != "splash.tscn":
+	if scene.get_basename() != "splash.tscn":
 		# Reset player attributes
 		cash = 10
 		health = 5

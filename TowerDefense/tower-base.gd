@@ -135,10 +135,10 @@ func hide_upgrade_menu():
 
 
 func add_tower(tower_scene):
-	print("Add tower: x=", get_pos().x, " y=", get_pos().y)
+	print("Add tower: x=", get_position().x, " y=", get_position().y)
 	tower = tower_scene.instance()
 	tower.set_name("Tower-" + idx)
-	tower.set_pos(Vector2(32,16))
+	tower.set_position(Vector2(32,16))
 	add_child(tower)
 
 

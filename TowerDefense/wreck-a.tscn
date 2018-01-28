@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=1 format=2]
 
 [ext_resource path="res://assets/images/wreck-a.png" type="Texture" id=1]
 
@@ -9,5 +9,3 @@ hframes = 4
 __meta__ = {
 "__editor_plugin_screen__": "2D"
 }
-
-

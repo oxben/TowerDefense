@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://guided-missile.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/missile.png" type="Texture" id=2]
@@ -9,19 +9,75 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="ColorRamp" id=2]
+[sub_resource type="Gradient" id=2]
 
-offsets = FloatArray( 0, 0.1, 0.3, 1 )
-colors = ColorArray( 0.123624, 0.105032, 0.0799965, 0.909804, 1, 0.847059, 0.580392, 0.847059, 1, 1, 1, 0.752941, 1, 1, 1, 0.12549 )
+offsets = PoolRealArray( 0, 0.5, 1 )
+colors = PoolColorArray( 1, 1, 1, 0.886627, 0.796875, 0.673433, 0.460693, 0.788667, 0.1875, 0.168932, 0.147217, 0.628863 )
+
+[sub_resource type="GradientTexture" id=3]
+
+flags = 4
+gradient = SubResource( 2 )
+width = 2048
+
+[sub_resource type="Curve" id=4]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.5 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+
+flags = 4
+width = 2048
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 0, 9.8, 0 )
+initial_velocity = 0.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 1.0
+scale = 0.4
+scale_random = 0.5
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Scale" ]
 
 [node name="Missile" type="RigidBody2D"]
 
-input/pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
-collision/layers = 1
-collision/mask = 1
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
 mode = 3
 mass = 1.0
 friction = 1.0
@@ -33,55 +89,47 @@ contacts_reported = 1
 contact_monitor = true
 sleeping = false
 can_sleep = true
-velocity/linear = Vector2( 0, 0 )
-velocity/angular = 0.0
-damp_override/linear = -1.0
-damp_override/angular = -1.0
-script/script = ExtResource( 1 )
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 1 )
 __meta__ = {
 "__editor_plugin_screen__": "2D"
 }
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
-trigger = false
-_update_shape_index = -1
 
-[node name="Particles2D" type="Particles2D" parent="."]
+[node name="Particles2D" type="Particles2D" parent="." index="2"]
 
-visibility/behind_parent = true
-transform/pos = Vector2( 0, 14 )
-config/amount = 40
-config/lifetime = 0.5
-config/process_mode = 1
-config/local_space = false
-config/texture = ExtResource( 3 )
-params/direction = 0.0
-params/spread = 4.0
-params/linear_velocity = 0.0
-params/spin_velocity = 10.0
-params/orbit_velocity = 0.0
-params/gravity_direction = 0.0
-params/gravity_strength = 0.0
-params/radial_accel = 0.0
-params/tangential_accel = 0.0
-params/damping = 0.0
-params/initial_angle = 0.0
-params/initial_size = 0.5
-params/final_size = 0.2
-params/hue_variation = 0.0
-params/anim_speed_scale = 1.0
-params/anim_initial_pos = 0.0
-randomness/initial_angle = 1.0
-randomness/initial_size = 0.3
-randomness/final_size = 0.5
-color/color_ramp = SubResource( 2 )
+show_behind_parent = true
+position = Vector2( 0, 14 )
+emitting = true
+amount = 30
+lifetime = 1.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = SubResource( 6 )
+texture = ExtResource( 3 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time" ]
 
-[connection signal="body_enter" from="." to="." method="_on_body_enter"]
+[connection signal="body_entered" from="." to="." method="_on_body_enter"]
 
 

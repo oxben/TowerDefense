@@ -20,12 +20,12 @@ const ammunition = "res://guided-missile.tscn"
 
 func _ready():
 	global = get_node("/root/global")
-	set_fixed_process(true)
+	set_physics_process(true)
 	if global.debug:
 		show_range()
 
 
-func _fixed_process(delta):
+func _physics_process(delta):
 	time += delta
 	#if enemy_at_range > 0:
 	fire()
@@ -74,10 +74,10 @@ func rotate_turret(direction):
 
 func choose_target():
 	var target = null
-	var pos = get_global_pos()
+	var pos = get_global_position()
 	for enemy in get_tree().get_nodes_in_group("enemy"):
-		if pos.distance_to(enemy.get_global_pos()) <= fire_range:
-			if target == null or enemy.get_global_pos().x > target.get_global_pos().x:
+		if pos.distance_to(enemy.get_global_position()) <= fire_range:
+			if target == null or enemy.get_global_position().x > target.get_global_position().x:
 				target = enemy
 	return target
 
@@ -92,9 +92,9 @@ func fire():
 		missile.target_path = target_enemy.get_path()
 		print("TARGET: " + target_enemy.get_path())
 		missile.level = level
-		var direction = (target_enemy.get_global_pos() - get_global_pos()).normalized()
+		var direction = (target_enemy.get_global_position() - get_global_position()).normalized()
 		rotate_turret(direction)
-		missile.set_pos(direction * 24) # Move missile at launcher boundary
+		missile.set_position(direction * 24) # Move missile at launcher boundary
 		add_child(missile)
 		move_child(missile, 0)
 		fire_next = time + fire_delta

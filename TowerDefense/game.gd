@@ -1,5 +1,5 @@
 
-extends TextureFrame
+extends TextureRect
 
 var global
 
@@ -41,9 +41,9 @@ func _ready():
 	var file = File.new()
 	file.open("res://" + level_name + "-waves.json", File.READ) # eg. level-01-waves.json
 	var txt = file.get_as_text()
-	var d = {}
-	var rc = d.parse_json(txt)
-	if rc != OK:
+	var d = parse_json(txt)
+	print(d)
+	if not d:
 		print("ERROR: Failed to parse wave file")
 	waves = d["waves"]
 	# Initialize first wave
@@ -127,7 +127,7 @@ func _process(delta):
 
 
 func _input(event):
-	if event.type == InputEvent.KEY:
+	if event is InputEventKey:
 		if Input.is_action_pressed("pause_game"):
 			get_tree().set_pause(true)
 			get_node("PausePopupPanel").show()
@@ -162,7 +162,8 @@ func _on_ContinueButton_pressed():
 	print("Load next level")
 	get_tree().set_pause(false)
 	# Hack
-	get_node("/root/global").goto_scene("res://game.tscn", "level-02")
+	var next_level = get_node("/root/global").get_next_level()
+	get_node("/root/global").goto_scene("res://game.tscn", next_level)
 
 
 

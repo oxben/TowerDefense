@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://splash.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/splash/splash-background.png" type="Texture" id=2]
@@ -11,157 +11,188 @@
 
 [sub_resource type="Animation" id=1]
 
-resource/name = "Intro"
+resource_name = "Intro"
 length = 4.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Logo:transform/pos")
+tracks/0/path = NodePath("Logo:position")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
-"times": FloatArray( 1.5, 2.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 320, -40 ), Vector2( 320, 188 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Start:visibility/opacity")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
-"times": FloatArray( 2.5, 3.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 2.5, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Quit:visibility/opacity")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
-"times": FloatArray( 2.5, 3.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 2.5, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Copyright:visibility/opacity")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
-"times": FloatArray( 3.5, 4 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Background:visibility/opacity")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
-"times": FloatArray( 0.5, 2.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
 }
 
 [node name="Splash" type="Control"]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 640.0
-margin/bottom = 480.0
-script/script = ExtResource( 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 640.0
+margin_bottom = 480.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+script = ExtResource( 1 )
 __meta__ = {
 "__editor_plugin_screen__": "Script"
 }
 
-[node name="Background" type="TextureFrame" parent="."]
+[node name="Background" type="TextureRect" parent="." index="0"]
 
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 640.0
-margin/bottom = 480.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 640.0
+margin_bottom = 480.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 texture = ExtResource( 2 )
 stretch_mode = 0
 
-[node name="Logo" type="Sprite" parent="."]
+[node name="Logo" type="Sprite" parent="." index="1"]
 
-transform/pos = Vector2( 320, 188 )
+position = Vector2( 320, 188 )
 texture = ExtResource( 3 )
 
-[node name="AnimPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimPlayer" type="AnimationPlayer" parent="." index="2"]
 
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
+root_node = NodePath("..")
+autoplay = "Intro"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
 anims/Intro = SubResource( 1 )
-playback/active = true
-playback/speed = 1.0
 blend_times = [  ]
 autoplay = "Intro"
 
-[node name="Start" type="TextureButton" parent="."]
+[node name="Start" type="TextureButton" parent="." index="3"]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 272.0
-margin/top = 228.0
-margin/right = 368.0
-margin/bottom = 268.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 272.0
+margin_top = 228.0
+margin_right = 368.0
+margin_bottom = 268.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 4 )
-textures/hover = ExtResource( 5 )
-params/resize_mode = 0
-params/stretch_mode = 0
+group = null
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
 
-[node name="Quit" type="TextureButton" parent="."]
+[node name="Quit" type="TextureButton" parent="." index="4"]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 240.0
-margin/top = 272.0
-margin/right = 400.0
-margin/bottom = 312.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_top = 272.0
+margin_right = 400.0
+margin_bottom = 312.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 6 )
-textures/hover = ExtResource( 7 )
-params/resize_mode = 0
-params/stretch_mode = 0
+group = null
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
 
-[node name="Copyright" type="TextureButton" parent="."]
+[node name="Copyright" type="TextureButton" parent="." index="5"]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 572.0
-margin/top = 440.0
-margin/right = 640.0
-margin/bottom = 480.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 572.0
+margin_top = 440.0
+margin_right = 640.0
+margin_bottom = 480.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-params/resize_mode = 0
-params/stretch_mode = 0
+group = null
+texture_normal = ExtResource( 8 )
 
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 

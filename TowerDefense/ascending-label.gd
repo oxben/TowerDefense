@@ -14,11 +14,11 @@ func _ready():
 	set_process(true)
 
 func _process(delta):
-	var pos = get_pos()
+	var pos = get_position()
 	var delta_move= (speed * delta)
 	pos.y -= delta_move
 	move += delta_move
-	set_pos(pos)
+	set_position(pos)
 	if move >= max_move:
 		queue_free()
 

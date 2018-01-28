@@ -11,20 +11,20 @@ var damage = [ 0, 3, 4 ,5 ]
 
 func _ready():
 	global = get_node("/root/global")
-	set_fixed_process(true)
+	set_physics_process(true)
 	# Set and rotate bullet sprite
 	var sprite = get_node("Sprite")
 	sprite.set_frame(level-1)
-	var rad_angle = atan2(direction.x, direction.y) - atan2(0, -1)
-	set_rot(rad_angle)
+	var rad_angle = atan2(direction.x, -direction.y)
+	set_rotation(rad_angle)
 
 
-func _fixed_process(delta):
-	var pos = get_pos()
+func _physics_process(delta):
+	var pos = get_position()
 	if pos.y > -fire_range:
-		set_pos(pos + (direction * speed * delta))
+		set_position(pos + (direction * speed * delta))
 		#pos.y -= speed * delta
-		#set_pos(pos)
+		#set_position(pos)
 	else:
 		#print("Bullet dies")
 		queue_free()
@@ -34,7 +34,7 @@ func _on_body_enter(body):
 	if body.is_in_group("enemy"):
 		var scene = preload("res://explosion.tscn")
 		var explosion = scene.instance()
-		explosion.set_pos(get_global_pos())
+		explosion.set_position(get_global_position())
 		get_node("/root").add_child(explosion)
 		body.hit(damage[level])
 		queue_free()

@@ -6,9 +6,9 @@ var time = 0
 
 func _ready():
 	set_frame(randi() % 4)
-	set_fixed_process(true)
+	set_physics_process(true)
 
-func _fixed_process(delta):
+func _physics_process(delta):
 	time += delta
 	if time > lifetime:
 		queue_free()

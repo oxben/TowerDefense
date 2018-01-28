@@ -21,12 +21,12 @@ const ammunition = "res://bullet.tscn"
 
 func _ready():
 	global = get_node("/root/global")
-	set_fixed_process(true)
+	set_physics_process(true)
 	if global.debug:
 		show_range()
 
 
-func _fixed_process(delta):
+func _physics_process(delta):
 	time += delta
 	#if enemy_at_range > 0:
 	fire()
@@ -75,10 +75,10 @@ func rotate_turret(direction):
 
 func choose_target():
 	var target = null
-	var pos = get_global_pos()
+	var pos = get_global_position()
 	for enemy in get_tree().get_nodes_in_group("enemy"):
-		if pos.distance_to(enemy.get_global_pos()) <= fire_range:
-			if target == null or enemy.get_global_pos().x > target.get_global_pos().x:
+		if pos.distance_to(enemy.get_global_position()) <= fire_range:
+			if target == null or enemy.get_global_position().x > target.get_global_position().x:
 				target = enemy
 	return target
 
@@ -90,8 +90,8 @@ func fire():
 			return
 		var scene = load(ammunition)
 		var bullet = scene.instance()
-		#bullet.set_pos(get_pos())
-		bullet.direction = (target_enemy.get_global_pos() - get_global_pos()).normalized()
+		#bullet.set_position(get_position())
+		bullet.direction = (target_enemy.get_global_position() - get_global_position()).normalized()
 		bullet.level = level
 		rotate_turret(bullet.direction)
 		add_child(bullet)

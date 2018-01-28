@@ -25,12 +25,12 @@ const ammunition = "res://bullet.tscn"
 
 func _ready():
 	global = get_node("/root/global")
-	set_fixed_process(true)
+	set_physics_process(true)
 	if global.debug:
 		show_range()
 
 
-func _fixed_process(delta):
+func _physics_process(delta):
 	time += delta
 	#if enemy_at_range > 0:
 	fire()
@@ -70,10 +70,10 @@ func upgrade():
 
 func choose_target():
 	var target = null
-	var pos = get_global_pos()
+	var pos = get_global_position()
 	for enemy in get_tree().get_nodes_in_group("enemy"):
-		if pos.distance_to(enemy.get_global_pos()) <= fire_range:
-			if target == null or enemy.get_global_pos().x > target.get_global_pos().x:
+		if pos.distance_to(enemy.get_global_position()) <= fire_range:
+			if target == null or enemy.get_global_position().x > target.get_global_position().x:
 				target = enemy
 	return target
 
@@ -85,12 +85,15 @@ func fire():
 		if target_enemy == null:
 			ray.set_emitting(false)
 			return
-		var ray_direction = (target_enemy.get_global_pos() - get_global_pos()).normalized()
+		var ray_direction = (target_enemy.get_global_position() - get_global_position()).normalized()
 		var rad_angle = atan2(ray_direction.x, ray_direction.y) + atan2(0, -1)
 		var angle = (180 + int(rad_angle * global.DEG_PER_RAD)) % 360
-		ray.set_param(Particles2D.PARAM_DIRECTION, angle)
+		var material = ray.get_process_material()
+		#material.set_angle(angle)
+		#ray.set_param(Particles2D.PARAM_DIRECTION, angle)
 		ray.set_emitting(true)
-		get_node("ParticlesRay/RayAttractor").set_global_pos(target_enemy.get_global_pos())
+		# @todo ParticalAttractor doesn't exist in Godot 3
+		#get_node("ParticlesRay/RayAttractor").set_global_position(target_enemy.get_global_position())
 		target_enemy.hit(damage[level], true)
 		fire_next = time + fire_delta
 

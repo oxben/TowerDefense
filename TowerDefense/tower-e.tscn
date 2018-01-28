@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://tower-e.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/fire-range-100.png" type="Texture" id=2]
@@ -11,12 +11,9 @@ radius = 5.0
 
 [node name="TowerE" type="RigidBody2D"]
 
-input/pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 20, 0, 0, 20, 0, 0 )
-shapes/0/trigger = true
-collision/layers = 1
-collision/mask = 1
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
 mode = 3
 mass = 1.0
 friction = 1.0
@@ -28,52 +25,55 @@ contacts_reported = 5
 contact_monitor = true
 sleeping = false
 can_sleep = true
-velocity/linear = Vector2( 0, 0 )
-velocity/angular = 0.0
-damp_override/linear = -1.0
-damp_override/angular = -1.0
-script/script = ExtResource( 1 )
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 1 )
 __meta__ = {
 "__editor_plugin_screen__": "Script"
 }
 
-[node name="FireRange" type="Sprite" parent="."]
+[node name="FireRange" type="Sprite" parent="." index="0"]
 
-visibility/visible = false
+visible = false
 texture = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="." index="1"]
 
 texture = ExtResource( 3 )
 vframes = 3
 hframes = 16
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="TextureButton" type="TextureButton" parent="." index="2"]
 
-visibility/visible = false
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = -16.0
-margin/top = -16.0
-margin/right = 16.0
-margin/bottom = 16.0
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 16.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-params/resize_mode = 0
-params/stretch_mode = 0
+group = null
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
-transform/scale = Vector2( 20, 20 )
+scale = Vector2( 20, 20 )
 shape = SubResource( 1 )
-trigger = true
-_update_shape_index = -1
 
-[connection signal="body_enter" from="." to="." method="_on_body_enter"]
+[connection signal="body_entered" from="." to="." method="_on_body_enter"]
 
-[connection signal="body_exit" from="." to="." method="_on_body_exit"]
+[connection signal="body_exited" from="." to="." method="_on_body_exit"]
 
 
