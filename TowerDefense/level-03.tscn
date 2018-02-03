@@ -12,21 +12,21 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 31.8442, -102.919, 0, 0, 92.9662, 1.10803, 268.744, -102.919, -55.7797, -67.59, 55.7797, 76.4543, 458.264, -22.919, -124.684, 1.10803, 0, 0, 663.577, 121.081 )
 }
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=2]
 
 bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 31.8442, 41.081, 0, 0, 92.9662, 1.10803, 252.951, 41.081, -85.3101, 68.6981, 80.9353, -75.3463, 450.367, -38.919, -124.684, 1.10803, 0, 0, 663.577, -182.919 )
 }
 
-[sub_resource type="Curve2D" id=4]
+[sub_resource type="Curve2D" id=3]
 
 bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 199.844, 209.081, -115.707, -1.05203, 122.188, -10.0283, 295.844, 9.08099, -34.7634, 94.0631, 26.4393, -46.6571, 527.844, -126.919, 0, 0, 0, 0, 663.844, -182.919 )
 }
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id=4]
 
 bake_interval = 5.0
 _data = {
@@ -155,7 +155,7 @@ __meta__ = {
 
 position = Vector2( -32.2609, 270.919 )
 scale = Vector2( 1.01309, 1 )
-curve = SubResource( 3 )
+curve = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -163,7 +163,7 @@ __meta__ = {
 [node name="WavePath-03" type="Path2D" parent="." index="6"]
 
 position = Vector2( -31.8442, 270.919 )
-curve = SubResource( 4 )
+curve = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -171,14 +171,13 @@ __meta__ = {
 [node name="WavePath-04" type="Path2D" parent="." index="7"]
 
 position = Vector2( -31.8442, 270.919 )
-curve = SubResource( 2 )
+curve = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="TowerBase-1" parent="." index="8" instance=ExtResource( 4 )]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -195,7 +194,6 @@ group = null
 
 [node name="TowerBase-2" parent="." index="9" instance=ExtResource( 4 )]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -212,7 +210,6 @@ group = null
 
 [node name="TowerBase-3" parent="." index="10" instance=ExtResource( 4 )]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -229,7 +226,6 @@ group = null
 
 [node name="TowerBase- 4" parent="." index="11" instance=ExtResource( 4 )]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -246,7 +242,6 @@ group = null
 
 [node name="TowerBase- 5" parent="." index="12" instance=ExtResource( 4 )]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
