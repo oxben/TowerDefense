@@ -122,7 +122,7 @@ func show_upgrade_menu():
 	label.set_text("$ " + str(cost))
 	set_upgrade_cost_color()
 	get_node("SellTowerButton").show()
-	get_node("UpgradeTowerButton").show()
+	get_node("UpgradeTowerButton").set_visible((cost > 0))
 	get_node("FireRange").set_scale(Vector2(tower.fire_range/100.0, tower.fire_range/100.0))
 	get_node("FireRange").show()
 

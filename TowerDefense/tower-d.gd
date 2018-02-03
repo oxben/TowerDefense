@@ -17,7 +17,7 @@ var enemy_at_range = 0
 var enemy_direction = Vector2(0,-1)
 var damage = [ 0, 1, 2, 3 ]
 
-var upgrade_cost = [0, 5, 10, 15]
+var upgrade_cost = [0, 5, 10, 0]
 var sell_price = [0, 2, 5, 8]
 
 const ammunition = "res://bullet.tscn"
