@@ -48,7 +48,7 @@ func _on_TowerBase_toggled( pressed ):
 	print("pressed=", str(pressed))
 	if pressed:
 		# Close other opened menu
-		get_tree().call_group(0,"OpenedBases","close_tower_menu")
+		get_tree().call_group("OpenedBases","close_tower_menu")
 		# Display menu
 		if tower == null:
 			show_tower_menu()
