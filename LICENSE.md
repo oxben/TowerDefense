@@ -1,8 +1,8 @@
-##Source code
+# Source code
 
 The following license applies to the code source within this repository.
 
-###MIT License
+## MIT License
 
 Copyright (c) 2015-2018 Oxben
 
@@ -24,8 +24,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-###Media assests
+# Media assests
+
+## CC BY-SA 4.0
 
 All graphical assets within this repository are licensed under Creative Commons Attribution-ShareAlike 4.0 International license (CC BY-SA 4.0).
 
-[Full text of the license provided by Creative Commons] (https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+[Full text of the license provided by Creative Commons](http://creativecommons.org/licenses/by-sa/4.0/legalcode)
