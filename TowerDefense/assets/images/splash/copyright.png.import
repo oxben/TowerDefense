@@ -7,10 +7,10 @@ path="res://.import/copyright.png-213cfaf05cc503147de763b457f63557.stex"
 [deps]
 
 source_file="res://assets/images/splash/copyright.png"
-source_md5="561b87a0f9e4ab22d7631fc7d8cbd5fb"
+source_md5="07c4bfc0336737f095b7c8b81cf5d311"
 
 dest_files=[ "res://.import/copyright.png-213cfaf05cc503147de763b457f63557.stex" ]
-dest_md5="f032a638b5d3bd889184fbc004921241"
+dest_md5="ca9a8c772778a3c741ed59679ec21702"
 
 [params]
 
