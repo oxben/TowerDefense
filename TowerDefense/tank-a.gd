@@ -67,8 +67,13 @@ func hit(damage, continuous=false):
 		print(get_name(), " destroyed!")
 		get_node("HealthLabel").hide()
 		progress.hide()
+		# Add explosion
+		var scene = preload("res://explosion-big.tscn")
+		var explosion = scene.instance()
+		explosion.set_position(get_global_position())
+		get_node("/root").add_child(explosion)
 		# Add wreckage
-		var scene = preload("res://wreck-a.tscn")
+		scene = preload("res://wreck-a.tscn")
 		var wreck = scene.instance()
 		wreck.set_position(get_global_position())
 		wreck.set_frame(randi() % wreck.get_hframes())

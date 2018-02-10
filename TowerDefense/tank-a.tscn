@@ -13,9 +13,6 @@ radius = 20.0
 [node name="TankA" type="RigidBody2D"]
 
 input_pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Transform2D( 1.3913, 0, 0, 1.3913, 0, 0 )
-shapes/0/trigger = false
 collision_layer = 1
 collision_mask = 1
 mode = 3
@@ -25,29 +22,34 @@ bounce = 0.0
 gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = 0
-contacts_reported = 1
+contacts_reported = 2
 contact_monitor = true
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
 angular_velocity = 0.0
-damp_override/linear = -1.0
-damp_override/angular = -1.0
+angular_damp = -1.0
 script = ExtResource( 1 )
 __meta__ = {
 "__editor_plugin_screen__": "2D"
 }
 
-[node name="HealthProgress" type="TextureProgress" parent="."]
+[node name="HealthProgress" type="TextureProgress" parent="." index="0"]
 
-focus_ignore_mouse = false
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = -19.0
 margin_top = -23.0
 margin_right = 5.0
 margin_bottom = -19.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 min_value = 0.0
 max_value = 100.0
 step = 1.0
@@ -60,31 +62,35 @@ texture_over = ExtResource( 2 )
 texture_progress = ExtResource( 3 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
+nine_patch_stretch = false
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="." index="1"]
 
 texture = ExtResource( 4 )
 hframes = 8
 frame = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 scale = Vector2( 1.3913, 1.3913 )
 shape = SubResource( 1 )
-trigger = false
-_update_shape_index = -1
 
-[node name="HealthLabel" type="Label" parent="."]
+[node name="HealthLabel" type="Label" parent="." index="3"]
 
 visible = false
-focus_ignore_mouse = true
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = -40.0
 margin_top = -32.0
 margin_right = -1.0
 margin_bottom = -19.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 2
+size_flags_vertical = 0
 custom_colors/font_color = Color( 0, 1, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
@@ -94,3 +100,5 @@ align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+

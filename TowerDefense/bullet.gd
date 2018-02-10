@@ -32,7 +32,7 @@ func _physics_process(delta):
 func _on_body_enter(body):
 	#print("Hit!")
 	if body.is_in_group("enemy"):
-		var scene = preload("res://explosion.tscn")
+		var scene = preload("res://explosion-small.tscn")
 		var explosion = scene.instance()
 		explosion.set_position(get_global_position())
 		get_node("/root").add_child(explosion)

@@ -1,29 +1,30 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://tower-d.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/fire-range-100.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/tower-d.png" type="Texture" id=3]
 [ext_resource path="res://assets/images/spark-2.png" type="Texture" id=4]
+[ext_resource path="res://assets/sounds/electricity.ogg" type="AudioStream" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 7.0
 
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=2]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.510742 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=4]
+[sub_resource type="CurveTexture" id=3]
 
 flags = 4
 width = 2048
-curve = SubResource( 3 )
+curve = SubResource( 2 )
 
-[sub_resource type="ParticlesMaterial" id=2]
+[sub_resource type="ParticlesMaterial" id=4]
 
 render_priority = 0
 trail_divisor = 1
@@ -52,7 +53,7 @@ angle = 0.0
 angle_random = 1.0
 scale = 0.5
 scale_random = 0.5
-scale_curve = SubResource( 4 )
+scale_curve = SubResource( 3 )
 color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -63,7 +64,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity" ]
 
-[node name="TowerD" type="RigidBody2D" index="0"]
+[node name="TowerD" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -84,6 +85,7 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
 __meta__ = {
 "__editor_plugin_screen__": "2D"
 }
@@ -142,12 +144,22 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 2 )
+process_material = SubResource( 4 )
 texture = ExtResource( 4 )
 normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Process Material", "Time", "Transform" ]
+
+[node name="AudioElectricity" type="AudioStreamPlayer2D" parent="." index="5"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_enter"]
 

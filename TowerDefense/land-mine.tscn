@@ -1,15 +1,16 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://bullet.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/steel-bullet.png" type="Texture" id=2]
+[ext_resource path="res://land-mine.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/land-mine.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+radius = 10.0
 
-[node name="Bullet" type="RigidBody2D"]
+[node name="RigidBody2D" type="RigidBody2D"]
 
+scale = Vector2( 0.8, 0.8 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -29,20 +30,18 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
-__meta__ = {
-"__editor_plugin_screen__": "Script"
-}
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
-hframes = 3
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+scale = Vector2( 1.95013, 1.95013 )
 shape = SubResource( 1 )
 
-[connection signal="body_entered" from="." to="." method="_on_body_enter"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 
 

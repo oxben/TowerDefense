@@ -89,12 +89,14 @@ func fire():
 			return
 		var scene = load(ammunition)
 		var missile = scene.instance()
+		var audio = get_node("AudioLaunch")
 		missile.target_path = target_enemy.get_path()
 		print("TARGET: " + target_enemy.get_path())
 		missile.level = level
 		var direction = (target_enemy.get_global_position() - get_global_position()).normalized()
 		rotate_turret(direction)
 		missile.set_position(direction * 24) # Move missile at launcher boundary
+		audio.play()
 		add_child(missile)
 		move_child(missile, 0)
 		fire_next = time + fire_delta

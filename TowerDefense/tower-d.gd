@@ -81,9 +81,11 @@ func choose_target():
 func fire():
 	if time > fire_next:
 		var ray = get_node("ParticlesRay")
+		var audio = get_node("AudioElectricity")
 		var target_enemy = choose_target()
 		if target_enemy == null:
 			ray.set_emitting(false)
+			audio.stop()
 			return
 		var ray_direction = (target_enemy.get_global_position() - get_global_position()).normalized()
 		var rad_angle = atan2(ray_direction.x, ray_direction.y) - atan2(0, -1)
@@ -93,6 +95,8 @@ func fire():
 		#ray.set_param(Particles2D.PARAM_DIRECTION, angle)
 		ray.set_rotation_degrees(angle-90)
 		ray.set_emitting(true)
+		if not audio.is_playing():
+			audio.play()
 		# @todo ParticalAttractor doesn't exist in Godot 3
 		#get_node("ParticlesRay/RayAttractor").set_global_position(target_enemy.get_global_position())
 		target_enemy.hit(damage[level], true)

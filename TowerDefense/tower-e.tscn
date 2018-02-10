@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://tower-e.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/fire-range-100.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/tower-e.png" type="Texture" id=3]
+[ext_resource path="res://assets/sounds/missile-launch.ogg" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -71,6 +72,16 @@ group = null
 
 scale = Vector2( 20, 20 )
 shape = SubResource( 1 )
+
+[node name="AudioLaunch" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_enter"]
 

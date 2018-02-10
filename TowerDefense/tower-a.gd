@@ -97,6 +97,7 @@ func fire():
 		add_child(bullet)
 		move_child(bullet, 0)
 		fire_next = time + fire_delta
+		get_node("AudioGunshot").play()
 
 
 func _on_body_enter(body):

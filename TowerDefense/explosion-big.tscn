@@ -1,0 +1,128 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/images/explosion-a.png" type="Texture" id=1]
+[ext_resource path="res://explosion-big.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/smoke.png" type="Texture" id=3]
+[ext_resource path="res://assets/sounds/explosion-big.ogg" type="AudioStream" id=4]
+
+[sub_resource type="Gradient" id=2]
+
+offsets = PoolRealArray( 0, 0.227451, 0.611765, 0.988235, 1 )
+colors = PoolColorArray( 0.976562, 0.93919, 0.850677, 1, 0.859375, 0.598499, 0.275269, 0.757725, 0.21875, 0.100483, 0.0427246, 0.551569, 0.130682, 0.117168, 0.109464, 0, 0.125, 0.118244, 0.11377, 0.175255 )
+
+[sub_resource type="GradientTexture" id=3]
+
+flags = 4
+gradient = SubResource( 2 )
+width = 2048
+
+[sub_resource type="Curve" id=6]
+
+min_value = 0.0
+max_value = 100.0
+bake_resolution = 100
+_data = [ Vector2( 0, 100 ), 0.0, -1.97435, 0, 0, Vector2( 0.529636, 42.3543 ), -380.838, -380.838, 0, 0, Vector2( 0.997122, 0.848976 ), -63.4729, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+
+flags = 4
+width = 2048
+curve = SubResource( 6 )
+
+[sub_resource type="Curve" id=4]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.5 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+
+flags = 4
+width = 2048
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=1]
+
+render_priority = 0
+trail_divisor = 4
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 180.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 300.0
+initial_velocity_random = 0.0
+angular_velocity = 1.4013e-43
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.5
+damping_random = 0.0
+damping_curve = SubResource( 7 )
+angle = 45.0
+angle_random = 1.0
+scale = 0.75
+scale_random = 0.5
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Damping", "Emission Shape", "Initial Velocity", "Trail" ]
+
+[node name="ExplosionBig" type="Sprite"]
+
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 1 )
+hframes = 4
+script = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Transform" ]
+
+[node name="Particles2D" type="Particles2D" parent="." index="0"]
+
+emitting = false
+amount = 256
+lifetime = 0.2
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.5
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 1 )
+texture = ExtResource( 3 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time" ]
+
+[node name="AudioExplosion" type="AudioStreamPlayer2D" parent="." index="1"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[connection signal="frame_changed" from="." to="." method="_on_frame_changed"]
+
+
