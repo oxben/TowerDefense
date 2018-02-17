@@ -7,10 +7,10 @@ path="res://.import/land-mine.png-1ab1aba4f22cb19b61b0b20054f6adf4.stex"
 [deps]
 
 source_file="res://assets/images/land-mine.png"
-source_md5="856325183623c85dee0b9583756bff9d"
+source_md5="b9940f9f569035b8ef26b2a93e0325b3"
 
 dest_files=[ "res://.import/land-mine.png-1ab1aba4f22cb19b61b0b20054f6adf4.stex" ]
-dest_md5="f72e825458e67db48c8ac327d6be306f"
+dest_md5="f32d3dcbc8edbd46baee2cec1d83757c"
 
 [params]
 
