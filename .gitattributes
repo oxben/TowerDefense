@@ -5,6 +5,7 @@
 # Doc: https://help.github.com/articles/dealing-with-line-endings/
 *.gd text eol=lf
 *.import text eol=lf
+*.tscn text eol=lf
 
 # Custom for Visual Studio
 *.cs     diff=csharp

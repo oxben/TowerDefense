@@ -24,6 +24,14 @@ const WAIT     = 0
 const ACTIVE   = 1
 const FINISHED = 2
 
+const ARROW_CURSOR = "res://assets/images/cursor-arrow-32x32.png"
+var arrow_cursor = null
+
+const LAND_MINE_CURSOR = "res://assets/images/land-mine-32x32.png"
+var land_mine_cursor = null
+
+var land_mine_install_mode = false
+
 
 func _ready():
 	print("Starting new level: " + level_name)
@@ -52,6 +60,10 @@ func _ready():
 	# Enable process functions
 	set_process(true)
 	set_process_input(true)
+	# Create mouse cursors
+	arrow_cursor = load(ARROW_CURSOR)
+	land_mine_cursor = load(LAND_MINE_CURSOR)
+	Input.set_custom_mouse_cursor(arrow_cursor)
 
 
 func init_wave(idx):
@@ -138,6 +150,13 @@ func _input(event):
 		if Input.is_action_pressed("cheat_cash"):
 			global.increase_cash(100)
 			return
+	elif event is InputEventMouseButton:
+		if event.get_button_index() == BUTTON_LEFT and not event.is_pressed():
+			# Letf mouse button up
+			if land_mine_install_mode:
+				plant_mine(event.get_global_position())
+				print("plant mine")
+				land_mine_install_mode = false
 
 
 func _on_resume_button_pressed():
@@ -166,6 +185,26 @@ func _on_ContinueButton_pressed():
 	get_node("/root/global").goto_scene("res://game.tscn", next_level)
 
 
-
 func _on_QuitButton_pressed():
 	get_tree().quit()
+
+
+func _on_BuyLandMineButton_button_up():
+	print("Buy mine")
+	if global.init_land_mine_cost <= global.cash:
+		print("I'm rich enough")
+		global.decrease_cash(global.init_land_mine_cost)
+		land_mine_install_mode = true
+		Input.set_custom_mouse_cursor(land_mine_cursor)
+
+
+func plant_mine(pos):
+	print("plant land mine", pos)
+	var scene = preload("res://land-mine.tscn")
+	var mine = scene.instance()
+	mine.set_position(pos)
+	global.current_level.level.add_child(mine)
+	global.current_level.level.move_child(mine, 3)
+	Input.set_custom_mouse_cursor(arrow_cursor)
+
+

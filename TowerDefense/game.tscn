@@ -712,4 +712,6 @@ __meta__ = {
 
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
 
+[connection signal="button_up" from="BuyLandMineButton" to="." method="_on_BuyLandMineButton_button_up"]
+
 

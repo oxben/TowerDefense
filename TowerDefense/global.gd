@@ -17,7 +17,8 @@ var cash = 10
 var health = 5
 
 var debug = false
-var init_tower_cost = 5 # Initial tower cost
+var init_tower_cost     = 5 # Initial tower cost
+var init_land_mine_cost = 2 # Initial land mine cost
 
 var enemy_scenes = {}
 
