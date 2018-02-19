@@ -78,8 +78,7 @@ func hit(damage, continuous=false):
 		wreck.set_position(get_global_position())
 		wreck.set_frame(randi() % wreck.get_hframes())
 		var root = get_node("/root")
-		global.current_level.level.add_child(wreck)
-		global.current_level.level.move_child(wreck, 3)
+		global.current_level.level.get_node("DetailsTileMap").add_child(wreck)
 
 		var texture = ImageTexture.new()
 		texture.load("res://assets/images/tank-a-dead.png")
