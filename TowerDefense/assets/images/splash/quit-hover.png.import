@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/quit-hover.png-dedf5f1b102c5f20efeefa5c2121d293.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/splash/quit-hover.png"
-source_md5="119ba2ec990c924bc8311bc4364de83e"
-
 dest_files=[ "res://.import/quit-hover.png-dedf5f1b102c5f20efeefa5c2121d293.stex" ]
-dest_md5="c3d6c2b6be0584ddc115d353364651c1"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/start-hover.png-c0bae9b60d69b7b8e2e44022bc2c446a.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/splash/start-hover.png"
-source_md5="58870e42064ed5b594ce19f697f581fd"
-
 dest_files=[ "res://.import/start-hover.png-c0bae9b60d69b7b8e2e44022bc2c446a.stex" ]
-dest_md5="cdb63f1929c8d0bf8e27cc5e2f6f2b2a"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

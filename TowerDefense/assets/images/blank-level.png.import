@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/blank-level.png-e8e349ec0ce01d6519e31d6f380fd15c.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/blank-level.png"
-source_md5="da137f62eedefc80680e3339ad847df8"
-
 dest_files=[ "res://.import/blank-level.png-e8e349ec0ce01d6519e31d6f380fd15c.stex" ]
-dest_md5="94e23cabd9d053b0e10e071a74ea049d"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

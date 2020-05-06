@@ -7,10 +7,7 @@ path="res://.import/missile-launch.ogg-1f7402e5313640464eeb8f10fe352438.oggstr"
 [deps]
 
 source_file="res://assets/sounds/missile-launch.ogg"
-source_md5="c1350829ee3ce2c9bc4eb02359460816"
-
 dest_files=[ "res://.import/missile-launch.ogg-1f7402e5313640464eeb8f10fe352438.oggstr" ]
-dest_md5="e62c9df996fb68b6a76e0a35da48584b"
 
 [params]
 

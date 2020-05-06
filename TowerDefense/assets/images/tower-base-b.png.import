@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/tower-base-b.png-c2dbf102b25158441a37b40514b932e1.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/tower-base-b.png"
-source_md5="bc3cca1f84a3bd93f63e7852296c1edb"
-
 dest_files=[ "res://.import/tower-base-b.png-c2dbf102b25158441a37b40514b932e1.stex" ]
-dest_md5="9db259d848e8bc834bc0aa0813a2e950"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

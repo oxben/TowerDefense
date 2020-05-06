@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/button-shadow.png-22704096984f0fef04b267ae08882f62.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/button-shadow.png"
-source_md5="338045f2d2d3aa0e8e36a02e791b657e"
-
 dest_files=[ "res://.import/button-shadow.png-22704096984f0fef04b267ae08882f62.stex" ]
-dest_md5="9426be05b2476930c652950e2332d215"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

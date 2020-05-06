@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/health-progress-over.png-f7854de3ab3be8ffd698a2f8e1bf0d05.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/health-progress-over.png"
-source_md5="301c846d099bdb11d8caf3f2e00fef3d"
-
 dest_files=[ "res://.import/health-progress-over.png-f7854de3ab3be8ffd698a2f8e1bf0d05.stex" ]
-dest_md5="f72acc6835179e8741d1c2358cd78cc1"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

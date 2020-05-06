@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/barrels.png-aae64d96ce6d217f02778f0d2ecb98e6.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/barrels.png"
-source_md5="3761e9a879575a45f3659e2d4f58b1bd"
-
 dest_files=[ "res://.import/barrels.png-aae64d96ce6d217f02778f0d2ecb98e6.stex" ]
-dest_md5="f7e95472fe5d6c7831387a816835244a"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

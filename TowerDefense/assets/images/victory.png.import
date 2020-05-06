@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/victory.png-ffece4c818a1116248bd5b9c0f765d39.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/victory.png"
-source_md5="60202f45e0b3e0988c3665b90b5229a2"
-
 dest_files=[ "res://.import/victory.png-ffece4c818a1116248bd5b9c0f765d39.stex" ]
-dest_md5="4fee187c8d9960148f57efc4c47ba6a9"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

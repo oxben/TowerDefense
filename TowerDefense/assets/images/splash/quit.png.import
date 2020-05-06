@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/quit.png-f0a6a7f9588a15ae3ed5affa769240a3.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/splash/quit.png"
-source_md5="8a24f4923c9d41916cc7e6c00f5370ce"
-
 dest_files=[ "res://.import/quit.png-f0a6a7f9588a15ae3ed5affa769240a3.stex" ]
-dest_md5="d97721ba88488642543ddf57485f42e0"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

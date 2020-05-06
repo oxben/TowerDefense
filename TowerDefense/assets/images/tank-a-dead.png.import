@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/tank-a-dead.png-9117b956230b57eb511520e97921fb87.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/tank-a-dead.png"
-source_md5="183efe50359ade319ce135852e40b340"
-
 dest_files=[ "res://.import/tank-a-dead.png-9117b956230b57eb511520e97921fb87.stex" ]
-dest_md5="bb5d202806a7e974b72b11408b1e10b7"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

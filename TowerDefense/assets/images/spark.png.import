@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/spark.png-dacfe166f52ad9b298af31ef8c2d570e.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/spark.png"
-source_md5="2c89eefb71e10840d0c62d7093ea193b"
-
 dest_files=[ "res://.import/spark.png-dacfe166f52ad9b298af31ef8c2d570e.stex" ]
-dest_md5="5555c41e6d81d8661d7e1aaf9bbdaf6b"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/bullet.png-233c01ebf7a36dda9b4884fdef5413e0.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/bullet.png"
-source_md5="02efef8872248dd095c5a00d7652b724"
-
 dest_files=[ "res://.import/bullet.png-233c01ebf7a36dda9b4884fdef5413e0.stex" ]
-dest_md5="74d7da80c1a384f44bd2eaf807348741"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

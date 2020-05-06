@@ -7,10 +7,7 @@ path="res://.import/gunshot-01.ogg-2d10b48d05cfcf26ded4a3d41e9535d3.oggstr"
 [deps]
 
 source_file="res://assets/sounds/gunshot-01.ogg"
-source_md5="fbf48fb79c08689acd848a2231875b00"
-
 dest_files=[ "res://.import/gunshot-01.ogg-2d10b48d05cfcf26ded4a3d41e9535d3.oggstr" ]
-dest_md5="e09a699336fd963d4dde4ec76340a4ce"
 
 [params]
 

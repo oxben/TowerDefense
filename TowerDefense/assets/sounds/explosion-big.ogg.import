@@ -7,10 +7,7 @@ path="res://.import/explosion-big.ogg-225aa6cc38cdce1476701686b2defbdb.oggstr"
 [deps]
 
 source_file="res://assets/sounds/explosion-big.ogg"
-source_md5="71f8823b59fc088ad02d37c8bcb03738"
-
 dest_files=[ "res://.import/explosion-big.ogg-225aa6cc38cdce1476701686b2defbdb.oggstr" ]
-dest_md5="d9e17f4594089370c031ae2208bbac36"
 
 [params]
 

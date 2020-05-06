@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/button-tower-e.png-f29e7ff563f67dd01822a4dfbd4497eb.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/button-tower-e.png"
-source_md5="a83c8e253ad9388e94e7df2f30a857ab"
-
 dest_files=[ "res://.import/button-tower-e.png-f29e7ff563f67dd01822a4dfbd4497eb.stex" ]
-dest_md5="2620eca16e0c6dbf2a398b0928f7eedc"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

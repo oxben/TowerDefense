@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/tower-defense-title.png-d922bab0255c0e913768877d30b7a017.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/splash/tower-defense-title.png"
-source_md5="f9c7e47cd448db971dd89e53b4b6d775"
-
 dest_files=[ "res://.import/tower-defense-title.png-d922bab0255c0e913768877d30b7a017.stex" ]
-dest_md5="96e5964078a7a4ca4dc05817e7058c51"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

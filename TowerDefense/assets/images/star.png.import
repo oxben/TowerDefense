@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/star.png-f0dde8ae1a011205b4f816c9f0b65378.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/star.png"
-source_md5="b9ef41a9019af74f5adf07d24a16fe37"
-
 dest_files=[ "res://.import/star.png-f0dde8ae1a011205b4f816c9f0b65378.stex" ]
-dest_md5="e3369a5f04046bb2c8439b0eb88ea0b8"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

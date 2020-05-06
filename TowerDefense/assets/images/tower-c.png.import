@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/tower-c.png-7b1f7e8eca525cc457a6236993dd0a14.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/tower-c.png"
-source_md5="bafd6fcf67829856c6f16fc6e61026ba"
-
 dest_files=[ "res://.import/tower-c.png-7b1f7e8eca525cc457a6236993dd0a14.stex" ]
-dest_md5="06c8387b018b1672aa620c4228e4f06a"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

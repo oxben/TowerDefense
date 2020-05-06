@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/cursor-arrow-32x32.png-6d606c55aa07e453403eb4bfc3bb69be.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/cursor-arrow-32x32.png"
-source_md5="d035a50b2386ba2a55384f0930465eee"
-
 dest_files=[ "res://.import/cursor-arrow-32x32.png-6d606c55aa07e453403eb4bfc3bb69be.stex" ]
-dest_md5="971e392c9df92625b51b79da3701fdf7"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -10,11 +10,8 @@
 [ext_resource path="res://assets/images/splash/copyright.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
-
 resource_name = "Intro"
 length = 4.0
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Background:modulate")
 tracks/0/interp = 1
@@ -77,16 +74,8 @@ tracks/4/keys = {
 }
 
 [node name="Splash" type="Control"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 640.0
 margin_bottom = 480.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 script = ExtResource( 1 )
@@ -94,112 +83,48 @@ __meta__ = {
 "__editor_plugin_screen__": "Script"
 }
 
-[node name="Background" type="TextureRect" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Background" type="TextureRect" parent="."]
 margin_right = 640.0
 margin_bottom = 480.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 texture = ExtResource( 2 )
-stretch_mode = 0
-_sections_unfolded = [ "Visibility" ]
 
-[node name="Logo" type="Sprite" parent="." index="1"]
-
+[node name="Logo" type="Sprite" parent="."]
 position = Vector2( 320, 188 )
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="AnimPlayer" type="AnimationPlayer" parent="." index="2"]
-
-root_node = NodePath("..")
+[node name="AnimPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Intro"
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
 anims/Intro = SubResource( 1 )
-blend_times = [  ]
 
-[node name="Start" type="TextureButton" parent="." index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Start" type="TextureButton" parent="."]
 margin_left = 272.0
 margin_top = 228.0
 margin_right = 368.0
 margin_bottom = 268.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 5 )
-_sections_unfolded = [ "Visibility" ]
 
-[node name="Quit" type="TextureButton" parent="." index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Quit" type="TextureButton" parent="."]
 margin_left = 240.0
 margin_top = 272.0
 margin_right = 400.0
 margin_bottom = 312.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 texture_normal = ExtResource( 6 )
 texture_hover = ExtResource( 7 )
-_sections_unfolded = [ "Visibility" ]
 
-[node name="Copyright" type="TextureButton" parent="." index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Copyright" type="TextureButton" parent="."]
 margin_left = 572.0
 margin_top = 440.0
 margin_right = 640.0
 margin_bottom = 480.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 texture_normal = ExtResource( 8 )
-_sections_unfolded = [ "Material", "Pause", "Visibility" ]
-
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
-
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
-
-
