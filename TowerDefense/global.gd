@@ -63,23 +63,23 @@ func goto_scene(scene, level_name=""):
 func increase_cash(sum):
 	cash += sum
 	# Update listeners
-	get_tree().call_group(0,"CashListeners","on_cash_update")
+	get_tree().call_group("CashListeners","on_cash_update")
 
 
 func decrease_cash(sum):
 	cash -= sum
 	# Update listeners
-	get_tree().call_group(0,"CashListeners","on_cash_update")
+	get_tree().call_group("CashListeners","on_cash_update")
 
 
 func increase_health(point):
 	health += point
 	# Update listeners
-	get_tree().call_group(0,"HealthListeners","on_health_update")
+	get_tree().call_group("HealthListeners","on_health_update")
 
 
 func decrease_health(point):
 	health -= point
 	# Update listeners
-	get_tree().call_group(0,"HealthListeners","on_health_update")
+	get_tree().call_group("HealthListeners","on_health_update")
 
