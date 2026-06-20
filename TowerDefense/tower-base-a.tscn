@@ -1,15 +1,15 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://assets/images/tower-base-b.png" type="Texture" id=1]
-[ext_resource path="res://assets/images/tower-base-b-pressed.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/tower-base-b.png" type="Texture2D" id=1]
+[ext_resource path="res://assets/images/tower-base-b-pressed.png" type="Texture2D" id=2]
 [ext_resource path="res://tower-base.gd" type="Script" id=3]
-[ext_resource path="res://assets/images/fire-range-100.png" type="Texture" id=4]
-[ext_resource path="res://assets/images/button-tower-a.png" type="Texture" id=5]
-[ext_resource path="res://assets/images/button-shadow.png" type="Texture" id=6]
-[ext_resource path="res://assets/images/button-tower-d.png" type="Texture" id=7]
-[ext_resource path="res://assets/images/button-tower-e.png" type="Texture" id=8]
-[ext_resource path="res://assets/images/button-sell.png" type="Texture" id=9]
-[ext_resource path="res://assets/images/button-upgrade.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/fire-range-100.png" type="Texture2D" id=4]
+[ext_resource path="res://assets/images/button-tower-a.png" type="Texture2D" id=5]
+[ext_resource path="res://assets/images/button-shadow.png" type="Texture2D" id=6]
+[ext_resource path="res://assets/images/button-tower-d.png" type="Texture2D" id=7]
+[ext_resource path="res://assets/images/button-tower-e.png" type="Texture2D" id=8]
+[ext_resource path="res://assets/images/button-sell.png" type="Texture2D" id=9]
+[ext_resource path="res://assets/images/button-upgrade.png" type="Texture2D" id=10]
 
 [node name="TowerBase" type="TextureButton"]
 
@@ -17,18 +17,18 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -32.0
-margin_top = -32.0
-margin_right = 32.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 toggle_mode = true
-enabled_focus_mode = 2
+focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 1 )
@@ -38,7 +38,7 @@ __meta__ = {
 "__editor_plugin_screen__": "2D"
 }
 
-[node name="FireRange" type="Sprite" parent="." index="0"]
+[node name="FireRange" type="Sprite2D" parent="." index="0"]
 
 position = Vector2( 32, 16 )
 texture = ExtResource( 4 )
@@ -49,18 +49,18 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -36.0
-margin_top = -8.0
-margin_right = 12.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
+offset_left = -36.0
+offset_top = -8.0
+offset_right = 12.0
+offset_bottom = 40.0
+pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 toggle_mode = false
-enabled_focus_mode = 2
+focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 5 )
@@ -71,27 +71,27 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 28.0
-margin_right = 40.0
-margin_bottom = 41.0
-rect_pivot_offset = Vector2( 0, 0 )
+offset_left = 8.0
+offset_top = 28.0
+offset_right = 40.0
+offset_bottom = 41.0
+pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 0
-custom_colors/font_color = Color( 1, 0.854902, 0.501961, 1 )
-custom_colors/font_color_shadow = Color( 0.12549, 0.0627451, 0, 0.75 )
-custom_constants/shadow_offset_x = 1
-custom_constants/shadow_offset_y = 1
-custom_constants/shadow_as_outline = 1
+theme_override_colors/font_color = Color( 1, 0.854902, 0.501961, 1 )
+theme_override_colors/font_shadow_color = Color( 0.12549, 0.0627451, 0, 0.75 )
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 1
 text = "$ 99"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Shadow" type="Sprite" parent="BuyTowerAButton" index="1"]
+[node name="Shadow" type="Sprite2D" parent="BuyTowerAButton" index="1"]
 
 show_behind_parent = true
 position = Vector2( 28, 28 )
@@ -103,18 +103,18 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 52.0
-margin_top = -8.0
-margin_right = 100.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
+offset_left = 52.0
+offset_top = -8.0
+offset_right = 100.0
+offset_bottom = 40.0
+pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 toggle_mode = false
-enabled_focus_mode = 2
+focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 7 )
@@ -125,27 +125,27 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 28.0
-margin_right = 40.0
-margin_bottom = 41.0
-rect_pivot_offset = Vector2( 0, 0 )
+offset_left = 8.0
+offset_top = 28.0
+offset_right = 40.0
+offset_bottom = 41.0
+pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 0
-custom_colors/font_color = Color( 1, 0.854902, 0.501961, 1 )
-custom_colors/font_color_shadow = Color( 0.12549, 0.0627451, 0, 0.75 )
-custom_constants/shadow_offset_x = 1
-custom_constants/shadow_offset_y = 1
-custom_constants/shadow_as_outline = 1
+theme_override_colors/font_color = Color( 1, 0.854902, 0.501961, 1 )
+theme_override_colors/font_shadow_color = Color( 0.12549, 0.0627451, 0, 0.75 )
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 1
 text = "$ 99"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Shadow" type="Sprite" parent="BuyTowerDButton" index="1"]
+[node name="Shadow" type="Sprite2D" parent="BuyTowerDButton" index="1"]
 
 show_behind_parent = true
 position = Vector2( 28, 28 )
@@ -157,17 +157,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = -48.0
-margin_right = 56.0
-rect_pivot_offset = Vector2( 0, 0 )
+offset_left = 8.0
+offset_top = -48.0
+offset_right = 56.0
+pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 toggle_mode = false
-enabled_focus_mode = 2
+focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 8 )
@@ -178,27 +178,27 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 28.0
-margin_right = 40.0
-margin_bottom = 41.0
-rect_pivot_offset = Vector2( 0, 0 )
+offset_left = 8.0
+offset_top = 28.0
+offset_right = 40.0
+offset_bottom = 41.0
+pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 0
-custom_colors/font_color = Color( 1, 0.854902, 0.501961, 1 )
-custom_colors/font_color_shadow = Color( 0.12549, 0.0627451, 0, 0.75 )
-custom_constants/shadow_offset_x = 1
-custom_constants/shadow_offset_y = 1
-custom_constants/shadow_as_outline = 1
+theme_override_colors/font_color = Color( 1, 0.854902, 0.501961, 1 )
+theme_override_colors/font_shadow_color = Color( 0.12549, 0.0627451, 0, 0.75 )
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 1
 text = "$ 99"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Shadow" type="Sprite" parent="BuyTowerEButton" index="1"]
+[node name="Shadow" type="Sprite2D" parent="BuyTowerEButton" index="1"]
 
 show_behind_parent = true
 position = Vector2( 28, 28 )
@@ -211,18 +211,18 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -32.0
-margin_top = 32.0
-margin_right = 16.0
-margin_bottom = 80.0
-rect_pivot_offset = Vector2( 0, 0 )
+offset_left = -32.0
+offset_top = 32.0
+offset_right = 16.0
+offset_bottom = 80.0
+pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 toggle_mode = false
-enabled_focus_mode = 2
+focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 9 )
@@ -233,27 +233,27 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 28.0
-margin_right = 40.0
-margin_bottom = 41.0
-rect_pivot_offset = Vector2( 0, 0 )
+offset_left = 8.0
+offset_top = 28.0
+offset_right = 40.0
+offset_bottom = 41.0
+pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 0
-custom_colors/font_color = Color( 1, 0.854902, 0.501961, 1 )
-custom_colors/font_color_shadow = Color( 0.12549, 0.0627451, 0, 0.745098 )
-custom_constants/shadow_offset_x = 1
-custom_constants/shadow_offset_y = 1
-custom_constants/shadow_as_outline = 1
+theme_override_colors/font_color = Color( 1, 0.854902, 0.501961, 1 )
+theme_override_colors/font_shadow_color = Color( 0.12549, 0.0627451, 0, 0.745098 )
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 1
 text = "$ 99"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Shadow" type="Sprite" parent="SellTowerButton" index="1"]
+[node name="Shadow" type="Sprite2D" parent="SellTowerButton" index="1"]
 
 show_behind_parent = true
 position = Vector2( 28, 28 )
@@ -266,18 +266,18 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 48.0
-margin_top = 32.0
-margin_right = 96.0
-margin_bottom = 80.0
-rect_pivot_offset = Vector2( 0, 0 )
+offset_left = 48.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 80.0
+pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 toggle_mode = false
-enabled_focus_mode = 2
+focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 10 )
@@ -288,27 +288,27 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 28.0
-margin_right = 40.0
-margin_bottom = 41.0
-rect_pivot_offset = Vector2( 0, 0 )
+offset_left = 8.0
+offset_top = 28.0
+offset_right = 40.0
+offset_bottom = 41.0
+pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 0
-custom_colors/font_color = Color( 1, 0.854902, 0.501961, 1 )
-custom_colors/font_color_shadow = Color( 0.12549, 0.0627451, 0, 0.745098 )
-custom_constants/shadow_offset_x = 1
-custom_constants/shadow_offset_y = 1
-custom_constants/shadow_as_outline = 1
+theme_override_colors/font_color = Color( 1, 0.854902, 0.501961, 1 )
+theme_override_colors/font_shadow_color = Color( 0.12549, 0.0627451, 0, 0.745098 )
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 1
 text = "$ 99"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Shadow" type="Sprite" parent="UpgradeTowerButton" index="1"]
+[node name="Shadow" type="Sprite2D" parent="UpgradeTowerButton" index="1"]
 
 show_behind_parent = true
 position = Vector2( 28, 28 )

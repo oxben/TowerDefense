@@ -1,5 +1,5 @@
 
-extends RigidBody2D
+extends Node2D
 
 var global
 
@@ -41,22 +41,24 @@ func _physics_process(delta):
 			dead_since += delta
 		return
 
-	if get_parent().get_unit_offset() < 1.0:
-		get_parent().set_offset(get_parent().get_offset() + (speed * delta) )
+	var path_follow := get_parent() as PathFollow2D
+	if path_follow.progress_ratio < 1.0:
+		#path_follow.set_h_offset(path_follow.get_h_offset() + (speed * delta) )
+		path_follow.progress += speed * delta
 	else:
 		print(get_name() + " reached the fortress")
 		global.hit_fortress(damage)
 		queue_free()
 
 
-func hit(damage, continuous=false):
+func hit(damage_count, continuous=false):
 	if health <= 0:
 		# If unit is already dead (case of wrecks)
 		return
 	if not continuous:
-		health -= max(0, damage - armor)
+		health -= max(0, damage_count - armor)
 	else:
-		health -= damage
+		health -= damage_count
 	get_node("HealthLabel").set_text(str(health))
 	var progress = get_node("HealthProgress")
 	if not progress.is_visible():
@@ -69,20 +71,18 @@ func hit(damage, continuous=false):
 		progress.hide()
 		# Add explosion
 		var scene = preload("res://explosion-big.tscn")
-		var explosion = scene.instance()
+		var explosion = scene.instantiate()
 		explosion.set_position(get_global_position())
 		get_node("/root").add_child(explosion)
 		# Add wreckage
 		scene = preload("res://wreck-a.tscn")
-		var wreck = scene.instance()
+		var wreck = scene.instantiate()
 		wreck.set_position(get_global_position())
 		wreck.set_frame(randi() % wreck.get_hframes())
-		var root = get_node("/root")
 		global.current_level.level.get_node("DetailsTileMap").add_child(wreck)
 
-		var texture = ImageTexture.new()
-		texture.load("res://assets/images/tank-a-dead.png")
-		var sprite = get_node("Sprite")
+		var texture = load("res://assets/images/tank-a-dead.png")
+		var sprite = get_node("Sprite2D")
 		sprite.set_texture(texture)
 		sprite.set_hframes(1)
 		sprite.set_frame(0)
@@ -90,8 +90,7 @@ func hit(damage, continuous=false):
 
 		# Add label for reward
 		scene = preload("res://ascending-label.tscn")
-		var label = scene.instance()
+		var label = scene.instantiate()
 		label.set_text("+ $" + str(reward))
 		add_child(label)
 		global.increase_cash(reward)
-

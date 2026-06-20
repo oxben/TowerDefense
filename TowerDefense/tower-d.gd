@@ -1,5 +1,4 @@
-
-extends RigidBody2D
+extends Node2D
 
 #
 # Electric Tower
@@ -22,18 +21,26 @@ var sell_price = [0, 2, 5, 8]
 
 const ammunition = "res://bullet.tscn"
 
+# Enemy currently targeted by the beam
+var current_target_enemy = null
+
 
 func _ready():
 	global = get_node("/root/global")
 	set_physics_process(true)
+	$ParticlesRay.emitting = false
 	if global.debug:
 		show_range()
+	# Duplicate particle shader
+	var shader := $ParticlesRay.process_material.duplicate() as ShaderMaterial
+	$ParticlesRay.process_material = shader
+	shader.set_shader_parameter("emitter_global_position", $ParticlesRay.global_position)
 
 
 func _physics_process(delta):
 	time += delta
-	#if enemy_at_range > 0:
-	fire()
+	if enemy_at_range > 0:
+		fire()
 
 
 func show_range():
@@ -62,7 +69,7 @@ func upgrade():
 	if level < level_max and global.cash >= upgrade_cost[level]:
 		global.decrease_cash(upgrade_cost[level])
 		level += 1
-		var sprite = get_node("Sprite")
+		var sprite = get_node("Sprite2D")
 		var hframes = sprite.get_hframes()
 		sprite.set_frame(hframes * (level-1 ))
 		print(get_name(), " upgraded to level ", level)
@@ -97,20 +104,22 @@ func fire():
 		ray.set_emitting(true)
 		if not audio.is_playing():
 			audio.play()
-		# @todo ParticalAttractor doesn't exist in Godot 3
-		#get_node("ParticlesRay/RayAttractor").set_global_position(target_enemy.get_global_position())
+		var shader := $ParticlesRay.process_material as ShaderMaterial
+		shader.set_shader_parameter("target_global_position", target_enemy.global_position)
 		target_enemy.hit(damage[level], true)
 		fire_next = time + fire_delta
 
 
-func _on_body_enter(body):
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	var body = area.get_parent()
 	#print("Body enter " + str(body))
 	if body.is_in_group("enemy"):
 		#get_node("ParticlesRay").set_emitting(true)
 		enemy_at_range += 1
 
 
-func _on_body_exit(body):
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	var body = area.get_parent()
 	#print("Body exit " + str(body))
 	if body.is_in_group("enemy"):
 		enemy_at_range -= 1

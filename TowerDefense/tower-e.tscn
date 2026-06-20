@@ -1,90 +1,42 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene format=3 uid="uid://bi3crb5bop3sv"]
 
-[ext_resource path="res://tower-e.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/fire-range-100.png" type="Texture" id=2]
-[ext_resource path="res://assets/images/tower-e.png" type="Texture" id=3]
-[ext_resource path="res://assets/sounds/missile-launch.ogg" type="AudioStream" id=4]
+[ext_resource type="Script" uid="uid://cavn7o6nvf75n" path="res://tower-e.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://diq3kh0gjmljp" path="res://assets/images/fire-range-100.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://uwka1evoo23y" path="res://assets/images/tower-e.png" id="3"]
+[ext_resource type="AudioStream" uid="uid://b80dd3hjh50qv" path="res://assets/sounds/missile-launch.ogg" id="4"]
 
-[sub_resource type="CircleShape2D" id=1]
-
-custom_solver_bias = 0.0
+[sub_resource type="CircleShape2D" id="1"]
 radius = 5.0
 
-[node name="TowerE" type="RigidBody2D"]
+[node name="TowerE" type="Node2D" unique_id=1069489338]
+script = ExtResource("1")
 
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 3
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 5
-contact_monitor = true
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-script = ExtResource( 1 )
-__meta__ = {
-"__editor_plugin_screen__": "Script"
-}
+[node name="Area2D" type="Area2D" parent="." unique_id=1840393174]
 
-[node name="FireRange" type="Sprite" parent="." index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1657764141]
+scale = Vector2(20, 20)
+shape = SubResource("1")
 
+[node name="FireRange" type="Sprite2D" parent="." unique_id=958539224]
 visible = false
-texture = ExtResource( 2 )
+texture = ExtResource("2")
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
-
-texture = ExtResource( 3 )
-vframes = 3
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2097117175]
+texture = ExtResource("3")
 hframes = 16
+vframes = 3
 
-[node name="TextureButton" type="TextureButton" parent="." index="2"]
-
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1612883792]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -16.0
-margin_top = -16.0
-margin_right = 16.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+[node name="AudioLaunch" type="AudioStreamPlayer2D" parent="." unique_id=1599035855]
+stream = ExtResource("4")
 
-scale = Vector2( 20, 20 )
-shape = SubResource( 1 )
-
-[node name="AudioLaunch" type="AudioStreamPlayer2D" parent="." index="4"]
-
-stream = ExtResource( 4 )
-volume_db = 0.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
-
-[connection signal="body_entered" from="." to="." method="_on_body_enter"]
-
-[connection signal="body_exited" from="." to="." method="_on_body_exit"]
-
-
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

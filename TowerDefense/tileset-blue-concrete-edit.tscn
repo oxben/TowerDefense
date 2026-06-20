@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/tilesets/tileset-blue-concrete.png" type="Texture" id=1]
-[ext_resource path="res://assets/tilesets/tileset-shadow.png" type="Texture" id=2]
-[ext_resource path="res://assets/tilesets/tileset-road.png" type="Texture" id=3]
-[ext_resource path="res://assets/tilesets/tileset-details.png" type="Texture" id=4]
+[ext_resource path="res://assets/tilesets/tileset-blue-concrete.png" type="Texture2D" id=1]
+[ext_resource path="res://assets/tilesets/tileset-shadow.png" type="Texture2D" id=2]
+[ext_resource path="res://assets/tilesets/tileset-road.png" type="Texture2D" id=3]
+[ext_resource path="res://assets/tilesets/tileset-details.png" type="Texture2D" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,266 +11,266 @@ __meta__ = {
 "__editor_plugin_screen__": "2D"
 }
 
-[node name="M" type="Sprite" parent="." index="0"]
+[node name="M" type="Sprite2D" parent="." index="0"]
 
 position = Vector2( 40, 40 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 32, 32, 16, 16 )
 
-[node name="T" type="Sprite" parent="." index="1"]
+[node name="T" type="Sprite2D" parent="." index="1"]
 
 position = Vector2( 40, 8 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 32, 0, 16, 16 )
 
-[node name="TR" type="Sprite" parent="." index="2"]
+[node name="TR" type="Sprite2D" parent="." index="2"]
 
 position = Vector2( 72, 8 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 64, 0, 16, 16 )
 
-[node name="CTR" type="Sprite" parent="." index="3"]
+[node name="CTR" type="Sprite2D" parent="." index="3"]
 
 position = Vector2( 56, 24 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 48, 16, 16, 16 )
 
-[node name="R" type="Sprite" parent="." index="4"]
+[node name="R" type="Sprite2D" parent="." index="4"]
 
 position = Vector2( 72, 40 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 64, 32, 16, 16 )
 
-[node name="RB" type="Sprite" parent="." index="5"]
+[node name="RB" type="Sprite2D" parent="." index="5"]
 
 position = Vector2( 72, 72 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 64, 64, 16, 16 )
 
-[node name="CRB" type="Sprite" parent="." index="6"]
+[node name="CRB" type="Sprite2D" parent="." index="6"]
 
 position = Vector2( 56, 56 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 48, 48, 16, 16 )
 
-[node name="B" type="Sprite" parent="." index="7"]
+[node name="B" type="Sprite2D" parent="." index="7"]
 
 position = Vector2( 40, 72 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 32, 64, 16, 16 )
 
-[node name="BL" type="Sprite" parent="." index="8"]
+[node name="BL" type="Sprite2D" parent="." index="8"]
 
 position = Vector2( 8, 72 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 64, 16, 16 )
 
-[node name="CBL" type="Sprite" parent="." index="9"]
+[node name="CBL" type="Sprite2D" parent="." index="9"]
 
 position = Vector2( 24, 56 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 16, 48, 16, 16 )
 
-[node name="L" type="Sprite" parent="." index="10"]
+[node name="L" type="Sprite2D" parent="." index="10"]
 
 position = Vector2( 8, 40 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 32, 16, 16 )
 
-[node name="LT" type="Sprite" parent="." index="11"]
+[node name="LT" type="Sprite2D" parent="." index="11"]
 
 position = Vector2( 8, 8 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 16, 16 )
 
-[node name="CLT" type="Sprite" parent="." index="12"]
+[node name="CLT" type="Sprite2D" parent="." index="12"]
 
 position = Vector2( 24.9754, 23.5123 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 16, 16, 16, 16 )
 
-[node name="ShadowTR" type="Sprite" parent="." index="13"]
+[node name="ShadowTR" type="Sprite2D" parent="." index="13"]
 
 position = Vector2( 168, 8 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 64, 0, 16, 16 )
 
-[node name="ShadowR" type="Sprite" parent="." index="14"]
+[node name="ShadowR" type="Sprite2D" parent="." index="14"]
 
 position = Vector2( 168, 40 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 64, 32, 16, 16 )
 
-[node name="ShadowRB" type="Sprite" parent="." index="15"]
+[node name="ShadowRB" type="Sprite2D" parent="." index="15"]
 
 position = Vector2( 168, 72 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 64, 64, 16, 16 )
 
-[node name="ShadowB" type="Sprite" parent="." index="16"]
+[node name="ShadowB" type="Sprite2D" parent="." index="16"]
 
 position = Vector2( 136, 72 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 32, 64, 16, 16 )
 
-[node name="ShadowCBL" type="Sprite" parent="." index="17"]
+[node name="ShadowCBL" type="Sprite2D" parent="." index="17"]
 
 position = Vector2( 104, 72 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 64, 16, 16 )
 
-[node name="ShadowCLT" type="Sprite" parent="." index="18"]
+[node name="ShadowCLT" type="Sprite2D" parent="." index="18"]
 
 position = Vector2( 104, 8 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 16, 16 )
 
-[node name="ShadowM" type="Sprite" parent="." index="19"]
+[node name="ShadowM" type="Sprite2D" parent="." index="19"]
 
 position = Vector2( 136, 40 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 32, 32, 16, 16 )
 
-[node name="RoadM" type="Sprite" parent="." index="20"]
+[node name="RoadM" type="Sprite2D" parent="." index="20"]
 
 position = Vector2( 8, 104 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 16, 16 )
 
-[node name="RoadWhiteStripes" type="Sprite" parent="." index="21"]
+[node name="RoadWhiteStripes" type="Sprite2D" parent="." index="21"]
 
 position = Vector2( 40, 104 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 32, 0, 16, 16 )
 
-[node name="KerbM" type="Sprite" parent="." index="22"]
+[node name="KerbM" type="Sprite2D" parent="." index="22"]
 
 position = Vector2( 136, 104 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 32, 32, 16, 16 )
 
-[node name="KerbR" type="Sprite" parent="." index="23"]
+[node name="KerbR" type="Sprite2D" parent="." index="23"]
 
 position = Vector2( 168, 104 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 48, 32, 16, 16 )
 
-[node name="KerbRB" type="Sprite" parent="." index="24"]
+[node name="KerbRB" type="Sprite2D" parent="." index="24"]
 
 position = Vector2( 168, 136 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 48, 48, 16, 16 )
 
-[node name="KerbB" type="Sprite" parent="." index="25"]
+[node name="KerbB" type="Sprite2D" parent="." index="25"]
 
 position = Vector2( 136, 136 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 32, 48, 16, 16 )
 
-[node name="KerbBL" type="Sprite" parent="." index="26"]
+[node name="KerbBL" type="Sprite2D" parent="." index="26"]
 
 position = Vector2( 104, 136 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 16, 48, 16, 16 )
 
-[node name="KerbL" type="Sprite" parent="." index="27"]
+[node name="KerbL" type="Sprite2D" parent="." index="27"]
 
 position = Vector2( 104, 104 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 16, 32, 16, 16 )
 
-[node name="Shrub" type="Sprite" parent="." index="28"]
+[node name="Shrub" type="Sprite2D" parent="." index="28"]
 
 position = Vector2( 16, 176 )
 texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 32, 32 )
 
-[node name="Rock" type="Sprite" parent="." index="29"]
+[node name="Rock" type="Sprite2D" parent="." index="29"]
 
 position = Vector2( 152, 168 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 64, 32, 16, 16 )
 
-[node name="Holes" type="Sprite" parent="." index="30"]
+[node name="Holes" type="Sprite2D" parent="." index="30"]
 
 position = Vector2( 48, 176 )
 texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 32, 0, 32, 32 )
 
-[node name="Holes 2" type="Sprite" parent="." index="31"]
+[node name="Holes 2" type="Sprite2D" parent="." index="31"]
 
 position = Vector2( 80, 176 )
 texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 64, 0, 32, 32 )
 
-[node name="Cracks" type="Sprite" parent="." index="32"]
+[node name="Cracks" type="Sprite2D" parent="." index="32"]
 
 position = Vector2( 112, 176 )
 texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 96, 0, 32, 32 )
 
-[node name="Hatch" type="Sprite" parent="." index="33"]
+[node name="Hatch" type="Sprite2D" parent="." index="33"]
 
 position = Vector2( 16, 208 )
 texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 0, 32, 32, 32 )
 
-[node name="Crate" type="Sprite" parent="." index="34"]
+[node name="Crate" type="Sprite2D" parent="." index="34"]
 
 position = Vector2( 48, 208 )
 texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 32, 32, 32, 32 )
 
-[node name="MetalSlab" type="Sprite" parent="." index="35"]
+[node name="MetalSlab" type="Sprite2D" parent="." index="35"]
 
 position = Vector2( 80, 208 )
 texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 64, 32, 32, 32 )
 
-[node name="BigMetalSlab" type="Sprite" parent="." index="36"]
+[node name="BigMetalSlab" type="Sprite2D" parent="." index="36"]
 
 position = Vector2( 32, 272 )
 texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 0, 128, 64, 64 )
 
-[node name="RoadCrater" type="Sprite" parent="." index="37"]
+[node name="RoadCrater" type="Sprite2D" parent="." index="37"]
 
 position = Vector2( 104, 264 )
 texture = ExtResource( 4 )

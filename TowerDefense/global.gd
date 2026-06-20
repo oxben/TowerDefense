@@ -25,7 +25,7 @@ var enemy_scenes = {}
 
 func _ready():
 	var root = get_tree().get_root()
-	current_level = root.get_child( root.get_child_count() - 1)
+	current_level = root.get_child(root.get_child_count() - 1)
 	# Preload enemies' scenes
 	enemy_scenes["tank-a"] = preload("res://tank-a.tscn")
 
@@ -54,7 +54,7 @@ func goto_scene(scene, level_name=""):
 		cash = 10
 		health = 5
 	var scn = ResourceLoader.load(scene)
-	current_level = scn.instance()
+	current_level = scn.instantiate()
 	if level_name != "":
 		current_level.level_name = level_name
 	get_tree().get_root().add_child(current_level)
@@ -82,4 +82,3 @@ func decrease_health(point):
 	health -= point
 	# Update listeners
 	get_tree().call_group("HealthListeners","on_health_update")
-

@@ -1,16 +1,16 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://assets/images/explosion-a.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/explosion-a.png" type="Texture2D" id=1]
 [ext_resource path="res://explosion-big.gd" type="Script" id=2]
-[ext_resource path="res://assets/images/smoke.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/smoke.png" type="Texture2D" id=3]
 [ext_resource path="res://assets/sounds/explosion-big.ogg" type="AudioStream" id=4]
 
 [sub_resource type="Gradient" id=2]
 
-offsets = PoolRealArray( 0, 0.227451, 0.611765, 0.988235, 1 )
-colors = PoolColorArray( 0.976562, 0.93919, 0.850677, 1, 0.859375, 0.598499, 0.275269, 0.757725, 0.21875, 0.100483, 0.0427246, 0.551569, 0.130682, 0.117168, 0.109464, 0, 0.125, 0.118244, 0.11377, 0.175255 )
+offsets = PackedFloat32Array( 0, 0.227451, 0.611765, 0.988235, 1 )
+colors = PackedColorArray( 0.976562, 0.93919, 0.850677, 1, 0.859375, 0.598499, 0.275269, 0.757725, 0.21875, 0.100483, 0.0427246, 0.551569, 0.130682, 0.117168, 0.109464, 0, 0.125, 0.118244, 0.11377, 0.175255 )
 
-[sub_resource type="GradientTexture" id=3]
+[sub_resource type="GradientTexture2D" id=3]
 
 flags = 4
 gradient = SubResource( 2 )
@@ -42,7 +42,7 @@ flags = 4
 width = 2048
 curve = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=1]
+[sub_resource type="ParticleProcessMaterial" id=1]
 
 render_priority = 0
 trail_divisor = 4
@@ -81,17 +81,17 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Angle", "Damping", "Emission Shape", "Initial Velocity", "Trail" ]
+_sections_unfolded = [ "Angle", "Damping", "Emission Shape3D", "Initial Velocity", "Trail" ]
 
-[node name="ExplosionBig" type="Sprite"]
+[node name="ExplosionBig" type="Sprite2D"]
 
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
 hframes = 4
 script = ExtResource( 2 )
-_sections_unfolded = [ "Animation", "Transform" ]
+_sections_unfolded = [ "Animation", "Transform3D" ]
 
-[node name="Particles2D" type="Particles2D" parent="." index="0"]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="0"]
 
 emitting = false
 amount = 256

@@ -1,5 +1,5 @@
 
-extends Sprite
+extends Sprite2D
 
 const lifetime = 0.25
 var time = 0
@@ -9,7 +9,7 @@ var frame_time = 0
 func _ready():
 	set_frame(randi() % 4)
 	set_physics_process(true)
-	var particles = get_node("Particles2D")
+	var particles = get_node("GPUParticles2D")
 	if particles:
 		particles.set_emitting(true)
 
