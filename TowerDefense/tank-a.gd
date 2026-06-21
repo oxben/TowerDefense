@@ -79,7 +79,7 @@ func hit(damage_count, continuous=false):
 		var wreck = scene.instantiate()
 		wreck.set_position(get_global_position())
 		wreck.set_frame(randi() % wreck.get_hframes())
-		global.current_level.level.get_node("DetailsTileMap").add_child(wreck)
+		global.current_level.level.get_node("DetailsLayer").add_child(wreck)
 
 		var texture = load("res://assets/images/tank-a-dead.png")
 		var sprite = get_node("Sprite2D")
