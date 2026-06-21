@@ -68,7 +68,7 @@ func _process(delta):
 				var path = PathFollow2D.new()
 				path.set_loop(false)
 				get_node("/root/Level-1/" + wave["path"]).add_child(path)
-				path.add_child(enemy)
+				path.add_child(enemy_inst)
 
 				if (wave["idx"]+1) < wave["count"]:
 					# Next enemy in wave
