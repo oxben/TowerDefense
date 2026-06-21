@@ -1,5 +1,5 @@
 
-extends RigidBody2D
+extends Node2D
 
 var global
 
@@ -13,7 +13,7 @@ func _ready():
 	global = get_node("/root/global")
 	set_physics_process(true)
 	# Set and rotate bullet sprite
-	var sprite = get_node("Sprite")
+	var sprite = get_node("Sprite2D")
 	sprite.set_frame(level-1)
 	var rad_angle = atan2(direction.x, -direction.y)
 	set_rotation(rad_angle)
@@ -29,11 +29,12 @@ func _physics_process(delta):
 		#print("Bullet dies")
 		queue_free()
 
-func _on_body_enter(body):
-	#print("Hit!")
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	var body = area.get_parent()
 	if body.is_in_group("enemy"):
 		var scene = preload("res://explosion-small.tscn")
-		var explosion = scene.instance()
+		var explosion = scene.instantiate()
 		explosion.set_position(get_global_position())
 		get_node("/root").add_child(explosion)
 		body.hit(damage[level])

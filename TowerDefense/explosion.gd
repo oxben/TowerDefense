@@ -1,5 +1,5 @@
 
-extends Sprite
+extends Sprite2D
 
 const lifetime = 0.25
 var time = 0

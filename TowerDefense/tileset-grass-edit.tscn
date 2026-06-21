@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://assets/tilesets/tileset-grass.png" type="Texture" id=1]
+[ext_resource path="res://assets/tilesets/tileset-grass.png" type="Texture2D" id=1]
 
 [node name="Node2D" type="Node2D"]
 
@@ -8,63 +8,63 @@ __meta__ = {
 "__editor_plugin_screen__": "2D"
 }
 
-[node name="T" type="Sprite" parent="."]
+[node name="T" type="Sprite2D" parent="."]
 
 position = Vector2( 40, 8 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 32, 0, 16, 16 )
 
-[node name="TR" type="Sprite" parent="."]
+[node name="TR" type="Sprite2D" parent="."]
 
 position = Vector2( 72, 8 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 64, 0, 16, 16 )
 
-[node name="R" type="Sprite" parent="."]
+[node name="R" type="Sprite2D" parent="."]
 
 position = Vector2( 72, 40 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 64, 32, 16, 16 )
 
-[node name="RB" type="Sprite" parent="."]
+[node name="RB" type="Sprite2D" parent="."]
 
 position = Vector2( 72, 72 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 64, 64, 16, 16 )
 
-[node name="B" type="Sprite" parent="."]
+[node name="B" type="Sprite2D" parent="."]
 
 position = Vector2( 40, 72 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 32, 64, 16, 16 )
 
-[node name="BL" type="Sprite" parent="."]
+[node name="BL" type="Sprite2D" parent="."]
 
 position = Vector2( 8, 72 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 64, 16, 16 )
 
-[node name="L" type="Sprite" parent="."]
+[node name="L" type="Sprite2D" parent="."]
 
 position = Vector2( 8, 40 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 32, 16, 16 )
 
-[node name="LT" type="Sprite" parent="."]
+[node name="LT" type="Sprite2D" parent="."]
 
 position = Vector2( 8, 8 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 16, 16 )
 
-[node name="M" type="Sprite" parent="."]
+[node name="M" type="Sprite2D" parent="."]
 
 position = Vector2( 40, 40 )
 texture = ExtResource( 1 )

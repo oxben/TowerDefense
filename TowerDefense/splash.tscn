@@ -1,130 +1,141 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=3 uid="uid://bu7fk3hqcv83u"]
 
-[ext_resource path="res://splash.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/splash/splash-background.png" type="Texture" id=2]
-[ext_resource path="res://assets/images/splash/tower-defense-title.png" type="Texture" id=3]
-[ext_resource path="res://assets/images/splash/start.png" type="Texture" id=4]
-[ext_resource path="res://assets/images/splash/start-hover.png" type="Texture" id=5]
-[ext_resource path="res://assets/images/splash/quit.png" type="Texture" id=6]
-[ext_resource path="res://assets/images/splash/quit-hover.png" type="Texture" id=7]
-[ext_resource path="res://assets/images/splash/copyright.png" type="Texture" id=8]
+[ext_resource type="Script" path="res://splash.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dybyke1p6to76" path="res://assets/images/splash/splash-background.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dlsq7wm045cqa" path="res://assets/images/splash/tower-defense-title.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bix1utdfivvi1" path="res://assets/images/splash/start.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dxkryivuvfdfc" path="res://assets/images/splash/start-hover.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bvux1bu65p4ml" path="res://assets/images/splash/quit.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://dxu1n2bowfw71" path="res://assets/images/splash/quit-hover.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dboo0yi47jlqi" path="res://assets/images/splash/copyright.png" id="8"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 resource_name = "Intro"
 length = 4.0
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Background:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 2.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Logo:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1.5, 2.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( 320, -40 ), Vector2( 320, -40 ), Vector2( 320, 188 ) ]
+"values": [Vector2(320, -40), Vector2(320, -40), Vector2(320, 188)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Start:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 2.5, 3.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 2.5, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Quit:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 2.5, 3.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 2.5, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Copyright:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 3.5, 4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jtxb8"]
+_data = {
+"Intro": SubResource("1")
 }
 
 [node name="Splash" type="Control"]
-margin_right = 640.0
-margin_bottom = 480.0
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-script = ExtResource( 1 )
-__meta__ = {
-"__editor_plugin_screen__": "Script"
-}
+script = ExtResource("1")
 
 [node name="Background" type="TextureRect" parent="."]
-margin_right = 640.0
-margin_bottom = 480.0
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 480.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-texture = ExtResource( 2 )
+texture = ExtResource("2")
 
-[node name="Logo" type="Sprite" parent="."]
-position = Vector2( 320, 188 )
-texture = ExtResource( 3 )
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(320, 188)
+texture = ExtResource("3")
 
 [node name="AnimPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jtxb8")
+}
 autoplay = "Intro"
-anims/Intro = SubResource( 1 )
 
 [node name="Start" type="TextureButton" parent="."]
-margin_left = 272.0
-margin_top = 228.0
-margin_right = 368.0
-margin_bottom = 268.0
+layout_mode = 0
+offset_left = 272.0
+offset_top = 228.0
+offset_right = 368.0
+offset_bottom = 268.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-texture_normal = ExtResource( 4 )
-texture_hover = ExtResource( 5 )
+texture_normal = ExtResource("4")
+texture_hover = ExtResource("5")
 
 [node name="Quit" type="TextureButton" parent="."]
-margin_left = 240.0
-margin_top = 272.0
-margin_right = 400.0
-margin_bottom = 312.0
+layout_mode = 0
+offset_left = 240.0
+offset_top = 272.0
+offset_right = 400.0
+offset_bottom = 312.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-texture_normal = ExtResource( 6 )
-texture_hover = ExtResource( 7 )
+texture_normal = ExtResource("6")
+texture_hover = ExtResource("7")
 
 [node name="Copyright" type="TextureButton" parent="."]
-margin_left = 572.0
-margin_top = 440.0
-margin_right = 640.0
-margin_bottom = 480.0
+layout_mode = 0
+offset_left = 572.0
+offset_top = 440.0
+offset_right = 640.0
+offset_bottom = 480.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-texture_normal = ExtResource( 8 )
+texture_normal = ExtResource("8")
+
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]

@@ -44,9 +44,9 @@ func _on_BuyTowerEButton_pressed():
 		set_pressed(false)
 
 
-func _on_TowerBase_toggled( pressed ):
-	print("pressed=", str(pressed))
-	if pressed:
+func _on_TowerBase_toggled( toggled_on ):
+	print("pressed=", str(toggled_on))
+	if toggled_on:
 		# Close other opened menu
 		get_tree().call_group("OpenedBases","close_tower_menu")
 		# Display menu
@@ -74,13 +74,13 @@ func set_tower_cost_color():
 	var td_label = get_node("BuyTowerDButton/Label")
 	var te_label = get_node("BuyTowerEButton/Label")
 	if global.init_tower_cost > global.cash:
-		ta_label.set("custom_colors/font_color", Color(global.COLOR_RED))
-		td_label.set("custom_colors/font_color", Color(global.COLOR_RED))
-		te_label.set("custom_colors/font_color", Color(global.COLOR_RED))
+		ta_label.set("theme_override_colors/font_color", Color(global.COLOR_RED))
+		td_label.set("theme_override_colors/font_color", Color(global.COLOR_RED))
+		te_label.set("theme_override_colors/font_color", Color(global.COLOR_RED))
 	else:
-		ta_label.set("custom_colors/font_color", Color(global.COLOR_GOLD))
-		td_label.set("custom_colors/font_color", Color(global.COLOR_GOLD))
-		te_label.set("custom_colors/font_color", Color(global.COLOR_GOLD))
+		ta_label.set("theme_override_colors/font_color", Color(global.COLOR_GOLD))
+		td_label.set("theme_override_colors/font_color", Color(global.COLOR_GOLD))
+		te_label.set("theme_override_colors/font_color", Color(global.COLOR_GOLD))
 
 
 func show_tower_menu():
@@ -109,9 +109,9 @@ func set_upgrade_cost_color():
 	var cost = tower.get_upgrade_cost()
 	var label = get_node("UpgradeTowerButton/Label")
 	if cost > global.cash:
-		label.set("custom_colors/font_color", Color(global.COLOR_RED))
+		label.set("theme_override_colors/font_color", Color(global.COLOR_RED))
 	else:
-		label.set("custom_colors/font_color", Color(global.COLOR_GOLD))
+		label.set("theme_override_colors/font_color", Color(global.COLOR_GOLD))
 
 
 func show_upgrade_menu():
@@ -136,7 +136,7 @@ func hide_upgrade_menu():
 
 func add_tower(tower_scene):
 	print("Add tower: x=", get_position().x, " y=", get_position().y)
-	tower = tower_scene.instance()
+	tower = tower_scene.instantiate()
 	tower.set_name("Tower-" + idx)
 	tower.set_position(Vector2(32,16))
 	add_child(tower)

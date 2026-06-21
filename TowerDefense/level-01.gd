@@ -39,11 +39,12 @@ func _ready():
 	victory = false
 	global = get_node("/root/global")
 	# Load waves
-	var file = File.new()
-	file.open("res://level-01-waves.json", File.READ)
+	var file = FileAccess.open("res://level-01-waves.json", FileAccess.READ)
 	var txt = file.get_as_text()
 	var d = {}
-	var rc = d.parse_json(txt)
+	var test_json_conv = JSON.new()
+	test_json_conv.parse(txt)
+	var rc = d.test_json_conv.get_data()
 	if rc != OK:
 		print("ERROR: Failed to parse wave file")
 	waves = d["waves"]
@@ -61,9 +62,9 @@ func _process(delta):
 			if time > enemy_spawn:
 				# Spawn next enemy in waves
 				# (idx is already incremented)
-				var enemy = wave["enemies"][wave["idx"]]
-				var scene = global.enemy_scenes[enemy["type"]]
-				var enemy_inst = scene.instance()
+				var enemy_wave = wave["enemies"][wave["idx"]]
+				var scene = global.enemy_scenes[enemy_wave["type"]]
+				var enemy = scene.instantiate()
 				var path = PathFollow2D.new()
 				path.set_loop(false)
 				get_node("/root/Level-1/" + wave["path"]).add_child(path)

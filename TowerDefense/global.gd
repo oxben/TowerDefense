@@ -13,8 +13,11 @@ const COLOR_RED  = "#ff4444"
 var current_level = null
 
 # Player
-var cash = 10
-var health = 5
+const START_CASH : int = 15
+var cash : int = START_CASH
+# Player health
+const START_HEALTH : int = 5
+var health : int = START_HEALTH
 
 var debug = false
 var init_tower_cost     = 5 # Initial tower cost
@@ -25,7 +28,7 @@ var enemy_scenes = {}
 
 func _ready():
 	var root = get_tree().get_root()
-	current_level = root.get_child( root.get_child_count() - 1)
+	current_level = root.get_child(root.get_child_count() - 1)
 	# Preload enemies' scenes
 	enemy_scenes["tank-a"] = preload("res://tank-a.tscn")
 
@@ -51,10 +54,10 @@ func goto_scene(scene, level_name=""):
 	current_level.queue_free()
 	if scene.get_basename() != "splash.tscn":
 		# Reset player attributes
-		cash = 10
-		health = 5
+		cash = START_CASH
+		health = START_HEALTH
 	var scn = ResourceLoader.load(scene)
-	current_level = scn.instance()
+	current_level = scn.instantiate()
 	if level_name != "":
 		current_level.level_name = level_name
 	get_tree().get_root().add_child(current_level)
@@ -82,4 +85,3 @@ func decrease_health(point):
 	health -= point
 	# Update listeners
 	get_tree().call_group("HealthListeners","on_health_update")
-

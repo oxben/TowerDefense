@@ -1,717 +1,491 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene format=3 uid="uid://dmdegm81aryg2"]
 
-[ext_resource path="res://assets/images/blank-level.png" type="Texture" id=1]
-[ext_resource path="res://game.gd" type="Script" id=2]
-[ext_resource path="res://assets/images/cash-label.png" type="Texture" id=3]
-[ext_resource path="res://assets/images/health-label.png" type="Texture" id=4]
-[ext_resource path="res://assets/images/skull-label.png" type="Texture" id=5]
-[ext_resource path="res://assets/images/button-skull.png" type="Texture" id=6]
-[ext_resource path="res://assets/images/button-shadow-32x32.png" type="Texture" id=7]
-[ext_resource path="res://assets/images/game-over.png" type="Texture" id=8]
-[ext_resource path="res://assets/images/victory.png" type="Texture" id=9]
-[ext_resource path="res://assets/images/restart.png" type="Texture" id=10]
-[ext_resource path="res://assets/images/restart-hover.png" type="Texture" id=11]
-[ext_resource path="res://assets/images/splash/continue.png" type="Texture" id=12]
-[ext_resource path="res://assets/images/splash/continue-hover.png" type="Texture" id=13]
-[ext_resource path="res://assets/images/splash/quit.png" type="Texture" id=14]
-[ext_resource path="res://assets/images/splash/quit-hover.png" type="Texture" id=15]
-[ext_resource path="res://assets/images/star.png" type="Texture" id=16]
-[ext_resource path="res://assets/images/button-land-mine.png" type="Texture" id=17]
-[ext_resource path="res://assets/images/button-shadow.png" type="Texture" id=18]
+[ext_resource type="Texture2D" uid="uid://4jp7x467cgo0" path="res://assets/images/blank-level.png" id="1"]
+[ext_resource type="Script" uid="uid://byx458hgdnav0" path="res://game.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://h4fg0xb014vs" path="res://assets/images/cash-label.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://jqejfn1fif78" path="res://assets/images/health-label.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://jk7wx6kalsvo" path="res://assets/images/skull-label.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://b72jbkfa2gx0e" path="res://assets/images/button-skull.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://dtryexnnxhsom" path="res://assets/images/button-shadow-32x32.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://5du355rp556h" path="res://assets/images/game-over.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://dngqyrq0oqrwg" path="res://assets/images/victory.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dgy762135fq3k" path="res://assets/images/restart.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://bf401fet16iqu" path="res://assets/images/restart-hover.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://dniep5r65x4iu" path="res://assets/images/splash/continue.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://b1po8nxftrxus" path="res://assets/images/splash/continue-hover.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://bvux1bu65p4ml" path="res://assets/images/splash/quit.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://dxu1n2bowfw71" path="res://assets/images/splash/quit-hover.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://vn85riw2lasx" path="res://assets/images/star.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://b1o7qkym1uum4" path="res://assets/images/button-land-mine.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://u53mov8i3ud2" path="res://assets/images/button-shadow.png" id="18"]
 
-[sub_resource type="Animation" id=1]
-
+[sub_resource type="Animation" id="1"]
 length = 2.5
-loop = false
-step = 0.1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("GameOverFrame:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("GameOverFrame:rect_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
+tracks/1/path = NodePath("GameOverFrame:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 160, -40 ), Vector2( 160, 200 ) ]
+"values": [Vector2(160, -40), Vector2(160, 200)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("GameOverFrame:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "gameover_pause"
-} ]
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"gameover_pause"
+}]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("RestartButton:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("RestartButton:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 1.3, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1.3, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("QuitButton:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ true ]
+"values": [true]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("QuitButton:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 1.8, 2.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1.8, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id=2]
-
+[sub_resource type="Animation" id="2"]
 length = 3.0
-loop = false
-step = 0.1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("VictoryFrame:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("VictoryFrame:rect_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
+tracks/1/path = NodePath("VictoryFrame:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 160, -40 ), Vector2( 160, 180 ) ]
+"values": [Vector2(160, -40), Vector2(160, 180)]
 }
 tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "gameover_pause"
-} ]
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"gameover_pause"
+}]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("ContinueButton:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("ContinueButton:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 1.8, 2.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1.8, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("VictoryFrame:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("Star 1:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("Star 2:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 1.3 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(1.3),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("Star 3:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 1.60049 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(1.60049),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/path = NodePath("QuitButton:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ true ]
+"values": [true]
 }
 tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/path = NodePath("QuitButton:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0, 2.3, 3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 2.3, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[node name="Game" type="TextureRect" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 640.0
-margin_bottom = 480.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 2
-size_flags_vertical = 2
-texture = ExtResource( 1 )
-expand = true
-stretch_mode = 0
-script = ExtResource( 2 )
-__meta__ = {
-"__editor_plugin_screen__": "Script",
-"_edit_lock_": true
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_krxk7"]
+_data = {
+&"GameOver": SubResource("1"),
+&"Victory": SubResource("2")
 }
 
-[node name="CashSprite" type="Sprite" parent="." index="0"]
-
-position = Vector2( 216, 16 )
-texture = ExtResource( 3 )
-
-[node name="CashLabel" type="Label" parent="CashSprite" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = -6.0
-margin_right = 32.0
-margin_bottom = 8.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 2
-size_flags_vertical = 0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0.0300081, 0.12549, 0.745098 )
-custom_constants/shadow_offset_x = 1
-custom_constants/shadow_offset_y = 1
-custom_constants/shadow_as_outline = 1
-text = "999"
-align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="HealthSprite" type="Sprite" parent="." index="1"]
-
-editor/display_folded = true
-position = Vector2( 320, 16 )
-texture = ExtResource( 4 )
-
-[node name="HealthLabel" type="Label" parent="HealthSprite" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = -6.0
-margin_right = 32.0
-margin_bottom = 7.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 2
-size_flags_vertical = 0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0.0313726, 0.25098, 0.745098 )
-custom_constants/shadow_offset_x = 1
-custom_constants/shadow_offset_y = 1
-custom_constants/shadow_as_outline = 1
-text = "999"
-align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="WaveSprite" type="Sprite" parent="." index="2"]
-
-editor/display_folded = true
-position = Vector2( 424, 16 )
-texture = ExtResource( 5 )
-
-[node name="WaveLabel" type="Label" parent="WaveSprite" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = -6.0
-margin_right = 32.0
-margin_bottom = 7.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 2
-size_flags_vertical = 0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0.0313726, 0.25098, 0.745098 )
-custom_constants/shadow_offset_x = 1
-custom_constants/shadow_offset_y = 1
-custom_constants/shadow_as_outline = 1
-text = "999"
-align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="PausePopupPanel" type="PopupPanel" parent="." index="3"]
-
-pause_mode = 2
-editor/display_folded = true
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 256.0
-margin_top = 200.0
-margin_right = 384.0
-margin_bottom = 264.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
-mouse_default_cursor_shape = 0
+[node name="Game" type="TextureRect" unique_id=1099587656]
+offset_right = 640.0
+offset_bottom = 480.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-popup_exclusive = false
+texture = ExtResource("1")
+expand_mode = 1
+script = ExtResource("2")
 
-[node name="Label" type="Label" parent="PausePopupPanel" index="0"]
+[node name="CashSprite" type="Sprite2D" parent="." unique_id=123677885]
+position = Vector2(216, 16)
+texture = ExtResource("3")
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 8.0
-margin_right = 128.0
-margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
+[node name="CashLabel" type="Label" parent="CashSprite" unique_id=1604310740]
+offset_top = -12.0
+offset_right = 32.0
+offset_bottom = 11.0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.0300081, 0.12549, 0.745098)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 1
+text = "999"
+horizontal_alignment = 1
+
+[node name="HealthSprite" type="Sprite2D" parent="." unique_id=908109231]
+position = Vector2(320, 16)
+texture = ExtResource("4")
+
+[node name="HealthLabel" type="Label" parent="HealthSprite" unique_id=1846651802]
+offset_top = -12.0
+offset_right = 32.0
+offset_bottom = 11.0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.0313726, 0.25098, 0.745098)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 1
+text = "999"
+horizontal_alignment = 1
+
+[node name="WaveSprite" type="Sprite2D" parent="." unique_id=292015082]
+position = Vector2(424, 16)
+texture = ExtResource("5")
+
+[node name="WaveLabel" type="Label" parent="WaveSprite" unique_id=666522745]
+offset_top = -12.0
+offset_right = 32.0
+offset_bottom = 11.0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.0313726, 0.25098, 0.745098)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 1
+text = "999"
+horizontal_alignment = 1
+
+[node name="PausePopupPanel" type="PopupPanel" parent="." unique_id=1183976599]
+process_mode = 3
+
+[node name="Label" type="Label" parent="PausePopupPanel" unique_id=1689170759]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 110.0
+offset_bottom = 96.0
 size_flags_horizontal = 2
 size_flags_vertical = 0
 text = "Game paused"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Button" type="Button" parent="PausePopupPanel" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 24.0
-margin_top = 32.0
-margin_right = 104.0
-margin_bottom = 56.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
+[node name="Button" type="Button" parent="PausePopupPanel" unique_id=1199991600]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 96.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Resume"
-flat = false
-align = 1
 
-[node name="SkullButton" type="TextureButton" parent="." index="4"]
-
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 256.0
-margin_right = 40.0
-margin_bottom = 288.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
+[node name="SkullButton" type="TextureButton" parent="." unique_id=1276582387]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 256.0
+offset_right = 40.0
+offset_bottom = 288.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource("6")
 
-[node name="Shadow" type="Sprite" parent="SkullButton" index="0"]
-
+[node name="Shadow" type="Sprite2D" parent="SkullButton" unique_id=632149283]
 show_behind_parent = true
-position = Vector2( 20, 20 )
-texture = ExtResource( 7 )
+position = Vector2(20, 20)
+texture = ExtResource("7")
 
-[node name="Label" type="Label" parent="SkullButton" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = -8.0
-margin_right = 32.0
-margin_bottom = 5.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
+[node name="Label" type="Label" parent="SkullButton" unique_id=332999876]
+layout_mode = 0
+offset_top = -19.0
+offset_right = 32.0
+offset_bottom = 4.0
 size_flags_horizontal = 2
 size_flags_vertical = 0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 1
-custom_constants/shadow_offset_y = 1
-custom_constants/shadow_as_outline = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 1
 text = "10s"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+horizontal_alignment = 1
 
-[node name="GameOverFrame" type="TextureRect" parent="." index="5"]
-
+[node name="GameOverFrame" type="TextureRect" parent="." unique_id=1341468120]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 160.0
-margin_top = 200.0
-margin_right = 460.0
-margin_bottom = 240.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
+layout_mode = 0
+offset_left = 160.0
+offset_top = 200.0
+offset_right = 460.0
+offset_bottom = 240.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-texture = ExtResource( 8 )
-stretch_mode = 0
-_sections_unfolded = [ "Rect", "Visibility" ]
+texture = ExtResource("8")
 
-[node name="VictoryFrame" type="TextureRect" parent="." index="6"]
-
+[node name="VictoryFrame" type="TextureRect" parent="." unique_id=1268860423]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 160.0
-margin_top = 180.0
-margin_right = 460.0
-margin_bottom = 220.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
+layout_mode = 0
+offset_left = 160.0
+offset_top = 180.0
+offset_right = 460.0
+offset_bottom = 220.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-texture = ExtResource( 9 )
-stretch_mode = 0
-_sections_unfolded = [ "Rect", "Visibility" ]
+texture = ExtResource("9")
 
-[node name="RestartButton" type="TextureButton" parent="." index="7"]
-
-pause_mode = 2
+[node name="RestartButton" type="TextureButton" parent="." unique_id=1212622427]
+process_mode = 3
 visible = false
-modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 240.0
-margin_top = 248.0
-margin_right = 400.0
-margin_bottom = 288.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 240.0
+offset_top = 248.0
+offset_right = 400.0
+offset_bottom = 288.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 10 )
-texture_hover = ExtResource( 11 )
-_sections_unfolded = [ "Visibility" ]
+texture_normal = ExtResource("10")
+texture_hover = ExtResource("11")
 
-[node name="ContinueButton" type="TextureButton" parent="." index="8"]
-
-pause_mode = 2
+[node name="ContinueButton" type="TextureButton" parent="." unique_id=514821816]
+process_mode = 3
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 239.0
-margin_top = 246.0
-margin_right = 399.0
-margin_bottom = 286.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
+layout_mode = 0
+offset_left = 239.0
+offset_top = 246.0
+offset_right = 399.0
+offset_bottom = 286.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 12 )
-texture_hover = ExtResource( 13 )
-_sections_unfolded = [ "Visibility" ]
+texture_normal = ExtResource("12")
+texture_hover = ExtResource("13")
 
-[node name="QuitButton" type="TextureButton" parent="." index="9"]
-
-pause_mode = 2
+[node name="QuitButton" type="TextureButton" parent="." unique_id=1281454014]
+process_mode = 3
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 240.0
-margin_top = 280.0
-margin_right = 400.0
-margin_bottom = 320.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
+layout_mode = 0
+offset_left = 240.0
+offset_top = 280.0
+offset_right = 400.0
+offset_bottom = 320.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 14 )
-texture_hover = ExtResource( 15 )
-_sections_unfolded = [ "Visibility" ]
+texture_normal = ExtResource("14")
+texture_hover = ExtResource("15")
 
-[node name="AnimPlayer" type="AnimationPlayer" parent="." index="10"]
+[node name="AnimPlayer" type="AnimationPlayer" parent="." unique_id=1804645138]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_krxk7")
 
-pause_mode = 2
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/GameOver = SubResource( 1 )
-anims/Victory = SubResource( 2 )
-blend_times = [  ]
-
-[node name="Star 1" type="Sprite" parent="." index="11"]
-
+[node name="Star 1" type="Sprite2D" parent="." unique_id=1658848209]
 visible = false
-position = Vector2( 268, 236 )
-texture = ExtResource( 16 )
+position = Vector2(268, 236)
+texture = ExtResource("16")
 
-[node name="Star 2" type="Sprite" parent="." index="12"]
-
+[node name="Star 2" type="Sprite2D" parent="." unique_id=1409125393]
 visible = false
-position = Vector2( 304, 236 )
-texture = ExtResource( 16 )
+position = Vector2(304, 236)
+texture = ExtResource("16")
 
-[node name="Star 3" type="Sprite" parent="." index="13"]
-
+[node name="Star 3" type="Sprite2D" parent="." unique_id=1360956688]
 visible = false
-position = Vector2( 340, 236 )
-texture = ExtResource( 16 )
+position = Vector2(340, 236)
+texture = ExtResource("16")
 
-[node name="BuyLandMineButton" type="TextureButton" parent="." index="14"]
+[node name="BuyLandMineButton" type="TextureButton" parent="." unique_id=750165471]
+layout_mode = 0
+offset_left = 589.0
+offset_right = 637.0
+offset_bottom = 48.0
+texture_normal = ExtResource("17")
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 589.0
-margin_right = 637.0
-margin_bottom = 48.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 17 )
-_sections_unfolded = [ "Textures" ]
-
-[node name="Label" type="Label" parent="BuyLandMineButton" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 4.0
-margin_top = 28.0
-margin_right = 44.0
-margin_bottom = 42.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_colors/font_color = Color( 1, 0.854902, 0.501961, 1 )
-custom_colors/font_color_shadow = Color( 0.12549, 0.0627451, 0, 0.74902 )
-custom_constants/shadow_offset_x = 1
-custom_constants/shadow_offset_y = 1
-custom_constants/shadow_as_outline = 1
+[node name="Label" type="Label" parent="BuyLandMineButton" unique_id=789465211]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 23.0
+offset_right = 44.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(1, 0.854902, 0.501961, 1)
+theme_override_colors/font_shadow_color = Color(0.12549, 0.0627451, 0, 0.74902)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 1
 text = "$ 2"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+horizontal_alignment = 1
 
-[node name="Shadow" type="Sprite" parent="BuyLandMineButton" index="1"]
-
+[node name="Shadow" type="Sprite2D" parent="BuyLandMineButton" unique_id=1894734480]
 show_behind_parent = true
-position = Vector2( 28, 28 )
-texture = ExtResource( 18 )
-_sections_unfolded = [ "Transform", "Visibility" ]
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2(28, 28)
+texture = ExtResource("18")
 
 [connection signal="pressed" from="PausePopupPanel/Button" to="." method="_on_resume_button_pressed"]
-
 [connection signal="pressed" from="SkullButton" to="." method="_on_SkullButton_pressed"]
-
 [connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]
-
 [connection signal="pressed" from="ContinueButton" to="." method="_on_ContinueButton_pressed"]
-
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
-
 [connection signal="button_up" from="BuyLandMineButton" to="." method="_on_BuyLandMineButton_button_up"]
-
-

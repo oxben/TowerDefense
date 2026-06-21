@@ -1,5 +1,5 @@
 
-extends RigidBody2D
+extends Node2D
 
 var global
 
@@ -28,8 +28,8 @@ func _ready():
 
 func _physics_process(delta):
 	time += delta
-	#if enemy_at_range > 0:
-	fire()
+	if enemy_at_range > 0:
+		fire()
 
 
 func show_range():
@@ -58,7 +58,7 @@ func upgrade():
 	if level < level_max and global.cash >= upgrade_cost[level]:
 		global.decrease_cash(upgrade_cost[level])
 		level += 1
-		var sprite = get_node("Sprite")
+		var sprite = get_node("Sprite2D")
 		var hframes = sprite.get_hframes()
 		sprite.set_frame(hframes * (level-1 ))
 		print(get_name(), " upgraded to level ", level)
@@ -67,7 +67,7 @@ func upgrade():
 func rotate_turret(direction):
 	var rad_angle = atan2(direction.x, direction.y) - atan2(0, -1)
 	var angle = (360 - int(rad_angle * global.DEG_PER_RAD)) % 360
-	var sprite = get_node("Sprite")
+	var sprite = get_node("Sprite2D")
 	var hframes = sprite.get_hframes()
 	var frame = int(round(angle / (360.0/hframes))) % hframes
 	sprite.set_frame(hframes * (level-1 ) + frame)
@@ -89,7 +89,7 @@ func fire():
 		if target_enemy == null:
 			return
 		var scene = load(ammunition)
-		var bullet = scene.instance()
+		var bullet = scene.instantiate()
 		#bullet.set_position(get_position())
 		bullet.direction = (target_enemy.get_global_position() - get_global_position()).normalized()
 		bullet.level = level
@@ -100,13 +100,15 @@ func fire():
 		get_node("AudioGunshot").play()
 
 
-func _on_body_enter(body):
+func _on_area_2d_area_entered(area: Area2D) -> void:
 	#print("Body enter " + str(body))
+	var body = area.get_parent()
 	if body.is_in_group("enemy"):
 		enemy_at_range += 1
 
 
-func _on_body_exit(body):
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	var body = area.get_parent()
 	#print("Body exit " + str(body))
 	if body.is_in_group("enemy"):
 		enemy_at_range -= 1

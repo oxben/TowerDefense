@@ -42,14 +42,15 @@ func _ready():
 	if level_name == "":
 		level_name = "level-01"
 	var scn = ResourceLoader.load("res://" + level_name + ".tscn")
-	level = scn.instance()
+	level = scn.instantiate()
 	add_child(level)
 	move_child(level, 0)
 	# Load level waves from .json file
-	var file = File.new()
-	file.open("res://" + level_name + "-waves.json", File.READ) # eg. level-01-waves.json
+	var file = FileAccess.open("res://" + level_name + "-waves.json", FileAccess.READ) # eg. level-01-waves.json
 	var txt = file.get_as_text()
-	var d = parse_json(txt)
+	var test_json_conv = JSON.new()
+	test_json_conv.parse(txt)
+	var d = test_json_conv.get_data()
 	print(d)
 	if not d:
 		print("ERROR: Failed to parse wave file")
@@ -75,7 +76,7 @@ func init_wave(idx):
 	wave["state"] = WAIT
 	wave["idx"] = 0
 	start_countdown = wave["intval"]
-	get_node("SkullButton/Label").set_text(str(ceil(start_countdown)) + "s")
+	get_node("SkullButton/Label").set_text("%ds" % [round(start_countdown)])
 	get_node("SkullButton").show()
 
 
@@ -96,11 +97,11 @@ func _process(delta):
 				# (idx is already incremented)
 				var enemy = wave["enemies"][wave["idx"]]
 				var scene = global.enemy_scenes[enemy["type"]]
-				var enemy_inst = scene.instance()
-				var path = PathFollow2D.new()
-				path.set_loop(false)
-				level.get_node(enemy["path"]).add_child(path)
-				path.add_child(enemy_inst)
+				var enemy_inst = scene.instantiate()
+				var path_follow = PathFollow2D.new()
+				path_follow.loop = false
+				level.get_node(enemy["path"]).add_child(path_follow)
+				path_follow.add_child(enemy_inst)
 
 				if (wave["idx"]+1) < wave["count"]:
 					# Next enemy in wave
@@ -118,7 +119,7 @@ func _process(delta):
 	elif wave["state"] == WAIT:
 		start_countdown -= delta
 		if start_countdown > 0:
-			get_node("SkullButton/Label").set_text(str(ceil(start_countdown)) + "s")
+			get_node("SkullButton/Label").set_text("%ds" % [round(start_countdown)])
 		else:
 			start_wave()
 
@@ -151,7 +152,7 @@ func _input(event):
 			global.increase_cash(100)
 			return
 	elif event is InputEventMouseButton:
-		if event.get_button_index() == BUTTON_LEFT and not event.is_pressed():
+		if event.get_button_index() == MOUSE_BUTTON_LEFT and not event.is_pressed():
 			# Letf mouse button up
 			if land_mine_install_mode:
 				plant_mine(event.get_global_position())
@@ -166,6 +167,7 @@ func _on_resume_button_pressed():
 
 func _on_SkullButton_pressed():
 	start_wave()
+
 
 func gameover_pause():
 	get_tree().set_pause(true)
@@ -201,9 +203,7 @@ func _on_BuyLandMineButton_button_up():
 func plant_mine(pos):
 	print("plant land mine", pos)
 	var scene = preload("res://land-mine.tscn")
-	var mine = scene.instance()
+	var mine = scene.instantiate()
 	mine.set_position(pos)
 	global.current_level.level.get_node("DetailsTileMap").add_child(mine)
 	Input.set_custom_mouse_cursor(arrow_cursor)
-
-
