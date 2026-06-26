@@ -205,5 +205,5 @@ func plant_mine(pos):
 	var scene = preload("res://land-mine.tscn")
 	var mine = scene.instantiate()
 	mine.set_position(pos)
-	global.current_level.level.get_node("DetailsTileMap").add_child(mine)
+	global.current_level.level.get_node("DetailsLayer").add_child(mine)
 	Input.set_custom_mouse_cursor(arrow_cursor)
